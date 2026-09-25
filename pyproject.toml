@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gelsa"
+version = "4.0"
+description = "Advanced tools for Euclid grism spectroscopy"
+readme = "Readme.md"
+license = "MIT AND Apache-2.0"
+license-files = ["LICENSE.txt", "gelsa/_vendor/LICENSE.fast_interp"]
+
+authors = [
+  {name = "Ben Granett", email = "benjamin.granett@inaf.it"},
+]
+
+dependencies = [
+    "numpy",
+    "scipy",
+    "numba",
+    "matplotlib",
+    "astropy",
+    "healpy",
+    "h5py",
+    "joblib",
+    "reproject",
+    "scikit-image"
+]
+
+[project.urls]
+Homepage = "https://github.com/elsa-euclid/gelsa"
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff"]
+docs = ["sphinx", "pydata-sphinx-theme", "sphinx-design"]
+esa = ["astroquery", "azulero>=2.1", "ipywidgets", "ipython"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.setuptools.packages.find]
+include = ["gelsa*"]
+namespaces = false
+
+[tool.setuptools.package-data]
+gelsa = ["logos/*.png"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes (undefined names, unused imports)
+    "I",   # isort (import ordering)
+]
+ignore = [
+    "E741",  # ambiguous variable names (l, O, I) — common in scientific code
+]
