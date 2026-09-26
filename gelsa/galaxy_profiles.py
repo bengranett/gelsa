@@ -51,14 +51,14 @@ def disk(r, r50):
     cache=True
 )
 def disk_integrated(r, r50):
-    """ Cumulative integral of exponential disk profile
+    r""" Cumulative integral of exponential disk profile
 
     Notes
     -----
     The integrated profile is
 
     .. math::
-       F(x) = 1 - \left(1+x\\right)e^{-x}
+       F(x) = 1 - \left(1+x\right)e^{-x}
 
     Parameters
     ----------
@@ -127,14 +127,14 @@ def bulge(r, r50):
     cache=True
 )
 def bulge_integrated(r, r50):
-    """ Cumulative integral of De Vaucouleurs profile
+    r""" Cumulative integral of De Vaucouleurs profile
 
     Notes
     -----
     The integrated profile is
 
     .. math::
-       F(x) = 1 - e^{-x} \left(1 + \sum_{i=1}^{7} \\frac{x^{i}}{i!} \\right)
+       F(x) = 1 - e^{-x} \left(1 + \sum_{i=1}^{7} \frac{x^{i}}{i!} \right)
 
     Parameters
     ----------
