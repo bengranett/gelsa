@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>gelsa.esa.euclid_archive &#8212; Gelsa 4.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mycss.css?v=47693ab7" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../../../_static/documentation_options.js?v=9f5556dd"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/gelsa/esa/euclid_archive';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="4.0" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/elsa-color-300.png" class="logo__image only-light" alt="Gelsa 4.0 documentation - Home"/>
+    <img src="../../../_static/elsa-color-300.png" class="logo__image only-dark pst-js-only" alt="Gelsa 4.0 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../install.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guide/concepts.html">
+    Core concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guide/simulation.html">
+    Simulate spectrograms
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guide/real_data.html">
+    Euclid data on ESA Datalabs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guide/decontamination.html">
+    Decontaminated 1D spectra
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../api.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/elsa-euclid/gelsa" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://elsa-euclid.github.io/" title="ELSA" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../../_static/elsa-color-icon.png" class="icon-link-image" alt="ELSA"/></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../install.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guide/concepts.html">
+    Core concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guide/simulation.html">
+    Simulate spectrograms
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guide/real_data.html">
+    Euclid data on ESA Datalabs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guide/decontamination.html">
+    Decontaminated 1D spectra
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../api.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/elsa-euclid/gelsa" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://elsa-euclid.github.io/" title="ELSA" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../../_static/elsa-color-icon.png" class="icon-link-image" alt="ELSA"/></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">gelsa.esa.euclid_archive</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for gelsa.esa.euclid_archive</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Queries against the Euclid science archive (TAP).</span>
+
+<span class="sd">Wrap a logged-in connection in :class:`EuclidArchive` and ask it for products:</span>
+
+<span class="sd">    from astroquery.esa.euclid.core import EuclidClass</span>
+<span class="sd">    from euclid_archive import EuclidArchive</span>
+
+<span class="sd">    Euclid = EuclidClass(environment=&#39;IDR&#39;)</span>
+<span class="sd">    Euclid.login(credentials_file=&#39;password&#39;)</span>
+<span class="sd">    archive = EuclidArchive(Euclid)</span>
+
+<span class="sd">    frames = archive.query_sir_frames(ra, dec)</span>
+<span class="sd">    rows = archive.query_mosaic(tile_index)</span>
+
+<span class="sd">Every query goes through :func:`_cached_launch_job`, so repeating one costs</span>
+<span class="sd">nothing and results survive a kernel restart. The query text is the cache key:</span>
+<span class="sd">keep it byte for byte if an existing cache entry is to be reused.</span>
+
+<span class="sd">The ``dr1.*`` tables are readable anonymously; the ``catalogue.*`` ones - the</span>
+<span class="sd">combined spectra and the MER catalogues - need a login.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">hashlib</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+<span class="kn">import</span> <span class="nn">xml.etree.ElementTree</span> <span class="k">as</span> <span class="nn">ET</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">astropy</span>
+<span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">units</span>
+<span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
+<span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="kn">import</span> <span class="n">SkyCoord</span>
+<span class="kn">from</span> <span class="nn">astropy.wcs</span> <span class="kn">import</span> <span class="n">WCS</span>
+<span class="kn">from</span> <span class="nn">astropy.table</span> <span class="kn">import</span> <span class="n">Table</span><span class="p">,</span> <span class="n">vstack</span>
+
+<span class="kn">import</span> <span class="nn">warnings</span>
+
+
+<span class="c1"># Query results are kept per user rather than beside the module, which may sit</span>
+<span class="c1"># in a read-only site-packages and must not collect pickles in a git checkout.</span>
+<span class="c1"># GELSA_CACHE_DIR overrides the location.</span>
+<span class="n">CACHE_DIR</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;GELSA_CACHE_DIR&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;XDG_CACHE_HOME&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s1">&#39;~/.cache&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;gelsa&#39;</span><span class="p">,</span> <span class="s1">&#39;query_cache&#39;</span><span class="p">)</span>
+
+<span class="c1"># In-memory layer in front of the on-disk cache, keyed by query text.</span>
+<span class="n">_query_cache</span> <span class="o">=</span> <span class="p">{}</span>
+
+
+<span class="k">def</span> <span class="nf">_cache_path</span><span class="p">(</span><span class="n">query</span><span class="p">):</span>
+    <span class="n">digest</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">query</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()[:</span><span class="mi">32</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">CACHE_DIR</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">digest</span><span class="si">}</span><span class="s1">.pkl&#39;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_read_cache_file</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return a cached result, or None if the file is missing or unreadable.&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)[</span><span class="s1">&#39;result&#39;</span><span class="p">]</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Warning: ignoring unreadable cache file </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+
+<span class="k">def</span> <span class="nf">_write_cache_file</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Write a result to the disk cache; a failure here must not break the query.&quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">CACHE_DIR</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="c1"># Write to a temp file first so an interrupted write can&#39;t leave a half file</span>
+        <span class="c1"># that later reads would choke on.</span>
+        <span class="n">tmp</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s1">.tmp</span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">getpid</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">({</span><span class="s1">&#39;query&#39;</span><span class="p">:</span> <span class="n">query</span><span class="p">,</span> <span class="s1">&#39;result&#39;</span><span class="p">:</span> <span class="n">result</span><span class="p">},</span> <span class="n">f</span><span class="p">)</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Warning: could not write cache file </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_cached_launch_job</span><span class="p">(</span><span class="n">euclid_class</span><span class="p">,</span> <span class="n">query</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Run a TAP query, reusing a cached result if this exact query already ran.</span>
+
+<span class="sd">    Results are cached in memory and under ``CACHE_DIR``, so they survive a module</span>
+<span class="sd">    reload or a restarted kernel. Use :func:`clear_query_cache` to force fresh queries.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">_query_cache</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_query_cache</span><span class="p">[</span><span class="n">query</span><span class="p">]</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="n">_read_cache_file</span><span class="p">(</span><span class="n">_cache_path</span><span class="p">(</span><span class="n">query</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">euclid_class</span><span class="o">.</span><span class="n">launch_job</span><span class="p">(</span><span class="n">query</span><span class="p">)</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
+        <span class="n">_write_cache_file</span><span class="p">(</span><span class="n">_cache_path</span><span class="p">(</span><span class="n">query</span><span class="p">),</span> <span class="n">query</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+
+    <span class="n">_query_cache</span><span class="p">[</span><span class="n">query</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+
+<div class="viewcode-block" id="clear_query_cache">
+<a class="viewcode-back" href="../../../api/gelsa.esa.euclid_archive.html#gelsa.esa.euclid_archive.clear_query_cache">[docs]</a>
+<span class="k">def</span> <span class="nf">clear_query_cache</span><span class="p">(</span><span class="n">disk</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Drop cached query results, forcing the next queries to hit the archive again.</span>
+
+<span class="sd">    Also removes the on-disk cache unless ``disk=False``.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">_query_cache</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">disk</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">names</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">CACHE_DIR</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.pkl&#39;</span><span class="p">):</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">CACHE_DIR</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span></div>
+
+
+
+<span class="k">def</span> <span class="nf">_survey_tables</span><span class="p">(</span><span class="n">survey</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The spectra and MER catalogue tables of the deep or the wide survey.&quot;&quot;&quot;</span>
+    <span class="n">tables_mer</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;deep_visits&#39;</span><span class="p">:</span> <span class="s1">&#39;catalogue.mer_catalogue_deep_visits&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;deep&#39;</span><span class="p">:</span> <span class="s1">&#39;catalogue.mer_catalogue_deep_survey&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;wide&#39;</span><span class="p">:</span> <span class="s1">&#39;catalogue.mer_catalogue_wide_survey&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;cosmos&#39;</span><span class="p">:</span> <span class="s1">&#39;catalogue.mer_catalogue_deep_mode&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">tables_sir</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;deep_visits&#39;</span><span class="p">:</span> <span class="s1">&#39;catalogue.spectra_source_deep_visits&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;deep&#39;</span><span class="p">:</span> <span class="s1">&#39;catalogue.spectra_source_deep&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;wide&#39;</span><span class="p">:</span> <span class="s1">&#39;catalogue.spectra_source_wide&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;cosmos&#39;</span><span class="p">:</span> <span class="s1">&#39;catalogue.spectra_source_deep&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">survey</span> <span class="o">=</span> <span class="n">survey</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="k">if</span> <span class="s1">&#39;visits&#39;</span> <span class="ow">in</span> <span class="n">survey</span><span class="p">:</span>
+        <span class="n">survey</span> <span class="o">=</span> <span class="s1">&#39;deep_visits&#39;</span>
+    <span class="k">elif</span> <span class="s1">&#39;wide&#39;</span> <span class="ow">in</span> <span class="n">survey</span><span class="p">:</span>
+        <span class="n">survey</span> <span class="o">=</span> <span class="s1">&#39;wide&#39;</span>
+    <span class="k">elif</span> <span class="s1">&#39;cosmos&#39;</span> <span class="ow">in</span> <span class="n">survey</span><span class="p">:</span>
+        <span class="n">survey</span> <span class="o">=</span> <span class="s1">&#39;cosmos&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">survey</span> <span class="o">=</span> <span class="s1">&#39;deep&#39;</span>
+    
+    <span class="k">return</span> <span class="n">tables_sir</span><span class="p">[</span><span class="n">survey</span><span class="p">],</span> <span class="n">tables_mer</span><span class="p">[</span><span class="n">survey</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="EuclidArchive">
+<a class="viewcode-back" href="../../../api/gelsa.esa.euclid_archive.html#gelsa.esa.euclid_archive.EuclidArchive">[docs]</a>
+<span class="k">class</span> <span class="nc">EuclidArchive</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Product queries against one archive connection.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">connection</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_connection</span> <span class="o">=</span> <span class="n">connection</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">connection</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The astroquery ``EuclidClass`` the queries run on.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_connection</span>
+
+<div class="viewcode-block" id="EuclidArchive.query">
+<a class="viewcode-back" href="../../../api/gelsa.esa.euclid_archive.html#gelsa.esa.euclid_archive.EuclidArchive.query">[docs]</a>
+    <span class="k">def</span> <span class="nf">query</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">adql</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Run an ADQL query through the cache.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_cached_launch_job</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_connection</span><span class="p">,</span> <span class="n">adql</span><span class="p">)</span></div>
+
+
+    <span class="c1"># --- MER products ----------------------------------------------------</span>
+
+    <span class="k">def</span> <span class="nf">query_mer_mosaic</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tile_index</span><span class="p">,</span> <span class="nb">filter</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">patch_id</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; &quot;&quot;&quot;</span>
+        <span class="n">query</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;SELECT CONCAT(mer.datalabs_path,&#39;/&#39;,mer.file_name) AS full_path, mer.filter_name</span>
+<span class="s2">                FROM dr1.mosaic_product AS mer</span>
+<span class="s2">                WHERE mer.tile_index=</span><span class="si">{</span><span class="n">tile_index</span><span class="si">}</span><span class="s2">&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">patch_id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">query</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot; and mer.patch_id_list=&#39;</span><span class="si">{</span><span class="n">patch_id</span><span class="si">}</span><span class="s2">&#39;&quot;</span>
+        <span class="k">if</span> <span class="nb">filter</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">query</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot; and mer.filter_name=&#39;</span><span class="si">{</span><span class="nb">filter</span><span class="si">}</span><span class="s2">&#39;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">query_mer_segmap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tile_index</span><span class="p">,</span> <span class="n">patch_id</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; &quot;&quot;&quot;</span>
+        <span class="n">query</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;SELECT CONCAT(mer.datalabs_path,&#39;/&#39;,mer.file_name) AS full_path</span>
+<span class="s2">                FROM dr1.mer_segmentation_map AS mer</span>
+<span class="s2">                WHERE mer.tile_index=</span><span class="si">{</span><span class="n">tile_index</span><span class="si">}</span><span class="s2">&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">patch_id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">query</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot; and mer.patch_id_list=&#39;</span><span class="si">{</span><span class="n">patch_id</span><span class="si">}</span><span class="s2">&#39;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">query_mer_tile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">radius_deg</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">survey</span><span class="o">=</span><span class="s1">&#39;Deep&#39;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; &quot;&quot;&quot;</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">mer_table</span> <span class="o">=</span> <span class="n">_survey_tables</span><span class="p">(</span><span class="n">survey</span><span class="p">)</span>
+
+        <span class="n">query</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;SELECT DISTINCT tile_index</span>
+<span class="s2">                FROM </span><span class="si">{</span><span class="n">mer_table</span><span class="si">}</span><span class="s2"> </span>
+<span class="s2">                WHERE</span>
+<span class="s2">                DISTANCE(</span><span class="si">{</span><span class="n">ra</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">dec</span><span class="si">}</span><span class="s2">, right_ascension, declination)&lt;</span><span class="si">{</span><span class="n">radius_deg</span><span class="si">}</span>
+<span class="s2">                &quot;&quot;&quot;</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+        <span class="n">tile_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;tile_index&#39;</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">tile_list</span>
+
+    
+<div class="viewcode-block" id="EuclidArchive.query_mer_catalog_by_tile">
+<a class="viewcode-back" href="../../../api/gelsa.esa.euclid_archive.html#gelsa.esa.euclid_archive.EuclidArchive.query_mer_catalog_by_tile">[docs]</a>
+    <span class="k">def</span> <span class="nf">query_mer_catalog_by_tile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tile_index</span><span class="p">,</span> <span class="n">patch_id</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Query path to MER final catalogue tile.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">query</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;SELECT datalabs_path, CONCAT(file_name_list) as file_name_list</span>
+<span class="s2">                FROM dr1.mer_final_catalogue</span>
+<span class="s2">                WHERE tile_index_list=&#39;</span><span class="se">{{</span><span class="si">{</span><span class="n">tile_index</span><span class="si">}</span><span class="se">}}</span><span class="s2">&#39;&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">patch_id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">query</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot; and patch_id_list=&#39;</span><span class="se">{{</span><span class="si">{</span><span class="n">patch_id</span><span class="si">}</span><span class="se">}}</span><span class="s2">&#39;&quot;</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;datalabs_path&#39;</span><span class="p">]</span>
+        <span class="n">file_list</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;file_name_list&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">file_name</span> <span class="ow">in</span> <span class="n">file_list</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">file_name</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;EUC_MER_FINAL-CAT&quot;</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+    
+<div class="viewcode-block" id="EuclidArchive.query_mer_catalog_by_radec">
+<a class="viewcode-back" href="../../../api/gelsa.esa.euclid_archive.html#gelsa.esa.euclid_archive.EuclidArchive.query_mer_catalog_by_radec">[docs]</a>
+    <span class="k">def</span> <span class="nf">query_mer_catalog_by_radec</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">patch_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">survey</span><span class="o">=</span><span class="s1">&#39;deep&#39;</span><span class="p">,</span> <span class="n">radius_deg</span><span class="o">=</span><span class="mf">0.3</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Query path to MER final catalogue tile.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># first determine the tile indices</span>
+        <span class="n">tile_list</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query_mer_tile</span><span class="p">(</span><span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">survey</span><span class="o">=</span><span class="n">survey</span><span class="p">,</span> <span class="n">radius_deg</span><span class="o">=</span><span class="n">radius_deg</span><span class="p">)))</span>
+        <span class="c1"># query catalog paths</span>
+        <span class="n">path_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">tile</span> <span class="ow">in</span> <span class="n">tile_list</span><span class="p">:</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">query_mer_catalog_by_tile</span><span class="p">(</span><span class="n">tile</span><span class="p">,</span> <span class="n">patch_id</span><span class="p">)</span>
+            <span class="n">path_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">path_list</span></div>
+
+
+    <span class="k">def</span> <span class="nf">load_mer_catalog</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">patch_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">survey</span><span class="o">=</span><span class="s1">&#39;deep&#39;</span><span class="p">,</span> <span class="n">radius_deg</span><span class="o">=</span><span class="mf">0.3</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; &quot;&quot;&quot;</span>
+        <span class="n">path_list</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">query_mer_catalog_by_radec</span><span class="p">(</span><span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">patch_id</span><span class="o">=</span><span class="n">patch_id</span><span class="p">,</span> <span class="n">survey</span><span class="o">=</span><span class="n">survey</span><span class="p">,</span> <span class="n">radius_deg</span><span class="o">=</span><span class="n">radius_deg</span><span class="p">)</span>
+
+        <span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">.</span><span class="n">UnitsWarning</span><span class="p">)</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">astropy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">MergeConflictWarning</span><span class="p">)</span>
+            <span class="n">cat_list</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">path_list</span><span class="p">:</span>
+                <span class="n">cat_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Table</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
+            <span class="n">cat</span> <span class="o">=</span> <span class="n">vstack</span><span class="p">(</span><span class="n">cat_list</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">cat</span>
+    
+    <span class="k">def</span> <span class="nf">load_fits_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdul</span><span class="p">:</span>
+            <span class="n">image</span> <span class="o">=</span> <span class="n">hdul</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[:]</span>
+            <span class="n">wcs</span> <span class="o">=</span> <span class="n">WCS</span><span class="p">(</span><span class="n">hdul</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">header</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">image</span><span class="p">,</span> <span class="n">wcs</span>
+
+<div class="viewcode-block" id="EuclidArchive.load_tile_image">
+<a class="viewcode-back" href="../../../api/gelsa.esa.euclid_archive.html#gelsa.esa.euclid_archive.EuclidArchive.load_tile_image">[docs]</a>
+    <span class="k">def</span> <span class="nf">load_tile_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tile</span><span class="p">,</span> <span class="n">patch_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">filter</span><span class="o">=</span><span class="s1">&#39;NIR_J&#39;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Load an image by tile index, filter and optional patch ID.</span>
+<span class="sd">        </span>
+<span class="sd">        Returns image, segmap, wcs</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">query_mer_mosaic</span><span class="p">(</span><span class="n">tile</span><span class="p">,</span> <span class="n">patch_id</span><span class="o">=</span><span class="n">patch_id</span><span class="p">,</span> <span class="nb">filter</span><span class="o">=</span><span class="nb">filter</span><span class="p">)</span>
+        <span class="n">results_seg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">query_mer_segmap</span><span class="p">(</span><span class="n">tile</span><span class="p">,</span> <span class="n">patch_id</span><span class="o">=</span><span class="n">patch_id</span><span class="p">)</span>
+
+        <span class="n">image</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">wcs</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;filter_name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="nb">filter</span><span class="p">:</span>
+                <span class="n">image</span><span class="p">,</span> <span class="n">wcs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">load_fits_image</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;full_path&#39;</span><span class="p">])</span>
+
+        <span class="k">if</span> <span class="n">image</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;image not found&quot;</span><span class="p">)</span>
+
+        <span class="n">segmap</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">load_fits_image</span><span class="p">(</span><span class="n">results_seg</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;full_path&#39;</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">image</span><span class="p">,</span> <span class="n">segmap</span><span class="p">,</span> <span class="n">wcs</span></div>
+
+    
+    <span class="k">def</span> <span class="nf">load_stamp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">51</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">51</span><span class="p">,</span> <span class="nb">filter</span><span class="o">=</span><span class="s1">&#39;NIR_H&#39;</span><span class="p">,</span> <span class="n">radius_deg</span><span class="o">=</span><span class="mf">10.</span><span class="o">/</span><span class="mi">3600</span><span class="p">,</span> <span class="n">survey</span><span class="o">=</span><span class="s1">&#39;DEEP&#39;</span><span class="p">,</span> <span class="n">patch_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hdu</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; &quot;&quot;&quot;</span>
+        <span class="n">tile_index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">query_mer_tile</span><span class="p">(</span><span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">radius_deg</span><span class="o">=</span><span class="n">radius_deg</span><span class="p">,</span> <span class="n">survey</span><span class="o">=</span><span class="n">survey</span><span class="p">)</span>
+        <span class="n">tile_index</span> <span class="o">=</span> <span class="n">tile_index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">query_mer_mosaic</span><span class="p">(</span><span class="n">tile_index</span><span class="p">,</span> <span class="nb">filter</span><span class="o">=</span><span class="nb">filter</span><span class="p">,</span> <span class="n">patch_id</span><span class="o">=</span><span class="n">patch_id</span><span class="p">)</span>
+        <span class="n">filter_select</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;filter_name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="nb">filter</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">filter_select</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;filter </span><span class="si">{</span><span class="nb">filter</span><span class="si">}</span><span class="s2"> not found. options: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;filter_name&#39;</span><span class="p">])</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="n">filter_select</span><span class="p">]</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;full_path&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        
+        <span class="k">with</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdul</span><span class="p">:</span>
+            <span class="n">image</span> <span class="o">=</span> <span class="n">hdul</span><span class="p">[</span><span class="n">hdu</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">[:]</span>
+            <span class="n">header</span> <span class="o">=</span> <span class="n">hdul</span><span class="p">[</span><span class="n">hdu</span><span class="p">]</span><span class="o">.</span><span class="n">header</span>
+            <span class="n">wcs</span> <span class="o">=</span> <span class="n">WCS</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">width</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">height</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">image</span><span class="p">,</span> <span class="n">wcs</span>
+            
+        <span class="n">sky</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="n">units</span><span class="o">.</span><span class="n">deg</span><span class="p">)</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">wcs</span><span class="o">.</span><span class="n">world_to_pixel</span><span class="p">(</span><span class="n">sky</span><span class="p">)</span>
+
+        <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+        <span class="n">x0</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">width</span><span class="o">//</span><span class="mi">2</span>
+        <span class="n">y0</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="n">height</span><span class="o">//</span><span class="mi">2</span>
+        <span class="n">x1</span> <span class="o">=</span> <span class="n">x0</span> <span class="o">+</span> <span class="n">width</span>
+        <span class="n">y1</span> <span class="o">=</span> <span class="n">y0</span> <span class="o">+</span> <span class="n">height</span>
+        <span class="n">x0_</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">y0_</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">x1_</span> <span class="o">=</span> <span class="n">width</span>
+        <span class="n">y1_</span> <span class="o">=</span> <span class="n">height</span>
+        <span class="k">if</span> <span class="n">x0</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">x0_</span> <span class="o">=</span> <span class="o">-</span><span class="n">x0</span>
+            <span class="n">x0</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="n">y0</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">y0_</span> <span class="o">=</span> <span class="o">-</span><span class="n">y0</span>
+            <span class="n">y0</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="n">x1</span> <span class="o">&gt;</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">x1_</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">x0</span>
+            <span class="n">x1</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">y1</span> <span class="o">&gt;</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">y1_</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">y0</span>
+            <span class="n">y1</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="n">image_stamp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">image</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+
+        <span class="n">image_stamp</span><span class="p">[</span><span class="n">y0_</span><span class="p">:</span><span class="n">y1_</span><span class="p">,</span> <span class="n">x0_</span><span class="p">:</span><span class="n">x1_</span><span class="p">]</span> <span class="o">=</span> <span class="n">image</span><span class="p">[</span><span class="n">y0</span><span class="p">:</span><span class="n">y1</span><span class="p">,</span> <span class="n">x0</span><span class="p">:</span><span class="n">x1</span><span class="p">]</span>
+
+        <span class="n">wcs</span> <span class="o">=</span> <span class="n">wcs</span><span class="p">[</span><span class="n">y0</span><span class="p">:</span><span class="n">y1</span><span class="p">,</span> <span class="n">x0</span><span class="p">:</span><span class="n">x1</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">image_stamp</span><span class="p">,</span> <span class="n">wcs</span>
+    
+    <span class="c1"># --- SIR science frames ----------------------------------------------</span>
+
+    <span class="k">def</span> <span class="nf">_lookup_patch_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="p">,</span> <span class="n">patch_id</span><span class="p">,</span> <span class="n">product_id</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; &quot;&quot;&quot;</span>
+        <span class="n">filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">product_id</span><span class="si">}</span><span class="s2">.xml&quot;</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+        <span class="n">root</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="o">.</span><span class="n">getroot</span><span class="p">()</span>
+        <span class="n">this_patch_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;Data/ObservationSequence/PatchId&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">this_patch_id</span> <span class="o">==</span> <span class="n">patch_id</span><span class="p">:</span>
+            <span class="n">data_filename</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;Data/DataStorage/DataContainer/FileName&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+            <span class="k">return</span> <span class="n">data_filename</span>
+        <span class="k">return</span> <span class="kc">None</span>
+                
+    <span class="k">def</span> <span class="nf">_read_pointing_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="p">,</span> <span class="n">product_id</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; &quot;&quot;&quot;</span>
+        <span class="n">filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">product_id</span><span class="si">}</span><span class="s2">.xml&quot;</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+        <span class="n">root</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="o">.</span><span class="n">getroot</span><span class="p">()</span>
+        <span class="n">pointing_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;Data/ObservationSequence/PointingId&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">pointing_id</span>
+    
+    <span class="k">def</span> <span class="nf">query_sir_frames</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">radius_deg</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">patch_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">unique_pointing_id</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">table</span><span class="o">=</span><span class="s2">&quot;dr1.sir_science_frame&quot;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; &quot;&quot;&quot;</span>
+        <span class="n">query</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;SELECT datalabs_path, file_name, product_id</span>
+<span class="s2">                    FROM </span><span class="si">{</span><span class="n">table</span><span class="si">}</span>
+<span class="s2">                    WHERE DISTANCE(</span><span class="si">{</span><span class="n">ra</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">dec</span><span class="si">}</span><span class="s2">, ra, dec)&lt;</span><span class="si">{</span><span class="n">radius_deg</span><span class="si">}</span><span class="s2">&quot;&quot;&quot;</span>
+        <span class="n">rows</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+        <span class="n">ptgid_cache</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">frame_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">:</span>
+            <span class="n">directory</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;datalabs_path&#39;</span><span class="p">]</span>
+            <span class="n">product_id</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;product_id&#39;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">patch_id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">filename</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lookup_patch_id</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">patch_id</span><span class="p">,</span> <span class="n">product_id</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">filename</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="k">continue</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">filename</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;file_name&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">unique_pointing_id</span><span class="p">:</span>
+                <span class="n">ptgid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_read_pointing_id</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="n">product_id</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">ptgid</span> <span class="ow">in</span> <span class="n">ptgid_cache</span><span class="p">:</span>
+                    <span class="k">continue</span>
+                <span class="n">ptgid_cache</span><span class="p">[</span><span class="n">ptgid</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;datalabs_path&#39;</span><span class="p">],</span> <span class="n">filename</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">path</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.gz&quot;</span><span class="p">):</span>
+                <span class="n">path</span> <span class="o">=</span> <span class="n">path</span><span class="p">[:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+            <span class="n">frame_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">frame_list</span>
+    
+
+    <span class="c1"># --- SIR combined spectra --------------------------------------------</span>
+
+    <span class="k">def</span> <span class="nf">query_sir_combined_spectra_by_object_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">object_id</span><span class="p">,</span> <span class="n">patch_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">survey</span><span class="o">=</span><span class="s2">&quot;deep&quot;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; &quot;&quot;&quot;</span>
+        <span class="n">spe_table</span><span class="p">,</span> <span class="n">mer_table</span> <span class="o">=</span> <span class="n">_survey_tables</span><span class="p">(</span><span class="n">survey</span><span class="p">)</span>
+        <span class="n">query</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;SELECT CONCAT(spe.datalabs_path,&#39;/&#39;,spe.file_name) AS full_path, spe.hdu_index, spe.source_id, spe.ra_obj, spe.dec_obj, mer.tile_index, mer.patch_id_list</span>
+<span class="s2">                FROM </span><span class="si">{</span><span class="n">spe_table</span><span class="si">}</span><span class="s2"> AS spe</span>
+<span class="s2">                JOIN </span><span class="si">{</span><span class="n">mer_table</span><span class="si">}</span><span class="s2"> AS mer</span>
+<span class="s2">                ON mer.object_id = spe.source_id</span>
+<span class="s2">                WHERE spe.source_id=</span><span class="si">{</span><span class="n">object_id</span><span class="si">}</span><span class="s2">&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">patch_id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">query</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot; and mer.patch_id_list=&#39;</span><span class="se">{{</span><span class="si">{</span><span class="n">patch_id</span><span class="si">}</span><span class="se">}}</span><span class="s2">&#39;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+
+<div class="viewcode-block" id="EuclidArchive.query_sir_combined_spectra_by_radec">
+<a class="viewcode-back" href="../../../api/gelsa.esa.euclid_archive.html#gelsa.esa.euclid_archive.EuclidArchive.query_sir_combined_spectra_by_radec">[docs]</a>
+    <span class="k">def</span> <span class="nf">query_sir_combined_spectra_by_radec</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">patch_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">survey</span><span class="o">=</span><span class="s1">&#39;deep&#39;</span><span class="p">,</span> <span class="n">radius_arcsec</span><span class="o">=</span><span class="mf">0.3</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The radius is in arcseconds here, not degrees.&quot;&quot;&quot;</span>
+        <span class="n">spe_table</span><span class="p">,</span> <span class="n">mer_table</span> <span class="o">=</span> <span class="n">_survey_tables</span><span class="p">(</span><span class="n">survey</span><span class="p">)</span>
+
+        <span class="n">radius_deg</span> <span class="o">=</span> <span class="n">radius_arcsec</span> <span class="o">/</span> <span class="mi">3600</span>
+
+        <span class="n">query</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;SELECT CONCAT(spe.datalabs_path,&#39;/&#39;,spe.file_name) AS full_path, spe.hdu_index, spe.source_id, spe.ra_obj, spe.dec_obj, mer.tile_index, mer.patch_id_list</span>
+<span class="s2">                FROM </span><span class="si">{</span><span class="n">spe_table</span><span class="si">}</span><span class="s2"> AS spe</span>
+<span class="s2">                JOIN </span><span class="si">{</span><span class="n">mer_table</span><span class="si">}</span><span class="s2">  AS mer</span>
+<span class="s2">                ON mer.object_id = spe.source_id</span>
+<span class="s2">                WHERE</span>
+<span class="s2">                DISTANCE(</span><span class="si">{</span><span class="n">ra</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">dec</span><span class="si">}</span><span class="s2">, spe.ra_obj, spe.dec_obj)&lt;</span><span class="si">{</span><span class="n">radius_deg</span><span class="si">}</span>
+<span class="s2">                &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">patch_id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">query</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot; and mer.patch_id_list=&#39;</span><span class="se">{{</span><span class="si">{</span><span class="n">patch_id</span><span class="si">}</span><span class="se">}}</span><span class="s2">&#39;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">query</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span> <span class="nf">query_sir_combined_spectra</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ra</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dec</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">object_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                                   <span class="n">survey</span><span class="o">=</span><span class="s1">&#39;deep&#39;</span><span class="p">,</span> <span class="n">radius_arcsec</span><span class="o">=</span><span class="mf">0.3</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">object_id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">query_sir_combined_spectra_by_object_id</span><span class="p">(</span><span class="n">object_id</span><span class="p">,</span> <span class="n">survey</span><span class="o">=</span><span class="n">survey</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">ra</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">query_sir_combined_spectra_by_radec</span><span class="p">(</span><span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">survey</span><span class="o">=</span><span class="n">survey</span><span class="p">,</span>
+                                                            <span class="n">radius_arcsec</span><span class="o">=</span><span class="n">radius_arcsec</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span>
+
+
+
+
+    <span class="k">def</span> <span class="nf">load_sir_combined_spectrum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ra</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dec</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">object_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">radius_arcsec</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">survey</span><span class="o">=</span><span class="s1">&#39;deep&#39;</span><span class="p">,</span> <span class="n">patch_id</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">object_id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">query_sir_combined_spectra_by_object_id</span><span class="p">(</span><span class="n">object_id</span><span class="p">,</span> <span class="n">patch_id</span><span class="o">=</span><span class="n">patch_id</span><span class="p">,</span> <span class="n">survey</span><span class="o">=</span><span class="n">survey</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">ra</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">query_sir_combined_spectra_by_radec</span><span class="p">(</span><span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">patch_id</span><span class="o">=</span><span class="n">patch_id</span><span class="p">,</span> <span class="n">survey</span><span class="o">=</span><span class="n">survey</span><span class="p">,</span>
+                                                               <span class="n">radius_arcsec</span><span class="o">=</span><span class="n">radius_arcsec</span><span class="p">)</span>
+        <span class="n">pack_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+            <span class="n">spec_pack</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;full_path&#39;</span><span class="p">]</span>
+            <span class="n">hdu_index</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;hdu_index&#39;</span><span class="p">]</span>
+            <span class="k">with</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">hdul</span><span class="p">:</span>
+                <span class="n">hdu</span> <span class="o">=</span> <span class="n">hdul</span><span class="p">[</span><span class="n">hdu_index</span><span class="p">]</span>
+                <span class="n">header</span> <span class="o">=</span> <span class="n">hdul</span><span class="p">[</span><span class="n">hdu_index</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">header</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="n">hdu</span><span class="o">.</span><span class="n">data</span><span class="p">[:]</span>
+                <span class="n">spec_pack</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span>
+                <span class="n">info</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s1">&#39;object_id&#39;</span><span class="p">:</span> <span class="n">header</span><span class="p">[</span><span class="s1">&#39;OBJ_ID&#39;</span><span class="p">],</span>
+                    <span class="s1">&#39;ndith&#39;</span><span class="p">:</span> <span class="n">header</span><span class="p">[</span><span class="s1">&#39;N_DITH&#39;</span><span class="p">],</span>
+                    <span class="s1">&#39;ra&#39;</span><span class="p">:</span> <span class="n">header</span><span class="p">[</span><span class="s1">&#39;RA_OBJ&#39;</span><span class="p">],</span>
+                    <span class="s1">&#39;dec&#39;</span><span class="p">:</span> <span class="n">header</span><span class="p">[</span><span class="s1">&#39;DEC_OBJ&#39;</span><span class="p">]</span>
+                <span class="p">}</span>
+                <span class="n">spec_pack</span><span class="p">[</span><span class="s1">&#39;header&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">info</span>
+            <span class="n">pack_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">spec_pack</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">pack_list</span></div>
+
+    
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024–2026, Ben Granett and the GELSA contributors.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.22.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

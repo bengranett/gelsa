@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>gelsa.gelsa &#8212; Gelsa 4.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mycss.css?v=47693ab7" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../../_static/documentation_options.js?v=9f5556dd"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/gelsa/gelsa';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="4.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/elsa-color-300.png" class="logo__image only-light" alt="Gelsa 4.0 documentation - Home"/>
+    <img src="../../_static/elsa-color-300.png" class="logo__image only-dark pst-js-only" alt="Gelsa 4.0 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guide/concepts.html">
+    Core concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guide/simulation.html">
+    Simulate spectrograms
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guide/real_data.html">
+    Euclid data on ESA Datalabs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guide/decontamination.html">
+    Decontaminated 1D spectra
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/elsa-euclid/gelsa" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://elsa-euclid.github.io/" title="ELSA" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../_static/elsa-color-icon.png" class="icon-link-image" alt="ELSA"/></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guide/concepts.html">
+    Core concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guide/simulation.html">
+    Simulate spectrograms
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guide/real_data.html">
+    Euclid data on ESA Datalabs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guide/decontamination.html">
+    Decontaminated 1D spectra
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/elsa-euclid/gelsa" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://elsa-euclid.github.io/" title="ELSA" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../_static/elsa-color-icon.png" class="icon-link-image" alt="ELSA"/></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">gelsa.gelsa</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for gelsa.gelsa</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">specframe</span><span class="p">,</span> <span class="n">photframe</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">zero_order_mask</span>
+<span class="kn">from</span> <span class="nn">.sgs</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">detector_model</span><span class="p">,</span>
+    <span class="n">optical_model</span><span class="p">,</span>
+    <span class="n">displacement_model</span><span class="p">,</span>
+    <span class="n">sensitivity_model</span><span class="p">,</span>
+    <span class="n">relative_flux</span><span class="p">,</span>
+    <span class="n">psf_model</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">.esa</span> <span class="kn">import</span> <span class="n">datalabs_paths</span>
+
+
+<div class="viewcode-block" id="Gelsa">
+<a class="viewcode-back" href="../../api/gelsa.gelsa.html#gelsa.gelsa.Gelsa">[docs]</a>
+<span class="k">class</span> <span class="nc">Gelsa</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Main class for handling Gelsa simulation setup and frame loading.</span>
+
+<span class="sd">    This class manages configuration settings, loads calibration models</span>
+<span class="sd">    (detector, optical, dispersion, sensitivity, relative flux, PSF),</span>
+<span class="sd">    and provides methods to create or load spectral (`SpecFrame`) and</span>
+<span class="sd">    photometric (`PhotFrame`) frames based on the loaded configuration</span>
+<span class="sd">    and calibration data.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_default_config</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;workdir&#39;</span><span class="p">:</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;datadir&#39;</span><span class="p">:</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;calibdir&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s1">&#39;config_file&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s1">&#39;abs_file&#39;</span><span class="p">:</span> <span class="s2">&quot;EUC_SIR_W-AbsoluteFlux-SCALE_ALL_20250218T221007.269385Z.fits&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;opt_file&#39;</span><span class="p">:</span> <span class="s1">&#39;SIR_Calib_Opt_EUCLID_2.0.1-CALIBRATION-pcasenov-PLAN-000000-MT0S7VWE-20250123-180643-0-new_opt_cal-0.xml&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;ids_file&#39;</span><span class="p">:</span> <span class="s1">&#39;SIR_Calib_Ids_EUCLID_2.0.1-CALIBRATION-pcasenov-PLAN-000001-GQLJE83P-20250211-181132-0-new_ids_calib-0.xml&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;crv_file&#39;</span><span class="p">:</span> <span class="s1">&#39;SIR_Calib_Crv_EUCLID_2.0.1-CALIBRATION-pcasenov-PLAN-000001-6NJP8VE4-20250211-163247-0-new_crv_cal-0.xml&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;location_table&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s1">&#39;detector_slots_path&#39;</span><span class="p">:</span> <span class="s1">&#39;EUC_SIR_DETMODEL_REAL_DATA_OP_02.csv&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;rel_flux_file&#39;</span><span class="p">:</span> <span class="s1">&#39;EUC_SIR_W-RelativeFlux-SCALE_20250716T035001.134254Z.fits&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;psf_file&#39;</span><span class="p">:</span> <span class="s1">&#39;psf_wavelength.json&#39;</span><span class="p">,</span>
+        <span class="c1"># options</span>
+        <span class="s1">&#39;use_psf&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s1">&#39;use_chromatic_psf&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s1">&#39;use_relative_flux_loss&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s1">&#39;zero_order_catalog&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s1">&#39;nir_wcs&#39;</span><span class="p">:</span> <span class="s1">&#39;nir_wcs.json&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;use_persistence_mask&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="p">{},</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialize the Gelsa object.</span>
+
+<span class="sd">        Loads configuration from defaults, a specified file, a dictionary,</span>
+<span class="sd">        and keyword arguments.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            config_file (str, optional): Path to a JSON configuration file. Defaults to None.</span>
+<span class="sd">            config (dict, optional): Dictionary containing configuration settings. Defaults to {}.</span>
+<span class="sd">            **kwargs: Additional configuration settings passed as keyword arguments.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">config</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_config</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">load_config</span><span class="p">(</span><span class="n">config_file</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">find_calibdir</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">check_calibdir</span><span class="p">()</span>
+        
+    <span class="k">def</span> <span class="nf">find_calibdir</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config_file</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;calibdir&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">datalabs_paths</span><span class="o">.</span><span class="n">data_paths</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found calibration directory </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;calibdir&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">path</span>
+                <span class="k">return</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;warning, calibdir is not set&quot;</span><span class="p">)</span>
+        
+    <span class="k">def</span> <span class="nf">check_calibdir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; &quot;&quot;&quot;</span>
+        <span class="n">file_list</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;abs_file&#39;</span><span class="p">,</span> <span class="s1">&#39;opt_file&#39;</span><span class="p">,</span> <span class="s1">&#39;crv_file&#39;</span><span class="p">,</span> <span class="s1">&#39;ids_file&#39;</span><span class="p">,</span> <span class="s1">&#39;detector_slots_path&#39;</span><span class="p">,</span> <span class="s1">&#39;rel_flux_file&#39;</span><span class="p">)</span>
+        <span class="n">calibdir</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;calibdir&#39;</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;looking in </span><span class="si">{</span><span class="n">calibdir</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">file_list</span><span class="p">:</span>
+            <span class="n">filename</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">calibdir</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+                <span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;found&#39;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;not found&#39;</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Gelsa.update_config">
+<a class="viewcode-back" href="../../api/gelsa.gelsa.html#gelsa.gelsa.Gelsa.update_config">[docs]</a>
+    <span class="k">def</span> <span class="nf">update_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Update the current configuration with new settings.</span>
+
+<span class="sd">        Only keys already present in the default configuration are updated.</span>
+<span class="sd">        A warning is printed for unknown keys.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            config (dict): Dictionary containing configuration settings to update.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">config</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Warning! unknown option: </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">=</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Gelsa.load_config">
+<a class="viewcode-back" href="../../api/gelsa.gelsa.html#gelsa.gelsa.Gelsa.load_config">[docs]</a>
+    <span class="k">def</span> <span class="nf">load_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load configuration settings from multiple sources.</span>
+
+<span class="sd">        Configuration is loaded in the following order, with later sources</span>
+<span class="sd">        overwriting earlier ones:</span>
+<span class="sd">        1. Default configuration (`_default_config`).</span>
+<span class="sd">        2. Configuration from a JSON file (`config_path`).</span>
+<span class="sd">        3. Configuration from a dictionary (`config`).</span>
+<span class="sd">        4. Configuration from keyword arguments (`**kwargs`).</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            config_path (str, optional): Path to a JSON configuration file. Defaults to None.</span>
+<span class="sd">            config (dict, optional): Dictionary containing configuration settings. Defaults to None.</span>
+<span class="sd">            **kwargs: Additional configuration settings passed as keyword arguments.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">config_path</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">config_path</span><span class="p">,</span> <span class="s2">&quot;rt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">inp</span><span class="p">:</span>
+                <span class="n">config_from_file</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">inp</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">update_config</span><span class="p">(</span><span class="n">config_from_file</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">config</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">update_config</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">update_config</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Gelsa.write_config">
+<a class="viewcode-back" href="../../api/gelsa.gelsa.html#gelsa.gelsa.Gelsa.write_config">[docs]</a>
+    <span class="k">def</span> <span class="nf">write_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Write the current configuration to a JSON file.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            path (str): The path to the output JSON file.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;wt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">out</span><span class="p">:</span>
+            <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span></div>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">detector_model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load and return the DetectorModel instance.</span>
+
+<span class="sd">        Loads the detector model based on the &#39;detector_slots_path&#39; specified</span>
+<span class="sd">        in the configuration. The model is cached after the first load.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            detector_model.DetectorModel: The loaded detector model instance.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_detector_model</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;workdir&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;calibdir&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;detector_slots_path&#39;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_detector_model</span> <span class="o">=</span> <span class="n">detector_model</span><span class="o">.</span><span class="n">DetectorModel</span><span class="p">(</span>
+            <span class="n">detector_slots_path</span><span class="o">=</span><span class="n">path</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_detector_model</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">optical_model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load and return the OpticalModel instance.</span>
+
+<span class="sd">        Loads the optical model based on the &#39;opt_file&#39; specified in the</span>
+<span class="sd">        configuration. The model is cached after the first load.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            optical_model.OpticalModel: The loaded optical model instance.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_optical_model</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;workdir&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;calibdir&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;opt_file&#39;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_optical_model</span> <span class="o">=</span> <span class="n">optical_model</span><span class="o">.</span><span class="n">OpticalModel</span><span class="p">(</span>
+            <span class="n">path</span><span class="o">=</span><span class="n">path</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_optical_model</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">dispersion_model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load and return the dispersion models (IDS and CRV).</span>
+
+<span class="sd">        Loads the Inverse Dispersion Solution (IDS) and Curvature (CRV) models</span>
+<span class="sd">        based on the &#39;ids_file&#39; and &#39;crv_file&#39; specified in the configuration.</span>
+<span class="sd">        The models are cached after the first load.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dict: A dictionary containing the loaded &#39;ids&#39; and &#39;crv&#39;</span>
+<span class="sd">                  DisplacementModel instances.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dispersion_model</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;workdir&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;calibdir&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;ids_file&#39;</span><span class="p">])</span>
+        <span class="n">ids_model</span> <span class="o">=</span> <span class="n">displacement_model</span><span class="o">.</span><span class="n">DisplacementModel</span><span class="p">(</span>
+            <span class="n">path</span><span class="o">=</span><span class="n">path</span>
+        <span class="p">)</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;workdir&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;calibdir&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;crv_file&#39;</span><span class="p">])</span>
+        <span class="n">crv_model</span> <span class="o">=</span> <span class="n">displacement_model</span><span class="o">.</span><span class="n">DisplacementModel</span><span class="p">(</span>
+            <span class="n">path</span><span class="o">=</span><span class="n">path</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dispersion_model</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;ids&#39;</span><span class="p">:</span> <span class="n">ids_model</span><span class="p">,</span>
+            <span class="s1">&#39;crv&#39;</span><span class="p">:</span> <span class="n">crv_model</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dispersion_model</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">sensitivity_model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load and return the SensitivityModel instance.</span>
+
+<span class="sd">        Loads the sensitivity (absolute calibration) model based on the</span>
+<span class="sd">        &#39;abs_file&#39; specified in the configuration. The model is cached</span>
+<span class="sd">        after the first load.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            sensitivity_model.SensitivityModel: The loaded sensitivity model instance.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sensitivity_model</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;workdir&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;calibdir&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;abs_file&#39;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_sensitivity_model</span> <span class="o">=</span> <span class="n">sensitivity_model</span><span class="o">.</span><span class="n">SensitivityModel</span><span class="p">(</span>
+            <span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">,</span>
+            <span class="n">datadir</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;datadir&#39;</span><span class="p">],</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sensitivity_model</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">relative_flux_model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load and return the RelativeFluxCalibration instance, if enabled.</span>
+
+<span class="sd">        Loads the relative flux loss model based on the &#39;rel_flux_file&#39;</span>
+<span class="sd">        specified in the configuration, only if &#39;use_relative_flux_loss&#39;</span>
+<span class="sd">        is True. Otherwise, returns None. The model is cached after the</span>
+<span class="sd">        first load.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            relative_flux.RelativeFluxCalibration or None: The loaded relative</span>
+<span class="sd">            flux model instance or None if disabled.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_relative_flux_model</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;use_relative_flux_loss&#39;</span><span class="p">]:</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;workdir&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;calibdir&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;rel_flux_file&#39;</span><span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_relative_flux_model</span> <span class="o">=</span> <span class="n">relative_flux</span><span class="o">.</span><span class="n">RelativeFluxCalibration</span><span class="p">(</span>
+                <span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">,</span>
+                <span class="n">datadir</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;datadir&#39;</span><span class="p">]</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_relative_flux_model</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_relative_flux_model</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">psf_model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load and return the appropriate PSF model instance.</span>
+
+<span class="sd">        Loads either the default PSF model, the chromatic PSF model, or None,</span>
+<span class="sd">        based on the &#39;use_psf&#39; and &#39;use_chromatic_psf&#39; settings in the</span>
+<span class="sd">        configuration. The model is cached after the first load.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            psf_model.PSFModel, psf_model.DefaultPSFModel, or None: The loaded</span>
+<span class="sd">            PSF model instance.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_psf_model</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;use_psf&#39;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_psf_model</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;use_chromatic_psf&#39;</span><span class="p">]:</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;workdir&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;calibdir&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;psf_file&#39;</span><span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_psf_model</span> <span class="o">=</span> <span class="n">psf_model</span><span class="o">.</span><span class="n">PSFModel</span><span class="p">(</span>
+                <span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_psf_model</span> <span class="o">=</span> <span class="n">psf_model</span><span class="o">.</span><span class="n">DefaultPSFModel</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_psf_model</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">zero_order_mask</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load and return the ZeroOrderMask instance, if enabled.</span>
+
+<span class="sd">        Loads the zero-order mask based on the &#39;zero_order_catalog&#39; specified</span>
+<span class="sd">        in the configuration. If &#39;zero_order_catalog&#39; is not set, returns None.</span>
+<span class="sd">        The mask object is cached after the first load.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            zero_order_mask.ZeroOrderMask or None: The loaded zero-order mask</span>
+<span class="sd">            instance or None if disabled.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;zero_order_catalog&#39;</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_zero_order_mask</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;workdir&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;calibdir&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;zero_order_catalog&#39;</span><span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_zero_order_mask</span> <span class="o">=</span> <span class="n">zero_order_mask</span><span class="o">.</span><span class="n">ZeroOrderMask</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_zero_order_mask</span>
+
+<div class="viewcode-block" id="Gelsa.load_spec_frame">
+<a class="viewcode-back" href="../../api/gelsa.gelsa.html#gelsa.gelsa.Gelsa.load_spec_frame">[docs]</a>
+    <span class="k">def</span> <span class="nf">load_spec_frame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">frame_path</span><span class="p">,</span> <span class="n">loctable_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">persistence_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">frame_args</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load an existing spectral frame (SpecFrame) from a file.</span>
+
+<span class="sd">        Initializes a SpecFrame, loads data from the specified frame path</span>
+<span class="sd">        (adjusting for workdir), optionally loads a location table, and sets</span>
+<span class="sd">        up all relevant calibration models (optical, detector, dispersion, etc.).</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            frame_path (str): Path to the spectral frame file (relative to workdir).</span>
+<span class="sd">            loctable_path (str, optional): Path to the location table file</span>
+<span class="sd">                                           (relative to workdir). Defaults to None.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            specframe.SpecFrame: The loaded and configured spectral frame instance.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">frame</span> <span class="o">=</span> <span class="n">specframe</span><span class="o">.</span><span class="n">SpecFrame</span><span class="p">(</span><span class="o">**</span><span class="n">frame_args</span><span class="p">)</span>
+
+        <span class="n">full_frame_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;workdir&#39;</span><span class="p">],</span> <span class="n">frame_path</span><span class="p">)</span>
+
+        <span class="n">full_loctable_path</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">full_persistence_path</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="n">loctable_path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">full_loctable_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;workdir&#39;</span><span class="p">],</span> <span class="n">loctable_path</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;use_persistence_mask&#39;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">persistence_path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">full_persistence_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;workdir&#39;</span><span class="p">],</span> <span class="n">persistence_path</span><span class="p">)</span>
+
+        <span class="n">frame</span><span class="o">.</span><span class="n">load_frame</span><span class="p">(</span>
+            <span class="n">full_frame_path</span><span class="p">,</span>
+            <span class="n">loctable_path</span><span class="o">=</span><span class="n">full_loctable_path</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="n">frame</span><span class="o">.</span><span class="n">set_optical_model</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">optical_model</span><span class="p">)</span>
+        <span class="n">frame</span><span class="o">.</span><span class="n">set_detector_model</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">detector_model</span><span class="p">)</span>
+        <span class="n">frame</span><span class="o">.</span><span class="n">set_dispersion_model</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dispersion_model</span><span class="p">)</span>
+        <span class="n">frame</span><span class="o">.</span><span class="n">set_sensitivity</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sensitivity_model</span><span class="p">)</span>
+        <span class="n">frame</span><span class="o">.</span><span class="n">set_relative_flux_model</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">relative_flux_model</span><span class="p">)</span>
+        <span class="n">frame</span><span class="o">.</span><span class="n">set_psf_model</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">psf_model</span><span class="p">)</span>
+        <span class="n">frame</span><span class="o">.</span><span class="n">set_zero_order_mask</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">zero_order_mask</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;use_persistence_mask&#39;</span><span class="p">]:</span>
+            <span class="n">frame</span><span class="o">.</span><span class="n">set_persistence_mask</span><span class="p">(</span><span class="n">full_persistence_path</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">frame</span></div>
+
+
+<div class="viewcode-block" id="Gelsa.new_spec_frame">
+<a class="viewcode-back" href="../../api/gelsa.gelsa.html#gelsa.gelsa.Gelsa.new_spec_frame">[docs]</a>
+    <span class="k">def</span> <span class="nf">new_spec_frame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">pa</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a new, empty spectral frame (SpecFrame) at a given pointing.</span>
+
+<span class="sd">        Initializes a SpecFrame with the specified pointing (RA, Dec, PA) and</span>
+<span class="sd">        any additional parameters. Sets up all relevant calibration models</span>
+<span class="sd">        (optical, detector, dispersion, etc.). This frame does not contain</span>
+<span class="sd">        pixel data initially.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ra (float): Right Ascension of the frame center (degrees).</span>
+<span class="sd">            dec (float): Declination of the frame center (degrees).</span>
+<span class="sd">            pa (float): Position Angle of the frame (degrees).</span>
+<span class="sd">            **params: Additional parameters to pass to the SpecFrame constructor.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            specframe.SpecFrame: The newly created and configured spectral frame instance.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">frame</span> <span class="o">=</span> <span class="n">specframe</span><span class="o">.</span><span class="n">SpecFrame</span><span class="p">(</span><span class="n">RA</span><span class="o">=</span><span class="n">ra</span><span class="p">,</span> <span class="n">DEC</span><span class="o">=</span><span class="n">dec</span><span class="p">,</span> <span class="n">PA</span><span class="o">=</span><span class="n">pa</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+        <span class="n">frame</span><span class="o">.</span><span class="n">set_optical_model</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">optical_model</span><span class="p">)</span>
+        <span class="n">frame</span><span class="o">.</span><span class="n">set_detector_model</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">detector_model</span><span class="p">)</span>
+        <span class="n">frame</span><span class="o">.</span><span class="n">set_dispersion_model</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dispersion_model</span><span class="p">)</span>
+        <span class="n">frame</span><span class="o">.</span><span class="n">set_sensitivity</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sensitivity_model</span><span class="p">)</span>
+        <span class="n">frame</span><span class="o">.</span><span class="n">set_relative_flux_model</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">relative_flux_model</span><span class="p">)</span>
+        <span class="n">frame</span><span class="o">.</span><span class="n">set_psf_model</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">psf_model</span><span class="p">)</span>
+        <span class="n">frame</span><span class="o">.</span><span class="n">set_zero_order_mask</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+        <span class="c1"># Note: Zero order mask is not set here as it depends on the frame data</span>
+        <span class="k">return</span> <span class="n">frame</span></div>
+
+
+    <span class="c1"># aliases</span>
+    <span class="n">load_frame</span> <span class="o">=</span> <span class="n">load_spec_frame</span>
+    <span class="n">new_frame</span> <span class="o">=</span> <span class="n">new_spec_frame</span>
+
+<div class="viewcode-block" id="Gelsa.load_phot_frame">
+<a class="viewcode-back" href="../../api/gelsa.gelsa.html#gelsa.gelsa.Gelsa.load_phot_frame">[docs]</a>
+    <span class="k">def</span> <span class="nf">load_phot_frame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">frame_path</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load an existing photometric frame (PhotFrame) from a file.</span>
+
+<span class="sd">        Initializes a PhotFrame, loads data from the specified frame path</span>
+<span class="sd">        (adjusting for workdir), and sets up the WCS.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            frame_path (str): Path to the photometric frame file (relative to workdir).</span>
+<span class="sd">            **params: Additional parameters to pass to the PhotFrame constructor.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            photframe.PhotFrame: The loaded photometric frame instance.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">frame</span> <span class="o">=</span> <span class="n">photframe</span><span class="o">.</span><span class="n">PhotFrame</span><span class="p">(</span><span class="o">**</span><span class="n">params</span><span class="p">)</span>
+        <span class="n">full_frame_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;workdir&#39;</span><span class="p">],</span> <span class="n">frame_path</span><span class="p">)</span>
+        <span class="n">frame</span><span class="o">.</span><span class="n">load_frame</span><span class="p">(</span><span class="n">full_frame_path</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">frame</span></div>
+
+
+<div class="viewcode-block" id="Gelsa.new_phot_frame">
+<a class="viewcode-back" href="../../api/gelsa.gelsa.html#gelsa.gelsa.Gelsa.new_phot_frame">[docs]</a>
+    <span class="k">def</span> <span class="nf">new_phot_frame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ra</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dec</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pa</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a new photometric frame (PhotFrame) definition.</span>
+
+<span class="sd">        Initializes a PhotFrame with the specified pointing (RA, Dec, PA) and</span>
+<span class="sd">        any additional parameters. Loads the WCS information from the JSON file</span>
+<span class="sd">        specified in the configuration (&#39;nir_wcs&#39;).</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ra (float, optional): Right Ascension of the frame center (degrees). Defaults to None.</span>
+<span class="sd">            dec (float, optional): Declination of the frame center (degrees). Defaults to None.</span>
+<span class="sd">            pa (float, optional): Position Angle of the frame (degrees). Defaults to None.</span>
+<span class="sd">            **params: Additional parameters to pass to the PhotFrame constructor.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            photframe.PhotFrame: The newly created photometric frame instance.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">frame</span> <span class="o">=</span> <span class="n">photframe</span><span class="o">.</span><span class="n">PhotFrame</span><span class="p">(</span><span class="n">ra</span><span class="o">=</span><span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="o">=</span><span class="n">dec</span><span class="p">,</span> <span class="n">pa</span><span class="o">=</span><span class="n">pa</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+        <span class="n">wcs_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;workdir&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;calibdir&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;nir_wcs&#39;</span><span class="p">])</span>
+        <span class="n">frame</span><span class="o">.</span><span class="n">_load_wcs_from_json</span><span class="p">(</span><span class="n">wcs_path</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">frame</span></div>
+</div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024–2026, Ben Granett and the GELSA contributors.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.22.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

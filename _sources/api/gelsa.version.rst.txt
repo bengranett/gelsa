@@ -1,0 +1,6 @@
+gelsa.version
+=============
+
+.. automodule:: gelsa.version
+
+   

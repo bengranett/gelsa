@@ -1,0 +1,1765 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>gelsa.specframe &#8212; Gelsa 4.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mycss.css?v=47693ab7" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../../_static/documentation_options.js?v=9f5556dd"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/gelsa/specframe';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="4.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/elsa-color-300.png" class="logo__image only-light" alt="Gelsa 4.0 documentation - Home"/>
+    <img src="../../_static/elsa-color-300.png" class="logo__image only-dark pst-js-only" alt="Gelsa 4.0 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guide/concepts.html">
+    Core concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guide/simulation.html">
+    Simulate spectrograms
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guide/real_data.html">
+    Euclid data on ESA Datalabs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guide/decontamination.html">
+    Decontaminated 1D spectra
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/elsa-euclid/gelsa" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://elsa-euclid.github.io/" title="ELSA" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../_static/elsa-color-icon.png" class="icon-link-image" alt="ELSA"/></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guide/concepts.html">
+    Core concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guide/simulation.html">
+    Simulate spectrograms
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guide/real_data.html">
+    Euclid data on ESA Datalabs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guide/decontamination.html">
+    Decontaminated 1D spectra
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/elsa-euclid/gelsa" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://elsa-euclid.github.io/" title="ELSA" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../_static/elsa-color-icon.png" class="icon-link-image" alt="ELSA"/></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">gelsa.specframe</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for gelsa.specframe</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">numpy.lib.stride_tricks</span> <span class="kn">import</span> <span class="n">sliding_window_view</span>
+
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">utils</span>
+<span class="kn">from</span> <span class="nn">.sgs</span> <span class="kn">import</span> <span class="n">dmutils</span><span class="p">,</span> <span class="n">frame_coordinates</span><span class="p">,</span> <span class="n">relative_flux</span><span class="p">,</span> <span class="n">psf_model</span>
+
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">spec_imager</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">photframe</span>
+<span class="kn">from</span> <span class="nn">.spec_crop</span> <span class="kn">import</span> <span class="n">SpecCrop</span><span class="p">,</span> <span class="n">NoExtraction</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">continuum_subtraction_base</span> <span class="k">as</span> <span class="n">csb</span>
+
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">ndimage</span>
+
+
+<span class="k">def</span> <span class="nf">_rolling_nanmedian</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">filt_n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Row-wise sliding-window nanmedian, equivalent to</span>
+<span class="sd">    ``ndimage.generic_filter(image, ..., size=(1, filt_n), mode=&#39;reflect&#39;)``</span>
+<span class="sd">    but vectorized. Note scipy&#39;s &#39;reflect&#39; mode repeats the edge pixel,</span>
+<span class="sd">    matching numpy&#39;s &#39;symmetric&#39; pad mode (not numpy&#39;s &#39;reflect&#39;).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">pad_left</span> <span class="o">=</span> <span class="n">filt_n</span> <span class="o">//</span> <span class="mi">2</span>
+    <span class="n">pad_right</span> <span class="o">=</span> <span class="n">filt_n</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">pad_left</span>
+    <span class="n">padded</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pad</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="n">pad_left</span><span class="p">,</span> <span class="n">pad_right</span><span class="p">)),</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;symmetric&#39;</span><span class="p">)</span>
+    <span class="n">windows</span> <span class="o">=</span> <span class="n">sliding_window_view</span><span class="p">(</span><span class="n">padded</span><span class="p">,</span> <span class="n">filt_n</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">RuntimeWarning</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmedian</span><span class="p">(</span><span class="n">windows</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="SpecFrame">
+<a class="viewcode-back" href="../../api/gelsa.specframe.html#gelsa.specframe.SpecFrame">[docs]</a>
+<span class="k">class</span> <span class="nc">SpecFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Represents a spectral frame (observation) in the Gelsa simulation.</span>
+
+<span class="sd">    This class handles the parameters, loading, and coordinate transformations</span>
+<span class="sd">    for a specific spectral observation frame (e.g., a NISP slitless</span>
+<span class="sd">    spectroscopy exposure). It interfaces with various calibration models</span>
+<span class="sd">    (detector, optical, dispersion, sensitivity, PSF) to provide accurate</span>
+<span class="sd">    coordinate conversions and flux calculations. It can load existing</span>
+<span class="sd">    FITS frames or be used to define and simulate new ones.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_default_params</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;grism_name&#39;</span><span class="p">:</span> <span class="s1">&#39;RGS000&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;RA&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s1">&#39;DEC&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s1">&#39;PA&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s1">&#39;tilt&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s1">&#39;PIXSCALE&#39;</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">,</span>
+        <span class="s1">&#39;exptime_sec&#39;</span><span class="p">:</span> <span class="mf">550.</span><span class="p">,</span>
+        <span class="s1">&#39;sigma2_det&#39;</span><span class="p">:</span> <span class="mf">2.33</span><span class="p">,</span>
+        <span class="s1">&#39;apply_median_filter&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s1">&#39;median_filter_size_pix&#39;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+        <span class="s1">&#39;median_filter_mask_threshold&#39;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
+        <span class="s1">&#39;apply_persistence_correction&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s1">&#39;persistence_mask_threshold&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+        <span class="s1">&#39;use_cache&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="n">dispersion_angles</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;RGS000&#39;</span><span class="p">:</span> <span class="mf">0.</span><span class="p">,</span>
+        <span class="s1">&#39;RGS180&#39;</span><span class="p">:</span> <span class="mf">180.</span><span class="p">,</span>
+        <span class="s1">&#39;BGS000&#39;</span><span class="p">:</span> <span class="mf">0.</span>
+    <span class="p">}</span>
+
+    <span class="n">detectors</span> <span class="o">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">41</span><span class="p">,</span>
+                <span class="mi">12</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">42</span><span class="p">,</span>
+                <span class="mi">13</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">33</span><span class="p">,</span><span class="mi">43</span><span class="p">,</span>
+                <span class="mi">14</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">34</span><span class="p">,</span><span class="mi">44</span><span class="p">]</span>
+
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">continuum_subtraction</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialize a SpecFrame object.</span>
+
+<span class="sd">        Sets up default parameters and updates them with any provided keyword</span>
+<span class="sd">        arguments. Initializes the frame coordinate system.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            **kwargs: Keyword arguments to override default parameters like</span>
+<span class="sd">                      &#39;RA&#39;, &#39;DEC&#39;, &#39;PA&#39;, &#39;grism_name&#39;, &#39;tilt&#39;, etc.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_detector_cache</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_params</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hdu_loaded</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_setup</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_setup_continuum_subtraction</span><span class="p">(</span><span class="n">continuum_subtraction</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return a string representation of the SpecFrame object.</span>
+
+<span class="sd">        Includes the class name and the current parameter dictionary.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: String representation of the object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&lt;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;params = {&quot;</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">s</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;  &#39;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&#39;: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">,</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;} &gt;&quot;</span>
+        <span class="k">return</span> <span class="n">s</span>
+
+    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; &quot;&quot;&quot;</span>
+        <span class="n">newframe</span> <span class="o">=</span> <span class="n">SpecFrame</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
+        <span class="n">newframe</span><span class="o">.</span><span class="n">framecoord</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">framecoord</span>
+        <span class="n">newframe</span><span class="o">.</span><span class="n">set_detector_model</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">detector_model</span><span class="p">)</span>
+        <span class="n">newframe</span><span class="o">.</span><span class="n">sensitivity_params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sensitivity_params</span>
+        <span class="n">newframe</span><span class="o">.</span><span class="n">optical_params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">framecoord</span><span class="o">.</span><span class="n">optical_params</span>
+        <span class="n">newframe</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;wavelength_range&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;wavelength_range&#39;</span><span class="p">]</span>
+        <span class="n">newframe</span><span class="o">.</span><span class="n">relative_flux_loss_params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">relative_flux_loss_params</span>
+        <span class="n">newframe</span><span class="o">.</span><span class="n">psf_params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">psf_params</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">newframe</span><span class="o">.</span><span class="n">zero_order_mask</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">zero_order_mask</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="n">newframe</span><span class="o">.</span><span class="n">zero_order_mask</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">newframe</span><span class="o">.</span><span class="n">_persistence_frame</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_persistence_frame</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="k">return</span> <span class="n">newframe</span>
+
+    <span class="k">def</span> <span class="nf">_setup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Internal setup method.</span>
+
+<span class="sd">        Calculates the total dispersion angle based on grism and tilt.</span>
+<span class="sd">        Initializes the FrameCoordinates object used for transformations.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;angle&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;tilt&#39;</span><span class="p">]</span> <span class="o">+</span> \
+            <span class="bp">self</span><span class="o">.</span><span class="n">dispersion_angles</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;grism_name&#39;</span><span class="p">]]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">framecoord</span> <span class="o">=</span> <span class="n">frame_coordinates</span><span class="o">.</span><span class="n">FrameCoordinates</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_setup_continuum_subtraction</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">continuum_subtraction</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">continuum_subtraction</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;apply_median_filter&#39;</span><span class="p">]</span> <span class="ow">and</span> \
+                <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;median_filter_size_pix&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
+                <span class="n">continuum_subtraction</span> <span class="o">=</span> <span class="n">csb</span><span class="o">.</span><span class="n">MedianFilterFrame</span><span class="p">(</span>
+                    <span class="n">median_filter_size_pix</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;median_filter_size_pix&#39;</span><span class="p">]</span>
+                <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cs</span> <span class="o">=</span> <span class="n">continuum_subtraction</span>
+
+<div class="viewcode-block" id="SpecFrame.load_frame">
+<a class="viewcode-back" href="../../api/gelsa.specframe.html#gelsa.specframe.SpecFrame.load_frame">[docs]</a>
+    <span class="k">def</span> <span class="nf">load_frame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">frame_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">loctable_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">persistence_path</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load frame data and metadata from a FITS file.</span>
+
+<span class="sd">        Reads the primary header and potentially updates pointing information</span>
+<span class="sd">        (RA, DEC, PA) either from specific SIR headers or by using a</span>
+<span class="sd">        location table if provided or found automatically.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            frame_path (str, optional): Path to the FITS science frame file.</span>
+<span class="sd">                                        Can be .gz compressed. Defaults to None.</span>
+<span class="sd">            loctable_path (str, optional): Path to the corresponding location</span>
+<span class="sd">                                           table FITS file. If None, attempts</span>
+<span class="sd">                                           to find it automatically based on</span>
+<span class="sd">                                           the science frame path. Defaults to None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">frame_path</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.gz&quot;</span><span class="p">):</span>
+            <span class="c1"># check if decompressed file exists</span>
+            <span class="n">path_</span> <span class="o">=</span> <span class="n">frame_path</span><span class="p">[:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path_</span><span class="p">):</span>
+                <span class="n">frame_path</span> <span class="o">=</span> <span class="n">path_</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;found </span><span class="si">{</span><span class="n">frame_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_hdul</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_metadata</span> <span class="o">=</span> <span class="n">dmutils</span><span class="o">.</span><span class="n">load_scienceframe</span><span class="p">(</span><span class="n">frame_path</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_header</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hdul</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">header</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;frame_path&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">frame_path</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;loctable_path&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">loctable_path</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;grism_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="p">[</span><span class="s1">&#39;GWA_POS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;tilt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="p">[</span><span class="s1">&#39;GWA_TILT&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;DATE-OBS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="p">[</span><span class="s1">&#39;DATE-OBS&#39;</span><span class="p">]</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># Look for SIR adjusted pointing center</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;RA&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="p">[</span><span class="s1">&#39;SIR_RA&#39;</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;DEC&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="p">[</span><span class="s1">&#39;SIR_DEC&#39;</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;PA&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="p">[</span><span class="s1">&#39;SIR_PA&#39;</span><span class="p">]</span>
+            <span class="n">got_adjusted_pointing</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="c1"># Fall back to commanded pointing with location table</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;RA&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="p">[</span><span class="s1">&#39;RA&#39;</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;DEC&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="p">[</span><span class="s1">&#39;DEC&#39;</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;PA&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="p">[</span><span class="s1">&#39;PA&#39;</span><span class="p">]</span>
+            <span class="n">got_adjusted_pointing</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;PIXSCALE&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="p">[</span><span class="s1">&#39;PIXSCALE&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;PTGID&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="p">[</span><span class="s1">&#39;PTGID&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;OBS_ID&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="p">[</span><span class="s1">&#39;OBS_ID&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;DITHOBS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="p">[</span><span class="s1">&#39;DITHOBS&#39;</span><span class="p">]</span>
+        <span class="c1"># Read with get: these are not in every frame, and a missing keyword</span>
+        <span class="c1"># should leave the value empty rather than stop the frame loading.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;CALBLKID&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;CALBLKID&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;OBSMODE&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;OBSMODE&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;PATCH_ID&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;PATCH_ID&#39;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_setup</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">got_adjusted_pointing</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">loctable_path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">loctable_path</span> <span class="o">=</span> <span class="n">dmutils</span><span class="o">.</span><span class="n">find_location_table</span><span class="p">(</span><span class="n">frame_path</span><span class="p">)</span>
+                <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;could not find location table automatically&quot;</span><span class="p">)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">framecoord</span><span class="o">.</span><span class="n">update_optical_model_from_location_table</span><span class="p">(</span><span class="n">loctable_path</span><span class="p">)</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="k">pass</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hdu_loaded</span> <span class="o">=</span> <span class="kc">True</span></div>
+
+
+    <span class="k">def</span> <span class="nf">set_pointing_center</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">pa</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">framecoord</span><span class="o">.</span><span class="n">set_pointing_center</span><span class="p">(</span><span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">pa</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">hdul</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Access the FITS HDUList object for the frame.</span>
+
+<span class="sd">        Loads the FITS file on first access if not already loaded.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            astropy.io.fits.HDUList: The HDUList object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hdul</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_hdul</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_metadata</span> <span class="o">=</span> <span class="n">dmutils</span><span class="o">.</span><span class="n">load_scienceframe</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;frame_path&#39;</span><span class="p">])</span>
+            <span class="c1"># close_frame() drops the header along with the HDU list, so restore</span>
+            <span class="c1"># it here: a reopened frame must be as closeable as a freshly</span>
+            <span class="c1"># loaded one.</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_header</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hdul</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">header</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">hdu_loaded</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hdul</span>
+
+<div class="viewcode-block" id="SpecFrame.close_frame">
+<a class="viewcode-back" href="../../api/gelsa.specframe.html#gelsa.specframe.SpecFrame.close_frame">[docs]</a>
+    <span class="k">def</span> <span class="nf">close_frame</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Close the associated FITS file handle.</span>
+
+<span class="sd">        Deletes internal references to the HDUList and header. Closing a frame</span>
+<span class="sd">        that is already closed does nothing.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">hdu_loaded</span><span class="p">:</span>
+            <span class="n">hdul</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;_hdul&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">hdul</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">hdul</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;_header&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="c1"># self.hdu_loaded = False</span>
+            <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">zero_order_mask</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">zero_order_mask</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_detector_cache</span> <span class="o">=</span> <span class="p">{}</span></div>
+
+
+<div class="viewcode-block" id="SpecFrame.set_detector_model">
+<a class="viewcode-back" href="../../api/gelsa.specframe.html#gelsa.specframe.SpecFrame.set_detector_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_detector_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">detector_model</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the detector model for coordinate transformations.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            detector_model (detector_model.DetectorModel): The detector model instance.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">framecoord</span><span class="o">.</span><span class="n">detector_model</span> <span class="o">=</span> <span class="n">detector_model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">detector_model</span> <span class="o">=</span> <span class="n">detector_model</span></div>
+
+
+<div class="viewcode-block" id="SpecFrame.set_optical_model">
+<a class="viewcode-back" href="../../api/gelsa.specframe.html#gelsa.specframe.SpecFrame.set_optical_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_optical_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">optical_model</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the optical model based on the current grism and tilt.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            optical_model (optical_model.OpticalModel): The optical model instance.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">framecoord</span><span class="o">.</span><span class="n">optical_params</span> <span class="o">=</span> <span class="n">optical_model</span><span class="o">.</span><span class="n">get_model</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;grism_name&#39;</span><span class="p">],</span> <span class="n">tilt</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;tilt&#39;</span><span class="p">]</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">optical_params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">framecoord</span><span class="o">.</span><span class="n">optical_params</span></div>
+
+
+<div class="viewcode-block" id="SpecFrame.set_dispersion_model">
+<a class="viewcode-back" href="../../api/gelsa.specframe.html#gelsa.specframe.SpecFrame.set_dispersion_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_dispersion_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dispersion_model</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the dispersion models (IDS and CRV) based on grism and tilt.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            dispersion_model (dict): A dictionary containing &#39;ids&#39; and &#39;crv&#39;</span>
+<span class="sd">                                     DisplacementModel instances.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ids_model</span> <span class="o">=</span> <span class="n">dispersion_model</span><span class="p">[</span><span class="s1">&#39;ids&#39;</span><span class="p">]</span>
+        <span class="n">crv_model</span> <span class="o">=</span> <span class="n">dispersion_model</span><span class="p">[</span><span class="s1">&#39;crv&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">framecoord</span><span class="o">.</span><span class="n">ids_params</span> <span class="o">=</span> <span class="n">ids_model</span><span class="o">.</span><span class="n">get_model</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;grism_name&#39;</span><span class="p">],</span> <span class="n">tilt</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;tilt&#39;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">framecoord</span><span class="o">.</span><span class="n">crv_params</span> <span class="o">=</span> <span class="n">crv_model</span><span class="o">.</span><span class="n">get_model</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;grism_name&#39;</span><span class="p">],</span> <span class="n">tilt</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;tilt&#39;</span><span class="p">])</span></div>
+
+
+<div class="viewcode-block" id="SpecFrame.set_sensitivity">
+<a class="viewcode-back" href="../../api/gelsa.specframe.html#gelsa.specframe.SpecFrame.set_sensitivity">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_sensitivity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sensitivity_model</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the sensitivity model and update the frame&#39;s wavelength range.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            sensitivity_model (sensitivity_model.SensitivityModel): The sensitivity</span>
+<span class="sd">                                                                    model instance.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sensitivity_params</span> <span class="o">=</span> <span class="n">sensitivity_model</span><span class="o">.</span><span class="n">get_model</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;grism_name&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;tilt&#39;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;wavelength_range&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sensitivity_params</span><span class="p">[</span><span class="s1">&#39;bounds&#39;</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="SpecFrame.set_relative_flux_model">
+<a class="viewcode-back" href="../../api/gelsa.specframe.html#gelsa.specframe.SpecFrame.set_relative_flux_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_relative_flux_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">relative_flux_model</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the relative flux loss calibration model.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            relative_flux_model (relative_flux.RelativeFluxCalibration or None):</span>
+<span class="sd">                The relative flux model instance, or None if not used.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">relative_flux_loss_params</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">relative_flux_model</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">relative_flux_loss_params</span> <span class="o">=</span> <span class="n">relative_flux_model</span><span class="o">.</span><span class="n">get_model</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;grism_name&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;tilt&#39;</span><span class="p">]</span>
+            <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="SpecFrame.set_psf_model">
+<a class="viewcode-back" href="../../api/gelsa.specframe.html#gelsa.specframe.SpecFrame.set_psf_model">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_psf_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">psf_model</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the Point Spread Function (PSF) model.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            psf_model (psf_model.PSFModel or psf_model.DefaultPSFModel or None):</span>
+<span class="sd">                The PSF model instance, or None if not used.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">psf_params</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">psf_model</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">psf_params</span> <span class="o">=</span> <span class="n">psf_model</span><span class="o">.</span><span class="n">get_model</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;grism_name&#39;</span><span class="p">]</span>
+            <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="SpecFrame.set_zero_order_mask">
+<a class="viewcode-back" href="../../api/gelsa.specframe.html#gelsa.specframe.SpecFrame.set_zero_order_mask">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_zero_order_mask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zero_order_mask</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set and apply the zero-order contamination mask.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            zero_order_mask (zero_order_mask.ZeroOrderMask or None):</span>
+<span class="sd">                The zero-order mask instance, or None if not used.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">zero_order_mask</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">zero_order_mask</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">zero_order_mask</span> <span class="o">=</span> <span class="n">zero_order_mask</span><span class="o">.</span><span class="n">create_zero_order_mask</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span> <span class="nf">set_persistence_mask</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_persistence_frame</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">return</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_persistence_frame</span> <span class="o">=</span> <span class="n">photframe</span><span class="o">.</span><span class="n">PhotFrame</span><span class="p">(</span><span class="n">sir_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_persistence_frame</span><span class="o">.</span><span class="n">load_frame</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">persistence_frame</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_persistence_frame</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">detector_shape</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return detector size in pixels (ny, nx).</span>
+
+<span class="sd">        Note the order (ny, nx) consistent with numpy array indexing.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            tuple: (height, width) in pixels.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">nx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">detector_model</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;nx_pixels&#39;</span><span class="p">]</span>
+        <span class="n">ny</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">detector_model</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;ny_pixels&#39;</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">ny</span><span class="p">,</span> <span class="n">nx</span> <span class="c1"># Note: numpy shape order (rows, columns)</span>
+
+<div class="viewcode-block" id="SpecFrame.arcsec_to_pixel">
+<a class="viewcode-back" href="../../api/gelsa.specframe.html#gelsa.specframe.SpecFrame.arcsec_to_pixel">[docs]</a>
+    <span class="k">def</span> <span class="nf">arcsec_to_pixel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_arcsec</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert units from arsec to pixels</span>
+
+<span class="sd">        x_pix = x_arcsec / pixscale</span>
+<span class="sd">        with pixscale in arcsec/pixel</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">x_arcsec</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;PIXSCALE&#39;</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="SpecFrame.radec_to_pixel_">
+<a class="viewcode-back" href="../../api/gelsa.specframe.html#gelsa.specframe.SpecFrame.radec_to_pixel_">[docs]</a>
+    <span class="k">def</span> <span class="nf">radec_to_pixel_</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">wavelength</span><span class="p">,</span> <span class="n">dispersion_order</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute detector pixel coordinates from RA, Dec sky position and wavelength.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ra (float or numpy.ndarray): Sky position RA in degrees.</span>
+<span class="sd">            dec (float or numpy.ndarray): Sky position Dec in degrees.</span>
+<span class="sd">            wavelength (float or numpy.ndarray): Wavelength in angstrom.</span>
+<span class="sd">            dispersion_order (int, optional): Dispersion order (0 or 1). Defaults to 1.</span>
+<span class="sd">            **kwargs: Additional arguments passed to framecoord.radec_to_pixel.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            tuple: (x, y, detector_index)</span>
+<span class="sd">                   x (float or ndarray): Pixel x-coordinate(s).</span>
+<span class="sd">                   y (float or ndarray): Pixel y-coordinate(s).</span>
+<span class="sd">                   detector_index (int or ndarray): Detector index/indices (0-15), -1 if off detector.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">framecoord</span><span class="o">.</span><span class="n">radec_to_pixel_</span><span class="p">(</span><span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">wavelength</span><span class="p">,</span><span class="n">dispersion_order</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="SpecFrame.radec_to_pixel">
+<a class="viewcode-back" href="../../api/gelsa.specframe.html#gelsa.specframe.SpecFrame.radec_to_pixel">[docs]</a>
+    <span class="k">def</span> <span class="nf">radec_to_pixel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">wavelength</span><span class="p">,</span> <span class="n">dispersion_order</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute detector pixel coordinates from RA, Dec sky position and wavelength.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ra (float or numpy.ndarray): Sky position RA in degrees.</span>
+<span class="sd">            dec (float or numpy.ndarray): Sky position Dec in degrees.</span>
+<span class="sd">            wavelength (float or numpy.ndarray): Wavelength in angstrom.</span>
+<span class="sd">            dispersion_order (int, optional): Dispersion order (0 or 1). Defaults to 1.</span>
+<span class="sd">            **kwargs: Additional arguments passed to framecoord.radec_to_pixel.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            tuple: (x, y, detector_index)</span>
+<span class="sd">                   x (float or ndarray): Pixel x-coordinate(s).</span>
+<span class="sd">                   y (float or ndarray): Pixel y-coordinate(s).</span>
+<span class="sd">                   detector_index (int or ndarray): Detector index/indices (0-15), -1 if off detector.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">framecoord</span><span class="o">.</span><span class="n">radec_to_pixel</span><span class="p">(</span><span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">wavelength</span><span class="p">,</span><span class="n">dispersion_order</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="SpecFrame.radec_to_fov">
+<a class="viewcode-back" href="../../api/gelsa.specframe.html#gelsa.specframe.SpecFrame.radec_to_fov">[docs]</a>
+    <span class="k">def</span> <span class="nf">radec_to_fov</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">wavelength</span><span class="p">,</span> <span class="n">dispersion_order</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute detector pixel coordinates from RA, Dec sky position and wavelength.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ra (float or numpy.ndarray): Sky position RA in degrees.</span>
+<span class="sd">            dec (float or numpy.ndarray): Sky position Dec in degrees.</span>
+<span class="sd">            wavelength (float or numpy.ndarray): Wavelength in angstrom.</span>
+<span class="sd">            dispersion_order (int, optional): Dispersion order (0 or 1). Defaults to 1.</span>
+<span class="sd">            **kwargs: Additional arguments passed to framecoord.radec_to_pixel.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            tuple: (x, y, detector_index)</span>
+<span class="sd">                   x (float or ndarray): Pixel x-coordinate(s).</span>
+<span class="sd">                   y (float or ndarray): Pixel y-coordinate(s).</span>
+<span class="sd">                   detector_index (int or ndarray): Detector index/indices (0-15), -1 if off detector.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">framecoord</span><span class="o">.</span><span class="n">radec_to_fov</span><span class="p">(</span><span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">wavelength</span><span class="p">,</span> <span class="n">dispersion_order</span><span class="o">=</span><span class="n">dispersion_order</span><span class="p">)</span></div>
+
+
+
+
+<div class="viewcode-block" id="SpecFrame.fov_to_pixel">
+<a class="viewcode-back" href="../../api/gelsa.specframe.html#gelsa.specframe.SpecFrame.fov_to_pixel">[docs]</a>
+    <span class="k">def</span> <span class="nf">fov_to_pixel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xfov</span><span class="p">,</span><span class="n">yfov</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute detector pixel coordinates from RA, Dec sky position and wavelength.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ra (float or numpy.ndarray): Sky position RA in degrees.</span>
+<span class="sd">            dec (float or numpy.ndarray): Sky position Dec in degrees.</span>
+<span class="sd">            wavelength (float or numpy.ndarray): Wavelength in angstrom.</span>
+<span class="sd">            dispersion_order (int, optional): Dispersion order (0 or 1). Defaults to 1.</span>
+<span class="sd">            **kwargs: Additional arguments passed to framecoord.radec_to_pixel.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            tuple: (x, y, detector_index)</span>
+<span class="sd">                   x (float or ndarray): Pixel x-coordinate(s).</span>
+<span class="sd">                   y (float or ndarray): Pixel y-coordinate(s).</span>
+<span class="sd">                   detector_index (int or ndarray): Detector index/indices (0-15), -1 if off detector.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">detector_model</span><span class="o">.</span><span class="n">getPixel</span><span class="p">(</span><span class="n">xfov</span><span class="p">,</span> <span class="n">yfov</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="SpecFrame.pixel_to_radec">
+<a class="viewcode-back" href="../../api/gelsa.specframe.html#gelsa.specframe.SpecFrame.pixel_to_radec">[docs]</a>
+    <span class="k">def</span> <span class="nf">pixel_to_radec</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">det</span><span class="p">,</span> <span class="n">wavelength</span><span class="p">,</span> <span class="n">dispersion_order</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute sky position RA, Dec from detector pixel coordinates and wavelength.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            x (float or numpy.ndarray): Detector pixel x-coordinate(s).</span>
+<span class="sd">            y (float or numpy.ndarray): Detector pixel y-coordinate(s).</span>
+<span class="sd">            det (int or numpy.ndarray): NISP detector index/indices (0-15).</span>
+<span class="sd">            wavelength (float or numpy.ndarray): Wavelength in angstrom.</span>
+<span class="sd">            dispersion_order (int, optional): Dispersion order (0 or 1). Defaults to 1.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            tuple: (RA, Dec)</span>
+<span class="sd">                   RA (float or ndarray): Right Ascension coordinate(s) in degrees.</span>
+<span class="sd">                   Dec (float or ndarray): Declination coordinate(s) in degrees.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">framecoord</span><span class="o">.</span><span class="n">pixel_to_radec</span><span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">det</span><span class="p">,</span> <span class="n">wavelength</span><span class="p">,</span>
+                                              <span class="n">dispersion_order</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="SpecFrame.sample_psf">
+<a class="viewcode-back" href="../../api/gelsa.specframe.html#gelsa.specframe.SpecFrame.sample_psf">[docs]</a>
+    <span class="k">def</span> <span class="nf">sample_psf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">detector</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">wavelength_ang</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                   <span class="o">**</span><span class="n">args</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Draw samples representing the PSF offset at given coordinates/wavelength.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            x (float or ndarray, optional): Detector x-coordinate(s). Not currently used</span>
+<span class="sd">                                            for position dependence. Defaults to None.</span>
+<span class="sd">            y (float or ndarray, optional): Detector y-coordinate(s). Not currently used</span>
+<span class="sd">                                            for position dependence. Defaults to None.</span>
+<span class="sd">            detector (int or ndarray, optional): Detector index/indices. Not currently used.</span>
+<span class="sd">                                                 Defaults to None.</span>
+<span class="sd">            wavelength_ang (float or ndarray, optional): Wavelength(s) in angstroms.</span>
+<span class="sd">                                                         Used for chromatic PSF. Defaults to None.</span>
+<span class="sd">            **args: Additional arguments passed to psf_model.sample_psf.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            tuple: (dx, dy) offsets in pixel coordinates, or (0, 0) if no PSF model is set.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># if x is not None:</span>
+        <span class="c1">#     xfov, yfov = self.detector_model.getFOVPosition(x, y, detector)</span>
+        <span class="c1">#     pos_fov = (np.mean(xfov), np.mean(yfov))</span>
+        <span class="c1"># else:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">psf_params</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+        <span class="n">pos_fov</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">samples</span> <span class="o">=</span> <span class="n">psf_model</span><span class="o">.</span><span class="n">sample_psf</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">psf_params</span><span class="p">,</span>
+            <span class="n">pos_fov</span><span class="o">=</span><span class="n">pos_fov</span><span class="p">,</span> <span class="n">wavelength_ang</span><span class="o">=</span><span class="n">wavelength_ang</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">args</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">samples</span></div>
+
+
+<div class="viewcode-block" id="SpecFrame.lineflux_to_counts">
+<a class="viewcode-back" href="../../api/gelsa.specframe.html#gelsa.specframe.SpecFrame.lineflux_to_counts">[docs]</a>
+    <span class="k">def</span> <span class="nf">lineflux_to_counts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flux</span><span class="p">,</span> <span class="n">wavelength</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Convert line flux in erg/s/cm^2 to photon counts.</span>
+
+<span class="sd">        Uses the sensitivity model and exposure time.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            flux (float or ndarray): Line flux in erg/s/cm^2.</span>
+<span class="sd">            wavelength (float or ndarray): Wavelength(s) in angstroms.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float or ndarray: Corresponding photon counts.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">flux</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">sensitivity_params</span><span class="p">[</span><span class="s1">&#39;func&#39;</span><span class="p">](</span><span class="n">wavelength</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;exptime_sec&#39;</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="SpecFrame.flux_to_counts">
+<a class="viewcode-back" href="../../api/gelsa.specframe.html#gelsa.specframe.SpecFrame.flux_to_counts">[docs]</a>
+    <span class="k">def</span> <span class="nf">flux_to_counts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flux</span><span class="p">,</span> <span class="n">wavelength</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Convert flux density in erg/s/cm^2/A to photon counts.</span>
+
+<span class="sd">        Uses the sensitivity model, wavelength step, and exposure time.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            flux (float or ndarray): Flux density in erg/s/cm^2/A.</span>
+<span class="sd">            wavelength (float or ndarray): Wavelength array in angstroms. Assumes</span>
+<span class="sd">                                           uniform spacing to calculate step.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float or ndarray: Corresponding photon counts.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">step</span> <span class="o">=</span> <span class="n">wavelength</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">wavelength</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">flux</span> <span class="o">*</span> <span class="n">step</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">sensitivity_params</span><span class="p">[</span><span class="s1">&#39;func&#39;</span><span class="p">](</span><span class="n">wavelength</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;exptime_sec&#39;</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="SpecFrame.counts_to_flux">
+<a class="viewcode-back" href="../../api/gelsa.specframe.html#gelsa.specframe.SpecFrame.counts_to_flux">[docs]</a>
+    <span class="k">def</span> <span class="nf">counts_to_flux</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">counts</span><span class="p">,</span> <span class="n">wavelength</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Convert photon counts to flux density in erg/s/cm^2/A.</span>
+
+<span class="sd">        Inverse of flux_to_counts. Uses sensitivity, wavelength step, and exposure time.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            counts (float or ndarray): Photon counts.</span>
+<span class="sd">            wavelength (float or ndarray): Wavelength array in angstroms. Assumes</span>
+<span class="sd">                                           uniform spacing to calculate step.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float or ndarray: Corresponding flux density in erg/s/cm^2/A.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">step</span> <span class="o">=</span> <span class="n">wavelength</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">wavelength</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">counts</span> <span class="o">/</span> <span class="p">(</span><span class="n">step</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">sensitivity_params</span><span class="p">[</span><span class="s1">&#39;func&#39;</span><span class="p">](</span><span class="n">wavelength</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;exptime_sec&#39;</span><span class="p">])</span></div>
+
+
+<div class="viewcode-block" id="SpecFrame.get_sensitivity">
+<a class="viewcode-back" href="../../api/gelsa.specframe.html#gelsa.specframe.SpecFrame.get_sensitivity">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_sensitivity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wavelength</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return sensitivity (response) in units counts/(erg/cm^2/s).</span>
+
+<span class="sd">        Note: This is the sensitivity integrated over the pixel wavelength step.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            wavelength (float or ndarray): Wavelength array in angstroms. Assumes</span>
+<span class="sd">                                           uniform spacing to calculate step.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float or ndarray: Sensitivity value(s).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">step</span> <span class="o">=</span> <span class="n">wavelength</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">wavelength</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">step</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">sensitivity_params</span><span class="p">[</span><span class="s1">&#39;func&#39;</span><span class="p">](</span><span class="n">wavelength</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;exptime_sec&#39;</span><span class="p">]</span></div>
+
+
+    <span class="c1"># alias</span>
+    <span class="n">sensitivity</span> <span class="o">=</span> <span class="n">get_sensitivity</span>
+
+<div class="viewcode-block" id="SpecFrame.get_relative_flux_loss_radec">
+<a class="viewcode-back" href="../../api/gelsa.specframe.html#gelsa.specframe.SpecFrame.get_relative_flux_loss_radec">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_relative_flux_loss_radec</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">wavelength_ang</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Calculates the relative flux loss factor at given detector coordinates and wavelength.</span>
+
+<span class="sd">        Uses the relative flux calibration model (`relative_flux_loss_params`)</span>
+<span class="sd">        if it has been set via `set_relative_flux_model`.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            x (float | np.ndarray): Detector x-coordinate(s).</span>
+<span class="sd">            y (float | np.ndarray): Detector y-coordinate(s).</span>
+<span class="sd">            det_index (int | np.ndarray): NISP detector index/indices (0-15).</span>
+<span class="sd">            wavelength_ang (float | np.ndarray): Wavelength(s) in Angstroms.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            float | np.ndarray: Flux loss factor. This is a multiplicative factor</span>
+<span class="sd">                (&lt;= 1.0) representing the fraction of flux remaining after</span>
+<span class="sd">                accounting for effects like vignetting or detector gaps modeled</span>
+<span class="sd">                by the relative flux calibration. Returns 1.0 if no model is</span>
+<span class="sd">                set or if the model doesn&#39;t apply to the given inputs. The</span>
+<span class="sd">                shape matches the input coordinate/wavelength arrays.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            AttributeError: If the detector model has not been set (needed by</span>
+<span class="sd">                the underlying `relative_flux.get_flux_loss`).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">relative_flux_loss_params</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">1</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">relative_flux_loss_params</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">1</span>
+
+        <span class="k">if</span> <span class="n">wavelength_ang</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">wavelength_ang</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;wavelength_range&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;wavelength_range&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="mf">2.</span>
+
+        <span class="n">scalar</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ndim</span><span class="p">(</span><span class="n">ra</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+        <span class="n">ra</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">ra</span><span class="p">)</span>
+        <span class="n">dec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">dec</span><span class="p">)</span>
+
+        <span class="n">wavelength_ang</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ra</span><span class="p">))</span> <span class="o">*</span> <span class="n">wavelength_ang</span>
+
+        <span class="n">xmm_undist</span><span class="p">,</span> <span class="n">ymm_undist</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">framecoord</span><span class="o">.</span><span class="n">getUndistortedObjectPosition</span><span class="p">(</span><span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">)</span>
+        <span class="n">xfov</span><span class="p">,</span> <span class="n">yfov</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">framecoord</span><span class="o">.</span><span class="n">getReferencePosition_jit</span><span class="p">(</span>
+            <span class="n">xmm_undist</span><span class="o">=</span><span class="n">xmm_undist</span><span class="p">,</span> <span class="n">ymm_undist</span><span class="o">=</span><span class="n">ymm_undist</span><span class="p">,</span>
+            <span class="n">order</span><span class="o">=</span><span class="mi">1</span>
+        <span class="p">)</span>
+
+        <span class="n">y</span> <span class="o">=</span> <span class="n">relative_flux</span><span class="o">.</span><span class="n">get_flux_loss_fov</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">detector_model</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">relative_flux_loss_params</span><span class="p">,</span>
+            <span class="n">xfov</span><span class="p">,</span> <span class="n">yfov</span><span class="p">,</span> <span class="n">wavelength_ang</span><span class="o">=</span><span class="n">wavelength_ang</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">scalar</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">y</span></div>
+
+
+<div class="viewcode-block" id="SpecFrame.get_detector">
+<a class="viewcode-back" href="../../api/gelsa.specframe.html#gelsa.specframe.SpecFrame.get_detector">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_detector</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">detector_index</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the pixel data arrays for a specific detector.</span>
+
+<span class="sd">        Retrieves the science image, data quality (mask), and variance arrays.</span>
+<span class="sd">        Applies the zero-order mask if it has been set.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            detector_index (int): NISP detector index (0-15).</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            tuple: (image, mask, variance)</span>
+<span class="sd">                   image (ndarray): Science image data.</span>
+<span class="sd">                   mask (ndarray): Data quality mask (0=good, 1=bad).</span>
+<span class="sd">                   variance (ndarray): Variance data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">detectors</span><span class="p">[</span><span class="n">detector_index</span><span class="p">]</span>
+        <span class="n">cache_key</span> <span class="o">=</span> <span class="n">detector_index</span>
+        <span class="k">if</span> <span class="n">cache_key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_detector_cache</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_detector_cache</span><span class="p">[</span><span class="n">cache_key</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">hdu_loaded</span><span class="p">:</span>
+            <span class="n">extname</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;DET</span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s1">.SCI&#39;</span>
+            <span class="n">maskname</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;DET</span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s1">.DQ&#39;</span>
+            <span class="n">varname</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;DET</span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s1">.VAR&#39;</span>
+            <span class="n">fullimage</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hdul</span><span class="p">[</span><span class="n">extname</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+            <span class="n">fullmask</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hdul</span><span class="p">[</span><span class="n">maskname</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+            <span class="n">fullvar</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hdul</span><span class="p">[</span><span class="n">varname</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># defaults if simulating</span>
+            <span class="n">fullimage</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">fullmask</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">fullvar</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="c1"># Handle case where data is simulated in memory</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;_data&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">detector_index</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">:</span>
+            <span class="n">fullimage</span> <span class="o">+=</span> <span class="n">fullimage</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">detector_index</span><span class="p">]</span>
+            <span class="n">fullmask</span> <span class="o">=</span> <span class="p">(</span><span class="n">fullmask</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mask</span><span class="p">[</span><span class="n">detector_index</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">0</span>
+            <span class="n">fullvar</span> <span class="o">=</span> <span class="n">fullvar</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_var</span><span class="p">[</span><span class="n">detector_index</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">hdu_loaded</span><span class="p">:</span>
+            <span class="c1"># Nothing loaded or simulated. In this case, image is zero</span>
+            <span class="n">nx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">framecoord</span><span class="o">.</span><span class="n">detector_model</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;nx_pixels&#39;</span><span class="p">]</span>
+            <span class="n">ny</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">framecoord</span><span class="o">.</span><span class="n">detector_model</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;ny_pixels&#39;</span><span class="p">]</span>
+            <span class="n">fullimage</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">ny</span><span class="p">,</span> <span class="n">nx</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;d&#39;</span><span class="p">)</span>
+            <span class="n">fullmask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">ny</span><span class="p">,</span> <span class="n">nx</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+            <span class="n">fullvar</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">ny</span><span class="p">,</span> <span class="n">nx</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;d&#39;</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">zero_order_mask</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">invalid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">zero_order_mask</span><span class="p">[</span><span class="n">detector_index</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span>
+                <span class="n">fullimage</span><span class="p">[</span><span class="n">invalid</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="n">fullmask</span><span class="p">[</span><span class="n">invalid</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">fullimage</span><span class="p">,</span> <span class="n">fullmask</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cs</span><span class="o">.</span><span class="n">process_frame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fullimage</span><span class="p">,</span> <span class="n">fullmask</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">persistence_frame</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">persistance_image</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">persistence_frame</span><span class="o">.</span><span class="n">get_detector</span><span class="p">(</span><span class="n">detector_index</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;apply_persistence_correction&#39;</span><span class="p">]:</span>
+                <span class="c1"># apply persistence correction</span>
+                <span class="n">fullimage</span> <span class="o">-=</span> <span class="n">persistance_image</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;persistence_mask_threshold&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="c1"># mask persistence above threshold</span>
+                <span class="n">invalid</span> <span class="o">=</span> <span class="n">persistance_image</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;persistence_mask_threshold&#39;</span><span class="p">]</span>
+                <span class="n">fullimage</span><span class="p">[</span><span class="n">invalid</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="n">fullmask</span><span class="p">[</span><span class="n">invalid</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Masking persistence </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;persistence_mask_threshold&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> &quot;</span> \
+                      <span class="sa">f</span><span class="s2">&quot;fraction of pixels: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">invalid</span><span class="p">)</span><span class="o">/</span><span class="n">invalid</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="c1"># store in cache</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;use_cache&#39;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_detector_cache</span><span class="p">[</span><span class="n">cache_key</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">fullimage</span><span class="p">,</span> <span class="n">fullmask</span><span class="p">,</span> <span class="n">fullvar</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">fullimage</span><span class="p">,</span> <span class="n">fullmask</span><span class="p">,</span> <span class="n">fullvar</span></div>
+
+
+    <span class="k">def</span> <span class="nf">median_filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">filter_size_pix</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">tilt</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">filter_size_pix</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="n">filtered_thresh</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;median_filter_mask_threshold&#39;</span><span class="p">]</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Applying median filter with size </span><span class="si">{</span><span class="n">filter_size_pix</span><span class="si">}</span><span class="s2"> pixels and </span><span class="si">{</span><span class="n">tilt</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">invalid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_not</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">image</span><span class="p">))</span>
+        <span class="n">image</span><span class="p">[</span><span class="n">invalid</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">rotated_image</span> <span class="o">=</span> <span class="n">ndimage</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">tilt</span><span class="p">,</span> <span class="n">reshape</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">filtered_rotated_image</span> <span class="o">=</span> <span class="n">ndimage</span><span class="o">.</span><span class="n">median_filter</span><span class="p">(</span><span class="n">rotated_image</span><span class="p">,</span> <span class="n">filter_size_pix</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">rotated_back</span> <span class="o">=</span> <span class="n">ndimage</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">filtered_rotated_image</span><span class="p">,</span> <span class="o">-</span><span class="n">tilt</span><span class="p">,</span> <span class="n">reshape</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cval</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+        <span class="n">resid</span> <span class="o">=</span> <span class="n">image</span> <span class="o">-</span> <span class="n">rotated_back</span>
+        <span class="n">invalid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_not</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">resid</span><span class="p">))</span>
+        <span class="n">resid</span><span class="p">[</span><span class="n">invalid</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
+        <span class="n">kernel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span>
+        <span class="n">kernel</span> <span class="o">=</span> <span class="n">kernel</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">kernel</span><span class="p">)</span>
+
+        <span class="n">filtered</span> <span class="o">=</span> <span class="n">ndimage</span><span class="o">.</span><span class="n">median_filter</span><span class="p">(</span><span class="n">resid</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">filtered</span> <span class="o">=</span> <span class="n">ndimage</span><span class="o">.</span><span class="n">convolve</span><span class="p">(</span><span class="n">filtered</span><span class="p">,</span> <span class="n">kernel</span><span class="p">)</span>
+
+        <span class="n">invalid2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">filtered</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">filtered_thresh</span>
+        <span class="n">resid</span><span class="p">[</span><span class="n">invalid2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;theshold </span><span class="si">{</span><span class="n">filtered_thresh</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Percentiles (95, 99, 99.5) </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">filtered</span><span class="p">),</span><span class="w"> </span><span class="p">(</span><span class="mi">95</span><span class="p">,</span><span class="w"> </span><span class="mi">99</span><span class="p">,</span><span class="w"> </span><span class="mf">99.5</span><span class="p">))</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;median artifact masked pixel fraction: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">invalid2</span><span class="p">)</span><span class="o">/</span><span class="n">invalid2</span><span class="o">.</span><span class="n">size</span><span class="si">:</span><span class="s2">0.5f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">invalid</span> <span class="o">=</span> <span class="n">invalid</span>  <span class="o">|</span> <span class="n">invalid2</span>
+        <span class="k">return</span> <span class="n">resid</span><span class="p">,</span> <span class="n">invalid</span>
+
+    <span class="k">def</span> <span class="nf">robust_local_linear_background</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">mask</span><span class="p">,</span> <span class="n">window</span><span class="p">):</span>
+        <span class="n">ny</span><span class="p">,</span> <span class="n">nx</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span>
+        <span class="n">half</span> <span class="o">=</span> <span class="n">window</span> <span class="o">//</span> <span class="mi">2</span>
+        <span class="n">cont</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full_like</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+
+        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">nx</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+
+        <span class="n">slope_max</span> <span class="o">=</span> <span class="mf">5e-17</span>  <span class="c1"># conservative, from observed continuum slopes in plots</span>
+
+        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ny</span><span class="p">):</span>
+            <span class="n">row</span> <span class="o">=</span> <span class="n">image</span><span class="p">[</span><span class="n">y</span><span class="p">]</span>
+            <span class="n">row_mask</span> <span class="o">=</span> <span class="n">mask</span><span class="p">[</span><span class="n">y</span><span class="p">]</span>
+
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nx</span><span class="p">):</span>
+                <span class="n">i0</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span> <span class="o">-</span> <span class="n">half</span><span class="p">)</span>
+                <span class="n">i1</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">nx</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="n">half</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+                <span class="n">xs</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">i0</span><span class="p">:</span><span class="n">i1</span><span class="p">]</span>
+                <span class="n">ys</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="n">i0</span><span class="p">:</span><span class="n">i1</span><span class="p">]</span>
+                <span class="n">ms</span> <span class="o">=</span> <span class="n">row_mask</span><span class="p">[</span><span class="n">i0</span><span class="p">:</span><span class="n">i1</span><span class="p">]</span>
+
+                <span class="n">good</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">ys</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="o">~</span><span class="n">ms</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">good</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">7</span><span class="p">:</span>
+                    <span class="k">continue</span>
+
+                <span class="n">xs_g</span> <span class="o">=</span> <span class="n">xs</span><span class="p">[</span><span class="n">good</span><span class="p">]</span>
+                <span class="n">ys_g</span> <span class="o">=</span> <span class="n">ys</span><span class="p">[</span><span class="n">good</span><span class="p">]</span>
+
+                <span class="c1"># iterative sigma clipping (2 iterations)</span>
+                <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+                    <span class="n">x0</span> <span class="o">=</span> <span class="n">xs_g</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+                    <span class="n">y0</span> <span class="o">=</span> <span class="n">ys_g</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+                    <span class="n">xs_c</span> <span class="o">=</span> <span class="n">xs_g</span> <span class="o">-</span> <span class="n">x0</span>
+                    <span class="n">ys_c</span> <span class="o">=</span> <span class="n">ys_g</span> <span class="o">-</span> <span class="n">y0</span>
+
+                    <span class="n">denom</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">xs_c</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">denom</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+                        <span class="k">break</span>
+
+                    <span class="n">slope</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">xs_c</span> <span class="o">*</span> <span class="n">ys_c</span><span class="p">)</span> <span class="o">/</span> <span class="n">denom</span>
+                    <span class="n">model</span> <span class="o">=</span> <span class="n">slope</span> <span class="o">*</span> <span class="n">xs_g</span> <span class="o">+</span> <span class="p">(</span><span class="n">y0</span> <span class="o">-</span> <span class="n">slope</span> <span class="o">*</span> <span class="n">x0</span><span class="p">)</span>
+                    <span class="n">resid</span> <span class="o">=</span> <span class="n">ys_g</span> <span class="o">-</span> <span class="n">model</span>
+
+                    <span class="n">sig</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanstd</span><span class="p">(</span><span class="n">resid</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">sig</span><span class="p">)</span> <span class="ow">or</span> <span class="n">sig</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                        <span class="k">break</span>
+
+                    <span class="n">keep</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">resid</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">3.0</span> <span class="o">*</span> <span class="n">sig</span>
+                    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">keep</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">7</span><span class="p">:</span>
+                        <span class="k">break</span>
+
+                    <span class="n">xs_g</span> <span class="o">=</span> <span class="n">xs_g</span><span class="p">[</span><span class="n">keep</span><span class="p">]</span>
+                    <span class="n">ys_g</span> <span class="o">=</span> <span class="n">ys_g</span><span class="p">[</span><span class="n">keep</span><span class="p">]</span>
+
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">xs_g</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">7</span><span class="p">:</span>
+                    <span class="k">continue</span>
+
+                <span class="n">q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanpercentile</span><span class="p">(</span><span class="n">ys_g</span><span class="p">,</span> <span class="mi">35</span><span class="p">)</span>
+                <span class="n">low</span> <span class="o">=</span> <span class="n">ys_g</span> <span class="o">&lt;=</span> <span class="n">q</span>
+                <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">low</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">7</span><span class="p">:</span>
+                    <span class="n">xs_g</span> <span class="o">=</span> <span class="n">xs_g</span><span class="p">[</span><span class="n">low</span><span class="p">]</span>
+                    <span class="n">ys_g</span> <span class="o">=</span> <span class="n">ys_g</span><span class="p">[</span><span class="n">low</span><span class="p">]</span>
+                <span class="c1"># final slope fit</span>
+                <span class="n">x0</span> <span class="o">=</span> <span class="n">xs_g</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+                <span class="n">y0</span> <span class="o">=</span> <span class="n">ys_g</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+                <span class="n">xs_c</span> <span class="o">=</span> <span class="n">xs_g</span> <span class="o">-</span> <span class="n">x0</span>
+                <span class="n">ys_c</span> <span class="o">=</span> <span class="n">ys_g</span> <span class="o">-</span> <span class="n">y0</span>
+
+                <span class="n">denom</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">xs_c</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">denom</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">cont</span><span class="p">[</span><span class="n">y</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmedian</span><span class="p">(</span><span class="n">ys_g</span><span class="p">)</span>
+                    <span class="k">continue</span>
+
+                <span class="n">slope</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">xs_c</span> <span class="o">*</span> <span class="n">ys_c</span><span class="p">)</span> <span class="o">/</span> <span class="n">denom</span>
+
+                <span class="c1"># slope cap</span>
+                <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">slope</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">slope_max</span><span class="p">:</span>
+                    <span class="n">slope</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+                <span class="c1"># anchor intercept to median (prevents upward bias)</span>
+                <span class="n">median</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmedian</span><span class="p">(</span><span class="n">ys_g</span><span class="p">)</span>
+                <span class="n">intercept</span> <span class="o">=</span> <span class="n">median</span> <span class="o">-</span> <span class="n">slope</span> <span class="o">*</span> <span class="n">x0</span>
+
+                <span class="n">cont</span><span class="p">[</span><span class="n">y</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">slope</span> <span class="o">*</span> <span class="n">i</span> <span class="o">+</span> <span class="n">intercept</span>
+
+        <span class="k">return</span> <span class="n">cont</span>
+
+    <span class="k">def</span> <span class="nf">_subtract_median_continuum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">crop</span><span class="p">,</span> <span class="n">detx_</span><span class="p">,</span> <span class="n">dety_</span><span class="p">,</span> <span class="n">wavelength_range</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Mask emission lines and subtract a running-median continuum from a crop.</span>
+
+<span class="sd">        Mutates ``crop.image`` (residual after continuum subtraction) and</span>
+<span class="sd">        ``crop.mask`` (True where the residual is invalid) in place.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;apply_median_filter = True&quot;</span><span class="p">)</span>
+        <span class="n">ny</span><span class="p">,</span> <span class="n">nx</span> <span class="o">=</span> <span class="n">crop</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span>
+        <span class="n">line_mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">ny</span><span class="p">,</span> <span class="n">nx</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+        <span class="n">wave_min</span><span class="p">,</span> <span class="n">wave_max</span> <span class="o">=</span> <span class="n">wavelength_range</span>
+        <span class="n">hole_width</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;median_filter_line_hole_pix&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+        <span class="n">tol_wave</span> <span class="o">=</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;wavelength_step&#39;</span><span class="p">,</span> <span class="mf">13.4</span><span class="p">))</span>
+        <span class="n">merge_pad</span> <span class="o">=</span> <span class="mi">3</span>
+        <span class="n">lam_list</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="mf">6564.61</span><span class="p">,</span>
+            <span class="mf">4862.69</span><span class="p">,</span>
+            <span class="mf">4341.69</span><span class="p">,</span>
+            <span class="mf">4102.92</span><span class="p">,</span>
+            <span class="mf">3971.19</span><span class="p">,</span>
+            <span class="mf">3890.15</span><span class="p">,</span>
+            <span class="mf">3836.48</span><span class="p">,</span>
+            <span class="mf">3798.98</span><span class="p">,</span>
+            <span class="mf">3771.70</span><span class="p">,</span>
+            <span class="mf">3751.22</span><span class="p">,</span>
+            <span class="mf">12821.59</span><span class="p">,</span>
+            <span class="mf">10941.09</span><span class="p">,</span>
+            <span class="mf">10052.13</span><span class="p">,</span>
+            <span class="mf">9548.59</span><span class="p">,</span>
+            <span class="mf">9231.55</span><span class="p">,</span>
+            <span class="mf">9017.39</span><span class="p">,</span>
+            <span class="mf">3728.49</span><span class="p">,</span>
+            <span class="mf">6732.71</span><span class="p">,</span>
+            <span class="mf">6718.32</span><span class="p">,</span>
+            <span class="mf">9533.20</span><span class="p">,</span>
+            <span class="mf">9071.10</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">crop</span><span class="o">.</span><span class="n">redshift</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">lam_rest</span> <span class="ow">in</span> <span class="n">lam_list</span><span class="p">:</span>
+                <span class="n">lam_obs</span> <span class="o">=</span> <span class="n">lam_rest</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">crop</span><span class="o">.</span><span class="n">redshift</span><span class="p">)</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">wave_min</span> <span class="o">&lt;=</span> <span class="n">lam_obs</span> <span class="o">&lt;=</span> <span class="n">wave_max</span><span class="p">):</span>
+                    <span class="k">continue</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">crop</span><span class="o">.</span><span class="n">wavelength_trace</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="k">continue</span>
+                <span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">crop</span><span class="o">.</span><span class="n">wavelength_trace</span> <span class="o">-</span> <span class="n">lam_obs</span><span class="p">))</span>
+                <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">crop</span><span class="o">.</span><span class="n">wavelength_trace</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">-</span> <span class="n">lam_obs</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">tol_wave</span><span class="p">:</span>
+                    <span class="k">continue</span>
+                <span class="n">x0</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">detx_</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">-</span> <span class="n">crop</span><span class="o">.</span><span class="n">bbox</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+                <span class="n">y0</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">dety_</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">-</span> <span class="n">crop</span><span class="o">.</span><span class="n">bbox</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+                <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">y0</span> <span class="o">&lt;</span> <span class="n">ny</span><span class="p">:</span>
+                    <span class="n">half</span> <span class="o">=</span> <span class="n">hole_width</span> <span class="o">//</span> <span class="mi">2</span>
+                    <span class="n">x_start</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">x0</span> <span class="o">-</span> <span class="n">half</span><span class="p">)</span>
+                    <span class="n">x_end</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">nx</span><span class="p">,</span> <span class="n">x0</span> <span class="o">+</span> <span class="n">half</span> <span class="o">+</span> <span class="p">(</span><span class="n">hole_width</span> <span class="o">%</span> <span class="mi">2</span><span class="p">))</span>
+                    <span class="n">line_mask</span><span class="p">[</span><span class="n">y0</span><span class="p">,</span> <span class="n">x_start</span><span class="p">:</span><span class="n">x_end</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; this block makes a masking bridge bw the OIII doublet</span>
+<span class="sd">        oiii1 = 4960.30 * (1.0 + crop.redshift)</span>
+<span class="sd">        oiii2 = 5008.24 * (1.0 + crop.redshift)</span>
+<span class="sd">        if (wave_min &lt;= oiii1 &lt;= wave_max) or (wave_min &lt;= oiii2 &lt;= wave_max):</span>
+<span class="sd">            if len(crop.wavelength_trace) &gt; 0:</span>
+<span class="sd">                idx0 = np.argmin(np.abs(crop.wavelength_trace - oiii1))</span>
+<span class="sd">                idx1 = np.argmin(np.abs(crop.wavelength_trace - oiii2))</span>
+<span class="sd">                if (np.abs(crop.wavelength_trace[idx0] - oiii1) &lt;= tol_wave) and (np.abs(crop.wavelength_trace[idx1] - oiii2) &lt;= tol_wave):</span>
+<span class="sd">                    x0 = int(round(detx_[idx0] - crop.bbox[0]))</span>
+<span class="sd">                    x1 = int(round(detx_[idx1] - crop.bbox[0]))</span>
+<span class="sd">                    y0 = int(round(dety_[idx0] - crop.bbox[2]))</span>
+<span class="sd">                    if x1 &lt; x0:</span>
+<span class="sd">                        x0, x1 = x1, x0</span>
+<span class="sd">                    if 0 &lt;= y0 &lt; ny:</span>
+<span class="sd">                        x_start = max(0, x0 - merge_pad)</span>
+<span class="sd">                        x_end = min(nx, x1 + merge_pad + 1)</span>
+<span class="sd">                        line_mask[y0, x_start:x_end] = True</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">filter_size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;median_filter_size_pix&#39;</span><span class="p">,</span> <span class="mi">31</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">filter_size</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="k">if</span> <span class="n">filter_size</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">filter_size</span> <span class="o">=</span> <span class="mi">3</span>
+        <span class="k">if</span> <span class="n">filter_size</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">filter_size</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">filt_n</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">filter_size</span><span class="p">)</span>
+        <span class="n">tilt</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">crop</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;tilt&#39;</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+        <span class="n">filt_n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">filt_n</span><span class="p">,</span> <span class="n">nx</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">tilt</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">image_rot</span> <span class="o">=</span> <span class="n">ndimage</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span>
+                <span class="n">crop</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">),</span> <span class="n">tilt</span><span class="p">,</span>
+                <span class="n">reshape</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;reflect&#39;</span><span class="p">,</span> <span class="n">cval</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+            <span class="p">)</span>
+            <span class="n">mask_rot</span> <span class="o">=</span> <span class="n">ndimage</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span>
+                <span class="n">line_mask</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">),</span> <span class="n">tilt</span><span class="p">,</span>
+                <span class="n">reshape</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;constant&#39;</span><span class="p">,</span> <span class="n">cval</span><span class="o">=</span><span class="mf">0.0</span>
+            <span class="p">)</span> <span class="o">&gt;</span> <span class="mf">0.5</span>
+
+            <span class="n">image_rot_masked</span> <span class="o">=</span> <span class="n">image_rot</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+            <span class="n">image_rot_masked</span><span class="p">[</span><span class="n">mask_rot</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+            <span class="c1">### &gt;&gt;&gt; VARIANCE MASK ADDED &lt;&lt;&lt;</span>
+            <span class="n">var</span> <span class="o">=</span> <span class="n">crop</span><span class="o">.</span><span class="n">var</span>
+            <span class="n">var_rot</span> <span class="o">=</span> <span class="n">ndimage</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span>
+                <span class="n">var</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">),</span> <span class="n">tilt</span><span class="p">,</span>
+                <span class="n">reshape</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;reflect&#39;</span><span class="p">,</span> <span class="n">cval</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+            <span class="p">)</span>
+            <span class="n">var_mask_rot</span> <span class="o">=</span> <span class="n">var_rot</span> <span class="o">&gt;</span> <span class="p">(</span><span class="mi">10</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmedian</span><span class="p">(</span><span class="n">var_rot</span><span class="p">))</span>
+            <span class="n">image_rot_masked</span><span class="p">[</span><span class="n">var_mask_rot</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+            <span class="c1">### &lt;&lt;&lt; VARIANCE MASK ADDED &lt;&lt;&lt;</span>
+
+
+            <span class="c1"># &gt;&gt;&gt; BEGIN MAD-BASED CONTINUUM QUALITY CHECK &lt;&lt;&lt;</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            mad_rot = ndimage.generic_filter(</span>
+<span class="sd">                image_rot_masked,</span>
+<span class="sd">                lambda w: np.nanmedian(np.abs(w - np.nanmedian(w))),</span>
+<span class="sd">                size=(1, filt_n),</span>
+<span class="sd">                mode=&#39;reflect&#39;</span>
+<span class="sd">            )</span>
+
+<span class="sd">            n_valid_rot = ndimage.generic_filter(</span>
+<span class="sd">                np.isfinite(image_rot_masked).astype(float),</span>
+<span class="sd">                np.nansum,</span>
+<span class="sd">                size=(1, filt_n),</span>
+<span class="sd">                mode=&#39;reflect&#39;</span>
+<span class="sd">            )</span>
+
+<span class="sd">            mad_ref = 45.0</span>
+<span class="sd">            mad_max = 200.0</span>
+<span class="sd">            bad_nvalid = (n_valid_rot &lt; 5)</span>
+<span class="sd">            #bad_mad = (mad_rot &gt; mad_ref)</span>
+<span class="sd">            bad_mad = (mad_rot &gt; mad_ref)</span>
+<span class="sd">            mad_eff = np.clip(mad_rot, mad_ref, mad_max)</span>
+<span class="sd">            scale = (mad_eff / mad_ref) ** 2</span>
+
+<span class="sd">            var_rot[bad_mad] *= scale[bad_mad]</span>
+<span class="sd">            var_rot[bad_nvalid] *= 300.0</span>
+<span class="sd">            var_back = ndimage.rotate(</span>
+<span class="sd">                        var_rot, -tilt,</span>
+<span class="sd">                        reshape=False, order=1, mode=&#39;reflect&#39;, cval=np.nan</span>
+<span class="sd">                    )</span>
+<span class="sd">            crop.var = var_back</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="c1"># &gt;&gt;&gt; END MAD-BASED CONTINUUM QUALITY CHECK &lt;&lt;&lt;</span>
+
+
+            <span class="n">cont_rot</span> <span class="o">=</span> <span class="n">_rolling_nanmedian</span><span class="p">(</span><span class="n">image_rot_masked</span><span class="p">,</span> <span class="n">filt_n</span><span class="p">)</span>
+
+            <span class="c1">#cont_rot = self.robust_local_linear_background(</span>
+            <span class="c1">#    image_rot_masked,</span>
+            <span class="c1">#    mask=mask_rot,</span>
+            <span class="c1">#    window=filt_n</span>
+            <span class="c1">#)</span>
+
+            <span class="n">cont_back</span> <span class="o">=</span> <span class="n">ndimage</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span>
+                <span class="n">cont_rot</span><span class="p">,</span> <span class="o">-</span><span class="n">tilt</span><span class="p">,</span>
+                <span class="n">reshape</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;reflect&#39;</span><span class="p">,</span> <span class="n">cval</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+            <span class="p">)</span>
+            <span class="n">line_mask_back</span> <span class="o">=</span> <span class="n">ndimage</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span>
+                <span class="n">mask_rot</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">),</span> <span class="o">-</span><span class="n">tilt</span><span class="p">,</span>
+                <span class="n">reshape</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;constant&#39;</span><span class="p">,</span> <span class="n">cval</span><span class="o">=</span><span class="mf">0.0</span>
+            <span class="p">)</span> <span class="o">&gt;</span> <span class="mf">0.5</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">image_masked</span> <span class="o">=</span> <span class="n">crop</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+            <span class="n">image_masked</span><span class="p">[</span><span class="n">line_mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+            <span class="c1">### &gt;&gt;&gt; VARIANCE MASK ADDED &lt;&lt;&lt;</span>
+            <span class="n">var</span> <span class="o">=</span> <span class="n">crop</span><span class="o">.</span><span class="n">var</span>
+            <span class="n">var_mask</span> <span class="o">=</span> <span class="n">var</span> <span class="o">&gt;</span> <span class="p">(</span><span class="mi">10</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmedian</span><span class="p">(</span><span class="n">var</span><span class="p">))</span>
+            <span class="n">image_masked</span><span class="p">[</span><span class="n">var_mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+            <span class="c1">### &lt;&lt;&lt; VARIANCE MASK ADDED &lt;&lt;&lt;</span>
+
+            <span class="n">cont_back</span> <span class="o">=</span> <span class="n">_rolling_nanmedian</span><span class="p">(</span><span class="n">image_masked</span><span class="p">,</span> <span class="n">filt_n</span><span class="p">)</span>
+
+            <span class="n">line_mask_back</span> <span class="o">=</span> <span class="n">line_mask</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+        <span class="n">resid</span> <span class="o">=</span> <span class="n">crop</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span> <span class="o">-</span> <span class="n">cont_back</span>
+        <span class="n">bad</span> <span class="o">=</span> <span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">resid</span><span class="p">)</span>
+        <span class="n">resid</span><span class="p">[</span><span class="n">bad</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="n">crop</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">resid</span>
+        <span class="c1">#crop.mask |= line_mask_back</span>
+        <span class="n">crop</span><span class="o">.</span><span class="n">mask</span><span class="p">[</span><span class="n">bad</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+
+<div class="viewcode-block" id="SpecFrame.cutout">
+<a class="viewcode-back" href="../../api/gelsa.specframe.html#gelsa.specframe.SpecFrame.cutout">[docs]</a>
+    <span class="k">def</span> <span class="nf">cutout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">redshift</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">lam_step</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">wavelength_range</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+               <span class="n">select_detector</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">crop_args</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create spectral cutouts (SpecCrop objects) around a sky position.</span>
+
+<span class="sd">        Calculates the trace of the object across the detectors for the given</span>
+<span class="sd">        wavelength range and creates SpecCrop instances for each detector</span>
+<span class="sd">        the trace falls on.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ra (float): Right Ascension of the target center (degrees).</span>
+<span class="sd">            dec (float): Declination of the target center (degrees).</span>
+<span class="sd">            redshift (float, optional): Redshift of the target (used for metadata). Defaults to 0.</span>
+<span class="sd">            lam_step (float, optional): Wavelength step for calculating the trace (Angstroms).</span>
+<span class="sd">                                        Defaults to 20.</span>
+<span class="sd">            wavelength_range (tuple, optional): (min, max) wavelength range for the trace.</span>
+<span class="sd">                                                Defaults to the frame&#39;s sensitivity range.</span>
+<span class="sd">            **crop_args: Additional keyword arguments passed to SpecCrop.crop_trace</span>
+<span class="sd">                         (e.g., padx, pady for padding around the trace).</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dict: A dictionary where keys are detector indices (int) and values</span>
+<span class="sd">                  are the corresponding SpecCrop objects.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: If the target&#39;s trace does not fall on any detector within</span>
+<span class="sd">                        the specified wavelength range.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">wavelength_range</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">wavelength_range</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;wavelength_range&#39;</span><span class="p">]</span>
+        <span class="n">wave_trace</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">intrange</span><span class="p">(</span><span class="o">*</span><span class="n">wavelength_range</span><span class="p">,</span> <span class="n">lam_step</span><span class="p">)</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">wave_trace</span><span class="p">)</span>
+
+        <span class="n">detx</span><span class="p">,</span> <span class="n">dety</span><span class="p">,</span> <span class="n">detid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">radec_to_pixel</span><span class="p">(</span>
+            <span class="n">ra</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">),</span>
+            <span class="n">dec</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">),</span>
+            <span class="n">wave_trace</span>
+        <span class="p">)</span>
+        <span class="n">valid</span> <span class="o">=</span> <span class="n">detid</span> <span class="o">&gt;=</span> <span class="mi">0</span>
+
+        <span class="k">if</span> <span class="n">select_detector</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;selecting detector </span><span class="si">{</span><span class="n">select_detector</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">valid</span> <span class="o">&amp;=</span> <span class="n">detid</span> <span class="o">==</span> <span class="n">select_detector</span>
+
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">valid</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;RA, Dec not on detector within wavelength range </span><span class="si">{</span><span class="n">wavelength_range</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="p">(</span><span class="n">ra</span><span class="p">,</span><span class="w"> </span><span class="n">dec</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">detx</span> <span class="o">=</span> <span class="n">detx</span><span class="p">[</span><span class="n">valid</span><span class="p">]</span>
+        <span class="n">dety</span> <span class="o">=</span> <span class="n">dety</span><span class="p">[</span><span class="n">valid</span><span class="p">]</span>
+        <span class="n">detid</span> <span class="o">=</span> <span class="n">detid</span><span class="p">[</span><span class="n">valid</span><span class="p">]</span>
+        <span class="n">wave_trace</span> <span class="o">=</span> <span class="n">wave_trace</span><span class="p">[</span><span class="n">valid</span><span class="p">]</span>
+
+        <span class="n">pack_list</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="k">for</span> <span class="n">det</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">detid</span><span class="p">):</span>
+            <span class="n">sel</span> <span class="o">=</span> <span class="n">detid</span> <span class="o">==</span> <span class="n">det</span>
+            <span class="n">detx_</span> <span class="o">=</span> <span class="n">detx</span><span class="p">[</span><span class="n">sel</span><span class="p">]</span>
+            <span class="n">dety_</span> <span class="o">=</span> <span class="n">dety</span><span class="p">[</span><span class="n">sel</span><span class="p">]</span>
+            <span class="n">crop</span> <span class="o">=</span> <span class="n">SpecCrop</span><span class="o">.</span><span class="n">crop_trace</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">det</span><span class="p">,</span> <span class="n">detx_</span><span class="p">,</span> <span class="n">dety_</span><span class="p">,</span>
+                                       <span class="n">continuum_subtraction</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_cs</span><span class="p">,</span>
+                                       <span class="o">**</span><span class="n">crop_args</span><span class="p">)</span>
+            <span class="n">crop</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="p">(</span><span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">)</span>
+            <span class="n">crop</span><span class="o">.</span><span class="n">wavelength_trace</span> <span class="o">=</span> <span class="n">wave_trace</span><span class="p">[</span><span class="n">sel</span><span class="p">]</span>
+            <span class="n">crop</span><span class="o">.</span><span class="n">redshift</span> <span class="o">=</span> <span class="n">redshift</span>
+
+            <span class="c1"># if crop.frame.params.get(&#39;apply_median_filter&#39;, False):</span>
+                <span class="c1"># self._subtract_median_continuum(crop, detx_, dety_, wavelength_range)</span>
+
+            <span class="n">pack_list</span><span class="p">[</span><span class="n">det</span><span class="p">]</span> <span class="o">=</span> <span class="n">crop</span>
+
+        <span class="k">return</span> <span class="n">pack_list</span></div>
+
+
+
+<div class="viewcode-block" id="SpecFrame.add_sources">
+<a class="viewcode-back" href="../../api/gelsa.specframe.html#gelsa.specframe.SpecFrame.add_sources">[docs]</a>
+    <span class="k">def</span> <span class="nf">add_sources</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">galaxy_list</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Simulate and add sources to the frame&#39;s internal data arrays.</span>
+
+<span class="sd">        This method is used when the SpecFrame is not loaded from an existing</span>
+<span class="sd">        FITS file but is being used for simulation. It uses SpectralImager</span>
+<span class="sd">        to generate the image of the provided galaxies.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            galaxy_list (list): A list of Galaxy objects to simulate.</span>
+<span class="sd">            **kwargs: Additional keyword arguments passed to</span>
+<span class="sd">                      SpectralImager.make_image.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_var</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_mask</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">S</span> <span class="o">=</span> <span class="n">spec_imager</span><span class="o">.</span><span class="n">SpectralImager</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">images</span><span class="p">,</span> <span class="n">var_images</span> <span class="o">=</span> <span class="n">S</span><span class="o">.</span><span class="n">make_image</span><span class="p">(</span><span class="n">galaxy_list</span><span class="p">,</span> <span class="n">return_var</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">det</span><span class="p">,</span> <span class="n">image</span> <span class="ow">in</span> <span class="n">images</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">det</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">det</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_var</span><span class="p">[</span><span class="n">det</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_mask</span><span class="p">[</span><span class="n">det</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">det</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">[</span><span class="n">det</span><span class="p">]</span> <span class="o">+</span> <span class="n">image</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_var</span><span class="p">[</span><span class="n">det</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_var</span><span class="p">[</span><span class="n">det</span><span class="p">]</span> <span class="o">+</span> <span class="n">var_images</span><span class="p">[</span><span class="n">det</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="SpecFrame.resample_on_wavelength">
+<a class="viewcode-back" href="../../api/gelsa.specframe.html#gelsa.specframe.SpecFrame.resample_on_wavelength">[docs]</a>
+    <span class="k">def</span> <span class="nf">resample_on_wavelength</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Extracts and combines 2D spectra onto a uniform wavelength grid.</span>
+
+<span class="sd">        Creates cutouts around the target RA/Dec using `cutout`, then calls</span>
+<span class="sd">        `resample_on_wavelength` on each `SpecCrop` object. The results from</span>
+<span class="sd">        all detectors are summed.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ra (float): Right Ascension of the target center (degrees).</span>
+<span class="sd">            dec (float): Declination of the target center (degrees).</span>
+<span class="sd">            **args: Additional keyword arguments passed directly to</span>
+<span class="sd">                    `SpecCrop.resample_on_wavelength` (e.g., `wave_range`,</span>
+<span class="sd">                    `wave_step`, `extraction_window`, `ndrops`).</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            tuple:</span>
+<span class="sd">                - im (np.ndarray): The combined, resampled 2D spectrum (flux).</span>
+<span class="sd">                - var (np.ndarray): The combined variance of the resampled spectrum.</span>
+<span class="sd">                - norm (np.ndarray): The combined normalization map (sum of weights).</span>
+<span class="sd">                - pix_bins (tuple): The pixel and wavelength bin edges used for</span>
+<span class="sd">                  resampling, taken from the last processed crop (assumes they</span>
+<span class="sd">                  are consistent).</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: If `cutout` fails to find the target on any detector.</span>
+<span class="sd">            # Add other potential exceptions from SpecCrop.resample_on_wavelength</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">crop</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cutout</span><span class="p">(</span><span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="c1">#print(&quot;Source not on detector&quot;)</span>
+            <span class="k">raise</span>
+
+        <span class="n">im</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">var</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">norm</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">got_extraction</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="k">for</span> <span class="n">det</span> <span class="ow">in</span> <span class="n">crop</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">im_</span><span class="p">,</span> <span class="n">var_</span><span class="p">,</span> <span class="n">norm_</span><span class="p">,</span> <span class="n">pix_bins</span> <span class="o">=</span> <span class="n">crop</span><span class="p">[</span><span class="n">det</span><span class="p">]</span><span class="o">.</span><span class="n">resample_on_wavelength</span><span class="p">(</span>
+                    <span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">)</span>
+            <span class="k">except</span> <span class="n">NoExtraction</span><span class="p">:</span>
+                <span class="k">continue</span>
+
+            <span class="n">got_extraction</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">im</span> <span class="o">=</span> <span class="n">im</span> <span class="o">+</span> <span class="n">im_</span>
+            <span class="n">var</span> <span class="o">=</span> <span class="n">var</span> <span class="o">+</span> <span class="n">var_</span>
+            <span class="n">norm</span> <span class="o">=</span> <span class="n">norm</span> <span class="o">+</span> <span class="n">norm_</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">got_extraction</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NoExtraction</span>
+
+        <span class="k">return</span> <span class="n">im</span><span class="p">,</span> <span class="n">var</span><span class="p">,</span> <span class="n">norm</span><span class="p">,</span> <span class="n">pix_bins</span></div>
+</div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024–2026, Ben Granett and the GELSA contributors.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.22.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

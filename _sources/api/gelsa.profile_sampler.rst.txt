@@ -1,0 +1,14 @@
+gelsa.profile\_sampler
+======================
+
+.. automodule:: gelsa.profile_sampler
+
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      FwhmGaussianSampler
+      ProfileSampler
+      SersicSampler
+   

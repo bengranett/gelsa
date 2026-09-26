@@ -1,0 +1,13 @@
+gelsa.sgs.dmutils
+=================
+
+.. automodule:: gelsa.sgs.dmutils
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      find_location_table
+      load_scienceframe
+   

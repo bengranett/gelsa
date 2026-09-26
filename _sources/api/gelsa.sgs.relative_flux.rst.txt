@@ -1,0 +1,19 @@
+gelsa.sgs.relative\_flux
+========================
+
+.. automodule:: gelsa.sgs.relative_flux
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      get_flux_loss
+      get_flux_loss_fov
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      RelativeFluxCalibration
+   

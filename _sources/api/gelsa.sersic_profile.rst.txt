@@ -1,0 +1,20 @@
+gelsa.sersic\_profile
+=====================
+
+.. automodule:: gelsa.sersic_profile
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      sersic_b
+      sersic_integrated
+      sersic_profile
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      SersicProfile
+   

@@ -1,0 +1,12 @@
+gelsa.decontam
+==============
+
+.. automodule:: gelsa.decontam
+
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Decontamination
+   

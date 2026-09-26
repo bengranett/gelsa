@@ -1,0 +1,12 @@
+gelsa.specframe
+===============
+
+.. automodule:: gelsa.specframe
+
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      SpecFrame
+   

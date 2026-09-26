@@ -1,0 +1,14 @@
+gelsa.elsa.branding
+===================
+
+.. automodule:: gelsa.elsa.branding
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      acknowledgements
+      asset_png
+      header
+   

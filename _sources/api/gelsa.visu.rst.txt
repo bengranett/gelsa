@@ -1,0 +1,22 @@
+gelsa.visu
+==========
+
+.. automodule:: gelsa.visu
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      colorize_image
+      filter_image
+      make_color_image
+      make_image_composite
+      median_filter_image
+      normalize_image
+      plot_detectors_focal_plane
+      plot_detectors_sky
+      rank_transform
+      show
+      trace1d
+   

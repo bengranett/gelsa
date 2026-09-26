@@ -1,0 +1,18 @@
+gelsa.sgs.optical\_model
+========================
+
+.. automodule:: gelsa.sgs.optical_model
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      string_to_array
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      OpticalModel
+   

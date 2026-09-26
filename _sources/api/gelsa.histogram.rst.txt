@@ -1,0 +1,16 @@
+gelsa.histogram
+===============
+
+.. automodule:: gelsa.histogram
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      histogram1d
+      histogram2d
+      histogram2d_accumulate
+      histogram2d_accumulate_mask
+      make_reverse_lookup
+   

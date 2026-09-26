@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>gelsa.photframe &#8212; Gelsa 4.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mycss.css?v=47693ab7" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../../_static/documentation_options.js?v=9f5556dd"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/gelsa/photframe';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="4.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/elsa-color-300.png" class="logo__image only-light" alt="Gelsa 4.0 documentation - Home"/>
+    <img src="../../_static/elsa-color-300.png" class="logo__image only-dark pst-js-only" alt="Gelsa 4.0 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guide/concepts.html">
+    Core concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guide/simulation.html">
+    Simulate spectrograms
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guide/real_data.html">
+    Euclid data on ESA Datalabs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guide/decontamination.html">
+    Decontaminated 1D spectra
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/elsa-euclid/gelsa" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://elsa-euclid.github.io/" title="ELSA" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../_static/elsa-color-icon.png" class="icon-link-image" alt="ELSA"/></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../install.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guide/concepts.html">
+    Core concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guide/simulation.html">
+    Simulate spectrograms
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guide/real_data.html">
+    Euclid data on ESA Datalabs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guide/decontamination.html">
+    Decontaminated 1D spectra
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/elsa-euclid/gelsa" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://elsa-euclid.github.io/" title="ELSA" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../_static/elsa-color-icon.png" class="icon-link-image" alt="ELSA"/></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">gelsa.photframe</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for gelsa.photframe</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">astropy.io</span> <span class="kn">import</span> <span class="n">fits</span>
+<span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">wcs</span>
+
+<span class="kn">from</span> <span class="nn">.sgs</span> <span class="kn">import</span> <span class="n">dmutils</span>
+
+
+<div class="viewcode-block" id="PhotFrame">
+<a class="viewcode-back" href="../../api/gelsa.photframe.html#gelsa.photframe.PhotFrame">[docs]</a>
+<span class="k">class</span> <span class="nc">PhotFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Represents a photometric frame (observation) in the Gelsa simulation.</span>
+
+<span class="sd">    This class handles the parameters, loading, and coordinate transformations</span>
+<span class="sd">    for a specific photometric observation frame (e.g., a NISP imaging exposure).</span>
+<span class="sd">    It manages WCS information, allowing conversion between sky (RA, Dec) and</span>
+<span class="sd">    detector pixel coordinates. It can load existing FITS frames or be used</span>
+<span class="sd">    to define new ones based on pointing and WCS parameters.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_default_params</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;ra&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s1">&#39;dec&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s1">&#39;pa&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s1">&#39;filter&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s1">&#39;pixscale&#39;</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">,</span>
+        <span class="s1">&#39;exptime_sec&#39;</span><span class="p">:</span> <span class="mf">87.</span><span class="p">,</span>
+        <span class="s1">&#39;sigma2_det&#39;</span><span class="p">:</span> <span class="mf">2.33</span><span class="p">,</span>
+        <span class="s1">&#39;sir_layout&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="n">detector_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span>
+                     <span class="mi">12</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span>
+                     <span class="mi">13</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span>
+                     <span class="mi">14</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">44</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialize a PhotFrame object.</span>
+
+<span class="sd">        Sets up default parameters and updates them with any provided keyword</span>
+<span class="sd">        arguments. Initializes internal state.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            **kwargs: Keyword arguments to override default parameters like</span>
+<span class="sd">                      &#39;ra&#39;, &#39;dec&#39;, &#39;pa&#39;, &#39;filter&#39;, &#39;pixscale&#39;, &#39;sir_layout&#39;, etc.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_params</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hdu_loaded</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_setup</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return a string representation of the PhotFrame object.</span>
+
+<span class="sd">        Includes the class name and the current parameter dictionary.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: String representation of the object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&lt;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;params = {&quot;</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">s</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;  &#39;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&#39;: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">,</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;} &gt;&quot;</span>
+        <span class="k">return</span> <span class="n">s</span>
+
+    <span class="k">def</span> <span class="nf">_setup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Internal setup method.</span>
+
+<span class="sd">        Currently empty, but can be used for future initialization logic</span>
+<span class="sd">        common to both new and loaded frames before WCS/data loading.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">_load_wcs_from_json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load WCS parameters for all detectors from a JSON file.</span>
+
+<span class="sd">        Parses a JSON file containing WCS information (CRPIX, CD matrix, etc.)</span>
+<span class="sd">        for each of the 16 detectors and creates astropy.wcs.WCS objects.</span>
+<span class="sd">        Sets the center coordinates based on the frame&#39;s RA, Dec, and PA.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            path (str): Path to the JSON file containing WCS parameters.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;rt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">inp</span><span class="p">:</span>
+            <span class="n">pack_list</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">inp</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_wcs_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">det_i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">16</span><span class="p">):</span>
+            <span class="n">pack</span> <span class="o">=</span> <span class="n">pack_list</span><span class="p">[</span><span class="n">det_i</span><span class="p">]</span>
+            <span class="n">header</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s1">&#39;CTYPE1&#39;</span><span class="p">:</span> <span class="n">pack</span><span class="p">[</span><span class="s1">&#39;CTYPE&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+                <span class="s1">&#39;CTYPE2&#39;</span><span class="p">:</span> <span class="n">pack</span><span class="p">[</span><span class="s1">&#39;CTYPE&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span>
+                <span class="s1">&#39;CRPIX1&#39;</span><span class="p">:</span> <span class="n">pack</span><span class="p">[</span><span class="s1">&#39;CRPIX&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+                <span class="s1">&#39;CRPIX2&#39;</span><span class="p">:</span> <span class="n">pack</span><span class="p">[</span><span class="s1">&#39;CRPIX&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span>
+                <span class="s1">&#39;CD1_1&#39;</span><span class="p">:</span> <span class="n">pack</span><span class="p">[</span><span class="s1">&#39;CD&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+                <span class="s1">&#39;CD1_2&#39;</span><span class="p">:</span> <span class="n">pack</span><span class="p">[</span><span class="s1">&#39;CD&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span>
+                <span class="s1">&#39;CD2_1&#39;</span><span class="p">:</span> <span class="n">pack</span><span class="p">[</span><span class="s1">&#39;CD&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+                <span class="s1">&#39;CD2_2&#39;</span><span class="p">:</span> <span class="n">pack</span><span class="p">[</span><span class="s1">&#39;CD&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span>
+                <span class="s1">&#39;NAXIS1&#39;</span><span class="p">:</span> <span class="n">pack</span><span class="p">[</span><span class="s1">&#39;NAXIS&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+                <span class="s1">&#39;NAXIS2&#39;</span><span class="p">:</span> <span class="n">pack</span><span class="p">[</span><span class="s1">&#39;NAXIS&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span>
+            <span class="p">}</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_wcs_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">wcs</span><span class="o">.</span><span class="n">WCS</span><span class="p">(</span><span class="n">header</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_center</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_set_center</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set the sky center (CRVAL) and rotation (CD matrix) for all WCS objects.</span>
+
+<span class="sd">        Uses the &#39;ra&#39;, &#39;dec&#39;, and &#39;pa&#39; parameters of the PhotFrame instance</span>
+<span class="sd">        to update the CRVAL and apply the rotation defined by the position angle</span>
+<span class="sd">        to the CD matrix of each detector&#39;s WCS.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;pa&#39;</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">wcs_</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wcs_list</span><span class="p">:</span>
+            <span class="n">wcs_</span><span class="o">.</span><span class="n">wcs</span><span class="o">.</span><span class="n">crval</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;ra&#39;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;dec&#39;</span><span class="p">]]</span>
+            <span class="c1"># Rotate by PA...</span>
+            <span class="n">cd</span> <span class="o">=</span> <span class="n">wcs_</span><span class="o">.</span><span class="n">wcs</span><span class="o">.</span><span class="n">cd</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="p">[[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)],</span> <span class="p">[</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)]]</span>
+            <span class="n">wcs_</span><span class="o">.</span><span class="n">wcs</span><span class="o">.</span><span class="n">cd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">cd</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_load_wcs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load WCS information from the headers of the loaded FITS file.</span>
+
+<span class="sd">        Iterates through the science extensions (DET*.SCI) of the loaded HDUList</span>
+<span class="sd">        and creates an astropy.wcs.WCS object for each detector from its header.</span>
+<span class="sd">        Assumes the FITS file follows the expected NISP multi-extension format.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_wcs_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">det_i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">16</span><span class="p">):</span>
+            <span class="n">detector_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">detector_list</span><span class="p">[</span><span class="n">det_i</span><span class="p">]</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">header</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hdul</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;DET</span><span class="si">{</span><span class="n">detector_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">header</span>
+            <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                <span class="k">return</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_wcs_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">wcs</span><span class="o">.</span><span class="n">WCS</span><span class="p">(</span><span class="n">header</span><span class="p">))</span>
+
+<div class="viewcode-block" id="PhotFrame.load_frame">
+<a class="viewcode-back" href="../../api/gelsa.photframe.html#gelsa.photframe.PhotFrame.load_frame">[docs]</a>
+    <span class="k">def</span> <span class="nf">load_frame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">frame_path</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load frame data and metadata from a NISP photometric FITS file.</span>
+
+<span class="sd">        Reads the primary header, extracts basic metadata (RA, Dec, PA, Obs ID, etc.),</span>
+<span class="sd">        and loads the WCS information for all detectors from their respective</span>
+<span class="sd">        extension headers.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            frame_path (str, optional): Path to the FITS science frame file.</span>
+<span class="sd">                                        Can be .gz compressed. Defaults to None.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">frame_path</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.gz&quot;</span><span class="p">):</span>
+            <span class="c1"># check if decompressed file exists</span>
+            <span class="n">path_</span> <span class="o">=</span> <span class="n">frame_path</span><span class="p">[:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path_</span><span class="p">):</span>
+                <span class="n">frame_path</span> <span class="o">=</span> <span class="n">path_</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;found </span><span class="si">{</span><span class="n">frame_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_hdul</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_metadata</span> <span class="o">=</span> <span class="n">dmutils</span><span class="o">.</span><span class="n">load_scienceframe</span><span class="p">(</span><span class="n">frame_path</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_header</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hdul</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">header</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;frame_path&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">frame_path</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;DATE-OBS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="p">[</span><span class="s1">&#39;DATE-OBS&#39;</span><span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;ra&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="p">[</span><span class="s1">&#39;RA&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;dec&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="p">[</span><span class="s1">&#39;DEC&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;pa&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="p">[</span><span class="s1">&#39;PA&#39;</span><span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;PTGID&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="p">[</span><span class="s1">&#39;PTGID&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;OBS_ID&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="p">[</span><span class="s1">&#39;OBS_ID&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;DITHOBS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_header</span><span class="p">[</span><span class="s1">&#39;DITHOBS&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_setup</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_load_wcs</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hdu_loaded</span> <span class="o">=</span> <span class="kc">True</span></div>
+
+
+<div class="viewcode-block" id="PhotFrame.rotate_coord_nir_to_sir">
+<a class="viewcode-back" href="../../api/gelsa.photframe.html#gelsa.photframe.PhotFrame.rotate_coord_nir_to_sir">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">rotate_coord_nir_to_sir</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">det</span><span class="p">,</span> <span class="n">inverse</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Rotate pixel coordinates between NIR default layout and SIR layout.</span>
+
+<span class="sd">        The SIR pipeline often uses a different detector orientation convention</span>
+<span class="sd">        than the raw NIR data. This function applies the necessary rotation</span>
+<span class="sd">        and flipping based on the detector index.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            x (np.ndarray): Input x pixel coordinates.</span>
+<span class="sd">            y (np.ndarray): Input y pixel coordinates.</span>
+<span class="sd">            det (np.ndarray): Detector indices (0-15) corresponding to coordinates.</span>
+<span class="sd">            inverse (bool, optional): If True, rotate from SIR back to NIR.</span>
+<span class="sd">                                      Defaults to False (NIR to SIR).</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            tuple: (x_out, y_out) rotated pixel coordinates.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">det</span> <span class="o">=</span> <span class="n">det</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+        <span class="n">flip</span> <span class="o">=</span> <span class="p">(</span><span class="n">det</span> <span class="o">%</span> <span class="mi">4</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span>
+        <span class="n">x_out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;d&#39;</span><span class="p">)</span>
+        <span class="n">y_out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;d&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">inverse</span><span class="p">:</span>
+            <span class="n">x_out</span><span class="p">[</span><span class="n">flip</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">flip</span><span class="p">]</span>
+            <span class="n">y_out</span><span class="p">[</span><span class="n">flip</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2040</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="n">flip</span><span class="p">]</span>
+            <span class="n">x_out</span><span class="p">[</span><span class="o">~</span><span class="n">flip</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2040</span> <span class="o">-</span> <span class="n">y</span><span class="p">[</span><span class="o">~</span><span class="n">flip</span><span class="p">]</span>
+            <span class="n">y_out</span><span class="p">[</span><span class="o">~</span><span class="n">flip</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="o">~</span><span class="n">flip</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">x_out</span><span class="p">[</span><span class="n">flip</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2040</span> <span class="o">-</span> <span class="n">y</span><span class="p">[</span><span class="n">flip</span><span class="p">]</span>
+            <span class="n">y_out</span><span class="p">[</span><span class="n">flip</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">flip</span><span class="p">]</span>
+            <span class="n">x_out</span><span class="p">[</span><span class="o">~</span><span class="n">flip</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="o">~</span><span class="n">flip</span><span class="p">]</span>
+            <span class="n">y_out</span><span class="p">[</span><span class="o">~</span><span class="n">flip</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2040</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="o">~</span><span class="n">flip</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">x_out</span><span class="p">,</span> <span class="n">y_out</span></div>
+
+
+<div class="viewcode-block" id="PhotFrame.rotate_image_nir_to_sir">
+<a class="viewcode-back" href="../../api/gelsa.photframe.html#gelsa.photframe.PhotFrame.rotate_image_nir_to_sir">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">rotate_image_nir_to_sir</span><span class="p">(</span><span class="n">det</span><span class="p">,</span> <span class="n">im</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Rotate a detector image from NIR default layout to SIR layout.</span>
+
+<span class="sd">        Applies the appropriate 90-degree rotation based on the detector index</span>
+<span class="sd">        to match the SIR pipeline&#39;s orientation convention.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            det_index (int): Detector index (0-15).</span>
+<span class="sd">            im (np.ndarray): The 2D image array for the detector.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            np.ndarray: The rotated image array.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">flip</span> <span class="o">=</span> <span class="p">(</span><span class="n">det</span> <span class="o">%</span> <span class="mi">4</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">flip</span><span class="p">:</span>
+            <span class="c1"># Rotate data of the upper rows of detectors</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">rot90</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">rot90</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></div>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">hdul</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Access the FITS HDUList object for the frame.</span>
+
+<span class="sd">        Loads the FITS file on first access if not already loaded.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            astropy.io.fits.HDUList: The HDUList object.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            AttributeError: If the frame was not initialized with a file path.</span>
+<span class="sd">            FileNotFoundError: If the FITS file specified by &#39;frame_path&#39; does not exist.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_loaded_hdu</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hdul</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_hdul</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fits_path</span><span class="p">,</span> <span class="n">decompress_in_memory</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hdu_loaded</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hdul</span>
+
+<div class="viewcode-block" id="PhotFrame.close">
+<a class="viewcode-back" href="../../api/gelsa.photframe.html#gelsa.photframe.PhotFrame.close">[docs]</a>
+    <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Close the associated FITS file handle, if it was loaded.</span>
+
+<span class="sd">        Deletes internal references to the HDUList and header.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">hdu_loaded</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_hdul</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">hdu_loaded</span> <span class="o">=</span> <span class="kc">False</span></div>
+
+
+<div class="viewcode-block" id="PhotFrame.get_detector">
+<a class="viewcode-back" href="../../api/gelsa.photframe.html#gelsa.photframe.PhotFrame.get_detector">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_detector</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">detector_index</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the pixel data arrays (flux, RMS, DQ) for a specific detector.</span>
+
+<span class="sd">        Retrieves the data from the corresponding FITS extensions. Applies</span>
+<span class="sd">        rotation to match the SIR layout if `params[&#39;sir_layout&#39;]` is True.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            detector_index (int): NISP detector index (0-15).</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            tuple: (flux, rms, dq)</span>
+<span class="sd">                   flux (ndarray): Science image data (e.g., counts or flux).</span>
+<span class="sd">                   rms (ndarray): RMS noise map.</span>
+<span class="sd">                   dq (ndarray): Data quality mask (0=good).</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            IndexError: If detector_index is out of range (0-15).</span>
+<span class="sd">            KeyError: If the required FITS extensions (e.g., DET*.SCI) are not found.</span>
+<span class="sd">            AttributeError: If the FITS file has not been loaded.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">det_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">detector_list</span><span class="p">[</span><span class="n">detector_index</span><span class="p">]</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">header</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hdul</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;DET</span><span class="si">{</span><span class="n">det_name</span><span class="si">}</span><span class="s2">.SCI&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">header</span>
+            <span class="n">flux</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hdul</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;DET</span><span class="si">{</span><span class="n">det_name</span><span class="si">}</span><span class="s2">.SCI&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+            <span class="n">rms</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hdul</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;DET</span><span class="si">{</span><span class="n">det_name</span><span class="si">}</span><span class="s2">.RMS&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+            <span class="n">dq</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hdul</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;DET</span><span class="si">{</span><span class="n">det_name</span><span class="si">}</span><span class="s2">.DQ&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="n">header</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hdul</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;PERSIS.IMG.DET</span><span class="si">{</span><span class="n">det_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">header</span>
+            <span class="n">flux</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_hdul</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;PERSIS.IMG.DET</span><span class="si">{</span><span class="n">det_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+            <span class="n">rms</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">dq</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_wcs</span> <span class="o">=</span> <span class="n">wcs</span><span class="o">.</span><span class="n">WCS</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;sir_layout&#39;</span><span class="p">]:</span>
+            <span class="n">flux</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rotate_image_nir_to_sir</span><span class="p">(</span><span class="n">detector_index</span><span class="p">,</span> <span class="n">flux</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">rms</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">rms</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rotate_image_nir_to_sir</span><span class="p">(</span><span class="n">detector_index</span><span class="p">,</span> <span class="n">rms</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">dq</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">dq</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rotate_image_nir_to_sir</span><span class="p">(</span><span class="n">detector_index</span><span class="p">,</span> <span class="n">dq</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">rms</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">flux</span>
+
+        <span class="k">return</span> <span class="n">flux</span><span class="p">,</span> <span class="n">rms</span><span class="p">,</span> <span class="n">dq</span></div>
+
+
+<div class="viewcode-block" id="PhotFrame.radec_to_pixel">
+<a class="viewcode-back" href="../../api/gelsa.photframe.html#gelsa.photframe.PhotFrame.radec_to_pixel">[docs]</a>
+    <span class="k">def</span> <span class="nf">radec_to_pixel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute detector pixel coordinates (x, y, det_index) from RA, Dec.</span>
+
+<span class="sd">        Iterates through the WCS of each detector to find which detector(s)</span>
+<span class="sd">        contain the given sky coordinates. Applies rotation to SIR layout</span>
+<span class="sd">        if `params[&#39;sir_layout&#39;]` is True.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ra (float or np.ndarray): Sky position RA in degrees.</span>
+<span class="sd">            dec (float or np.ndarray): Sky position Dec in degrees.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            tuple: (x, y, detector_index)</span>
+<span class="sd">                   x (float or ndarray): Pixel x-coordinate(s). -1 if off all detectors.</span>
+<span class="sd">                   y (float or ndarray): Pixel y-coordinate(s). -1 if off all detectors.</span>
+<span class="sd">                   detector_index (int or ndarray): Detector index (0-15). -1 if off all detectors.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            AttributeError: If WCS list (`_wcs_list`) has not been loaded.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">scalar</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ndim</span><span class="p">(</span><span class="n">ra</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+        <span class="n">ra</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">ra</span><span class="p">)</span>
+        <span class="n">dec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">dec</span><span class="p">)</span>
+
+        <span class="n">x_out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ra</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;d&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="n">y_out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ra</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;d&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="n">det_out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ra</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">det_i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">16</span><span class="p">):</span>
+            <span class="n">wcs_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wcs_list</span><span class="p">[</span><span class="n">det_i</span><span class="p">]</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">wcs_</span><span class="o">.</span><span class="n">wcs_world2pix</span><span class="p">(</span><span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">on_detector</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">y</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">2040</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">y</span> <span class="o">&lt;</span> <span class="mi">2040</span><span class="p">)</span>
+            <span class="n">x_out</span><span class="p">[</span><span class="n">on_detector</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">on_detector</span><span class="p">]</span>
+            <span class="n">y_out</span><span class="p">[</span><span class="n">on_detector</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">on_detector</span><span class="p">]</span>
+            <span class="n">det_out</span><span class="p">[</span><span class="n">on_detector</span><span class="p">]</span> <span class="o">=</span> <span class="n">det_i</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;sir_layout&#39;</span><span class="p">]:</span>
+                <span class="n">x_out</span><span class="p">[</span><span class="n">on_detector</span><span class="p">],</span> <span class="n">y_out</span><span class="p">[</span><span class="n">on_detector</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rotate_coord_nir_to_sir</span><span class="p">(</span>
+                    <span class="n">x_out</span><span class="p">[</span><span class="n">on_detector</span><span class="p">],</span> <span class="n">y_out</span><span class="p">[</span><span class="n">on_detector</span><span class="p">],</span> <span class="n">det_i</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">scalar</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">x_out</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y_out</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">det_out</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">x_out</span><span class="p">,</span> <span class="n">y_out</span><span class="p">,</span> <span class="n">det_out</span></div>
+
+
+<div class="viewcode-block" id="PhotFrame.pixel_to_radec">
+<a class="viewcode-back" href="../../api/gelsa.photframe.html#gelsa.photframe.PhotFrame.pixel_to_radec">[docs]</a>
+    <span class="k">def</span> <span class="nf">pixel_to_radec</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">det</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute sky position (RA, Dec) from detector pixel coordinates.</span>
+
+<span class="sd">        Uses the WCS object corresponding to the given detector index (`det`).</span>
+<span class="sd">        Applies inverse rotation from SIR layout if `params[&#39;sir_layout&#39;]` is True.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            x (float or np.ndarray): Detector pixel x-coordinate(s).</span>
+<span class="sd">            y (float or np.ndarray): Detector pixel y-coordinate(s).</span>
+<span class="sd">            det (int or np.ndarray): NISP detector index/indices (0-15).</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            tuple: (RA, Dec)</span>
+<span class="sd">                   RA (float or ndarray): Right Ascension coordinate(s) in degrees. NaN if input pixel is off-detector.</span>
+<span class="sd">                   Dec (float or ndarray): Declination coordinate(s) in degrees. NaN if input pixel is off-detector.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            AttributeError: If WCS list (`_wcs_list`) has not been loaded.</span>
+<span class="sd">            IndexError: If any value in `det` is out of range (0-15).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">scalar</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ndim</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+        <span class="n">det</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">*</span><span class="n">det</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;sir_layout&#39;</span><span class="p">]:</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rotate_coord_nir_to_sir</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">det</span><span class="p">,</span> <span class="n">inverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="n">ra_out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;d&#39;</span><span class="p">)</span>
+        <span class="n">dec_out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;d&#39;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">det_i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">det</span><span class="p">):</span>
+            <span class="n">sel</span> <span class="o">=</span> <span class="n">det</span> <span class="o">==</span> <span class="n">det_i</span>
+            <span class="n">wcs_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wcs_list</span><span class="p">[</span><span class="n">det_i</span><span class="p">]</span>
+            <span class="n">ra</span><span class="p">,</span> <span class="n">dec</span> <span class="o">=</span> <span class="n">wcs_</span><span class="o">.</span><span class="n">wcs_pix2world</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">sel</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">sel</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">ra_out</span><span class="p">[</span><span class="n">sel</span><span class="p">]</span> <span class="o">=</span> <span class="n">ra</span>
+            <span class="n">dec_out</span><span class="p">[</span><span class="n">sel</span><span class="p">]</span> <span class="o">=</span> <span class="n">dec</span>
+        <span class="k">if</span> <span class="n">scalar</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">ra_out</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">dec_out</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">ra_out</span><span class="p">,</span> <span class="n">dec_out</span></div>
+</div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024–2026, Ben Granett and the GELSA contributors.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.22.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+gelsa.overlaps
+==============
+
+.. automodule:: gelsa.overlaps
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      check_overlap
+      check_segment_overlap
+      get_overlap_galaxies
+      get_overlap_galaxies_
+   

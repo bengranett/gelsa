@@ -1,0 +1,12 @@
+gelsa.spec\_imager
+==================
+
+.. automodule:: gelsa.spec_imager
+
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      SpectralImager
+   

@@ -1,0 +1,23 @@
+gelsa.esa.line\_map\_studio
+===========================
+
+.. automodule:: gelsa.esa.line_map_studio
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      compute_continuum_rgb
+      make_line_map_studio
+      number
+      read_targets
+      trace_sweep
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      LineMapStudio
+      Quiet
+   

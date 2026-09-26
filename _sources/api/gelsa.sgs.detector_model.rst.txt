@@ -1,0 +1,18 @@
+gelsa.sgs.detector\_model
+=========================
+
+.. automodule:: gelsa.sgs.detector_model
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      fast_inside_poly
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      DetectorModel
+   

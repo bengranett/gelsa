@@ -1,0 +1,20 @@
+gelsa.sgs.psf\_model
+====================
+
+.. automodule:: gelsa.sgs.psf_model
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      interpolator
+      sample_psf
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      DefaultPSFModel
+      PSFModel
+   

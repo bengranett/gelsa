@@ -1,0 +1,23 @@
+gelsa.plot\_utils
+=================
+
+.. automodule:: gelsa.plot_utils
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      load_catalog
+      load_catalog_list
+      load_scienceframe
+      plot_catalogs
+      plot_footprint
+      show_image
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      SkyBin
+   

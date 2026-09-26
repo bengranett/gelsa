@@ -1,0 +1,18 @@
+gelsa.esa.azulero\_gui
+======================
+
+.. automodule:: gelsa.esa.azulero_gui
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      make_azulero_gui
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      AzuleroGUI
+   

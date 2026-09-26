@@ -1,0 +1,14 @@
+gelsa.sgs.poly
+==============
+
+.. automodule:: gelsa.sgs.poly
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      fast_cheb_coeffs_kernel
+      fast_cheb_eval
+      fast_polyval2d
+   

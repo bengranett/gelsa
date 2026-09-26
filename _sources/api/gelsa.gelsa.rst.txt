@@ -1,0 +1,12 @@
+gelsa.gelsa
+===========
+
+.. automodule:: gelsa.gelsa
+
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Gelsa
+   

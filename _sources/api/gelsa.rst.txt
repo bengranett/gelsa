@@ -1,0 +1,40 @@
+﻿gelsa
+=====
+
+.. automodule:: gelsa
+
+   
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   analysis
+   colorize
+   consts
+   continuum_subtraction_base
+   decontam
+   decontam_utils
+   elsa
+   esa
+   galaxy
+   galaxy_profiles
+   gelsa
+   histogram
+   optimize
+   overlaps
+   photframe
+   plot_utils
+   profile_sampler
+   sample_dist
+   sersic_profile
+   sgs
+   spec_crop
+   spec_imager
+   specframe
+   utils
+   version
+   visu
+   wcs_interpolator
+   zero_order_mask

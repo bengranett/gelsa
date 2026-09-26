@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>gelsa.specframe &#8212; Gelsa 4.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/mycss.css?v=47693ab7" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../_static/documentation_options.js?v=9f5556dd"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/gelsa.specframe';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="gelsa.utils" href="gelsa.utils.html" />
+    <link rel="prev" title="gelsa.spec_imager" href="gelsa.spec_imager.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="4.0" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/elsa-color-300.png" class="logo__image only-light" alt="Gelsa 4.0 documentation - Home"/>
+    <img src="../_static/elsa-color-300.png" class="logo__image only-dark pst-js-only" alt="Gelsa 4.0 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../install.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guide/concepts.html">
+    Core concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guide/simulation.html">
+    Simulate spectrograms
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guide/real_data.html">
+    Euclid data on ESA Datalabs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guide/decontamination.html">
+    Decontaminated 1D spectra
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../api.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/elsa-euclid/gelsa" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://elsa-euclid.github.io/" title="ELSA" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../_static/elsa-color-icon.png" class="icon-link-image" alt="ELSA"/></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../install.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guide/concepts.html">
+    Core concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guide/simulation.html">
+    Simulate spectrograms
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guide/real_data.html">
+    Euclid data on ESA Datalabs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guide/decontamination.html">
+    Decontaminated 1D spectra
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../api.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/elsa-euclid/gelsa" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://elsa-euclid.github.io/" title="ELSA" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../_static/elsa-color-icon.png" class="icon-link-image" alt="ELSA"/></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="gelsa.html">gelsa</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gelsa.analysis.html">gelsa.analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.colorize.html">gelsa.colorize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.consts.html">gelsa.consts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.continuum_subtraction_base.html">gelsa.continuum_subtraction_base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.decontam.html">gelsa.decontam</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.decontam_utils.html">gelsa.decontam_utils</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="gelsa.elsa.html">gelsa.elsa</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="gelsa.elsa.branding.html">gelsa.elsa.branding</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="gelsa.esa.html">gelsa.esa</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="gelsa.esa.azulero_gui.html">gelsa.esa.azulero_gui</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gelsa.esa.datalabs_paths.html">gelsa.esa.datalabs_paths</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gelsa.esa.euclid_archive.html">gelsa.esa.euclid_archive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gelsa.esa.line_map_studio.html">gelsa.esa.line_map_studio</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.galaxy.html">gelsa.galaxy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.galaxy_profiles.html">gelsa.galaxy_profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.gelsa.html">gelsa.gelsa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.histogram.html">gelsa.histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.optimize.html">gelsa.optimize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.overlaps.html">gelsa.overlaps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.photframe.html">gelsa.photframe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.plot_utils.html">gelsa.plot_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.profile_sampler.html">gelsa.profile_sampler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.sample_dist.html">gelsa.sample_dist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.sersic_profile.html">gelsa.sersic_profile</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="gelsa.sgs.html">gelsa.sgs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="gelsa.sgs.detector_model.html">gelsa.sgs.detector_model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gelsa.sgs.displacement_model.html">gelsa.sgs.displacement_model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gelsa.sgs.dmutils.html">gelsa.sgs.dmutils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gelsa.sgs.frame_coordinates.html">gelsa.sgs.frame_coordinates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gelsa.sgs.optical_model.html">gelsa.sgs.optical_model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gelsa.sgs.poly.html">gelsa.sgs.poly</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gelsa.sgs.psf_model.html">gelsa.sgs.psf_model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gelsa.sgs.relative_flux.html">gelsa.sgs.relative_flux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gelsa.sgs.relative_flux_fastinterp.html">gelsa.sgs.relative_flux_fastinterp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gelsa.sgs.sensitivity_model.html">gelsa.sgs.sensitivity_model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gelsa.sgs.tan_projection.html">gelsa.sgs.tan_projection</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.spec_crop.html">gelsa.spec_crop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.spec_imager.html">gelsa.spec_imager</a></li>
+<li class="toctree-l2 current active"><a aria-current="page" class="current reference internal" href="#">gelsa.specframe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.utils.html">gelsa.utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.version.html">gelsa.version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.visu.html">gelsa.visu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.wcs_interpolator.html">gelsa.wcs_interpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.zero_order_mask.html">gelsa.zero_order_mask</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../api.html" class="nav-link">API reference</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="gelsa.html" class="nav-link">gelsa</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">gelsa.specframe</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-gelsa.specframe">
+<span id="gelsa-specframe"></span><h1>gelsa.specframe<a class="headerlink" href="#module-gelsa.specframe" title="Link to this heading">#</a></h1>
+<p class="rubric">Classes</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gelsa.specframe.SpecFrame" title="gelsa.specframe.SpecFrame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SpecFrame</span></code></a>([continuum_subtraction])</p></td>
+<td><p>Represents a spectral frame (observation) in the Gelsa simulation.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="gelsa.specframe.SpecFrame">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gelsa.specframe.</span></span><span class="sig-name descname"><span class="pre">SpecFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">continuum_subtraction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gelsa/specframe.html#SpecFrame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gelsa.specframe.SpecFrame" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Represents a spectral frame (observation) in the Gelsa simulation.</p>
+<p>This class handles the parameters, loading, and coordinate transformations
+for a specific spectral observation frame (e.g., a NISP slitless
+spectroscopy exposure). It interfaces with various calibration models
+(detector, optical, dispersion, sensitivity, PSF) to provide accurate
+coordinate conversions and flux calculations. It can load existing
+FITS frames or be used to define and simulate new ones.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="gelsa.specframe.SpecFrame.load_frame">
+<span class="sig-name descname"><span class="pre">load_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loctable_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">persistence_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gelsa/specframe.html#SpecFrame.load_frame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gelsa.specframe.SpecFrame.load_frame" title="Link to this definition">#</a></dt>
+<dd><p>Load frame data and metadata from a FITS file.</p>
+<p>Reads the primary header and potentially updates pointing information
+(RA, DEC, PA) either from specific SIR headers or by using a
+location table if provided or found automatically.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>frame_path</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><em>optional</em>) – Path to the FITS science frame file.
+Can be .gz compressed. Defaults to None.</p></li>
+<li><p><strong>loctable_path</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><em>optional</em>) – Path to the corresponding location
+table FITS file. If None, attempts
+to find it automatically based on
+the science frame path. Defaults to None.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="gelsa.specframe.SpecFrame.hdul">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">hdul</span></span><a class="headerlink" href="#gelsa.specframe.SpecFrame.hdul" title="Link to this definition">#</a></dt>
+<dd><p>Access the FITS HDUList object for the frame.</p>
+<p>Loads the FITS file on first access if not already loaded.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The HDUList object.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.astropy.org/en/stable/io/fits/api/hdulists.html#astropy.io.fits.HDUList" title="(in Astropy v8.0)">astropy.io.fits.HDUList</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gelsa.specframe.SpecFrame.close_frame">
+<span class="sig-name descname"><span class="pre">close_frame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gelsa/specframe.html#SpecFrame.close_frame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gelsa.specframe.SpecFrame.close_frame" title="Link to this definition">#</a></dt>
+<dd><p>Close the associated FITS file handle.</p>
+<p>Deletes internal references to the HDUList and header. Closing a frame
+that is already closed does nothing.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gelsa.specframe.SpecFrame.set_detector_model">
+<span class="sig-name descname"><span class="pre">set_detector_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">detector_model</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gelsa/specframe.html#SpecFrame.set_detector_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gelsa.specframe.SpecFrame.set_detector_model" title="Link to this definition">#</a></dt>
+<dd><p>Set the detector model for coordinate transformations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>detector_model</strong> (<em>detector_model.DetectorModel</em>) – The detector model instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gelsa.specframe.SpecFrame.set_optical_model">
+<span class="sig-name descname"><span class="pre">set_optical_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">optical_model</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gelsa/specframe.html#SpecFrame.set_optical_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gelsa.specframe.SpecFrame.set_optical_model" title="Link to this definition">#</a></dt>
+<dd><p>Set the optical model based on the current grism and tilt.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>optical_model</strong> (<em>optical_model.OpticalModel</em>) – The optical model instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gelsa.specframe.SpecFrame.set_dispersion_model">
+<span class="sig-name descname"><span class="pre">set_dispersion_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dispersion_model</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gelsa/specframe.html#SpecFrame.set_dispersion_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gelsa.specframe.SpecFrame.set_dispersion_model" title="Link to this definition">#</a></dt>
+<dd><p>Set the dispersion models (IDS and CRV) based on grism and tilt.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dispersion_model</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – A dictionary containing ‘ids’ and ‘crv’
+DisplacementModel instances.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gelsa.specframe.SpecFrame.set_sensitivity">
+<span class="sig-name descname"><span class="pre">set_sensitivity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sensitivity_model</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gelsa/specframe.html#SpecFrame.set_sensitivity"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gelsa.specframe.SpecFrame.set_sensitivity" title="Link to this definition">#</a></dt>
+<dd><p>Set the sensitivity model and update the frame’s wavelength range.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sensitivity_model</strong> (<em>sensitivity_model.SensitivityModel</em>) – The sensitivity
+model instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gelsa.specframe.SpecFrame.set_relative_flux_model">
+<span class="sig-name descname"><span class="pre">set_relative_flux_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">relative_flux_model</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gelsa/specframe.html#SpecFrame.set_relative_flux_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gelsa.specframe.SpecFrame.set_relative_flux_model" title="Link to this definition">#</a></dt>
+<dd><p>Set the relative flux loss calibration model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>relative_flux_model</strong> (<em>relative_flux.RelativeFluxCalibration</em><em> or </em><em>None</em>) – The relative flux model instance, or None if not used.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gelsa.specframe.SpecFrame.set_psf_model">
+<span class="sig-name descname"><span class="pre">set_psf_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">psf_model</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gelsa/specframe.html#SpecFrame.set_psf_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gelsa.specframe.SpecFrame.set_psf_model" title="Link to this definition">#</a></dt>
+<dd><p>Set the Point Spread Function (PSF) model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>psf_model</strong> (<em>psf_model.PSFModel</em><em> or </em><em>psf_model.DefaultPSFModel</em><em> or </em><em>None</em>) – The PSF model instance, or None if not used.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gelsa.specframe.SpecFrame.set_zero_order_mask">
+<span class="sig-name descname"><span class="pre">set_zero_order_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zero_order_mask</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gelsa/specframe.html#SpecFrame.set_zero_order_mask"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gelsa.specframe.SpecFrame.set_zero_order_mask" title="Link to this definition">#</a></dt>
+<dd><p>Set and apply the zero-order contamination mask.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>zero_order_mask</strong> (<em>zero_order_mask.ZeroOrderMask</em><em> or </em><em>None</em>) – The zero-order mask instance, or None if not used.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="gelsa.specframe.SpecFrame.detector_shape">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">detector_shape</span></span><a class="headerlink" href="#gelsa.specframe.SpecFrame.detector_shape" title="Link to this definition">#</a></dt>
+<dd><p>Return detector size in pixels (ny, nx).</p>
+<p>Note the order (ny, nx) consistent with numpy array indexing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(height, width) in pixels.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#tuple" title="(in Python v3.14)">tuple</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gelsa.specframe.SpecFrame.arcsec_to_pixel">
+<span class="sig-name descname"><span class="pre">arcsec_to_pixel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_arcsec</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gelsa/specframe.html#SpecFrame.arcsec_to_pixel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gelsa.specframe.SpecFrame.arcsec_to_pixel" title="Link to this definition">#</a></dt>
+<dd><p>Convert units from arsec to pixels</p>
+<p>x_pix = x_arcsec / pixscale
+with pixscale in arcsec/pixel</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gelsa.specframe.SpecFrame.radec_to_pixel_">
+<span class="sig-name descname"><span class="pre">radec_to_pixel_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ra</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dispersion_order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gelsa/specframe.html#SpecFrame.radec_to_pixel_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gelsa.specframe.SpecFrame.radec_to_pixel_" title="Link to this definition">#</a></dt>
+<dd><p>Compute detector pixel coordinates from RA, Dec sky position and wavelength.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ra</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><em>numpy.ndarray</em></a>) – Sky position RA in degrees.</p></li>
+<li><p><strong>dec</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><em>numpy.ndarray</em></a>) – Sky position Dec in degrees.</p></li>
+<li><p><strong>wavelength</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><em>numpy.ndarray</em></a>) – Wavelength in angstrom.</p></li>
+<li><p><strong>dispersion_order</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – Dispersion order (0 or 1). Defaults to 1.</p></li>
+<li><p><strong>**kwargs</strong> – Additional arguments passed to framecoord.radec_to_pixel.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>(x, y, detector_index)</dt><dd><p>x (float or ndarray): Pixel x-coordinate(s).
+y (float or ndarray): Pixel y-coordinate(s).
+detector_index (int or ndarray): Detector index/indices (0-15), -1 if off detector.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#tuple" title="(in Python v3.14)">tuple</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gelsa.specframe.SpecFrame.radec_to_pixel">
+<span class="sig-name descname"><span class="pre">radec_to_pixel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ra</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dispersion_order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gelsa/specframe.html#SpecFrame.radec_to_pixel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gelsa.specframe.SpecFrame.radec_to_pixel" title="Link to this definition">#</a></dt>
+<dd><p>Compute detector pixel coordinates from RA, Dec sky position and wavelength.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ra</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><em>numpy.ndarray</em></a>) – Sky position RA in degrees.</p></li>
+<li><p><strong>dec</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><em>numpy.ndarray</em></a>) – Sky position Dec in degrees.</p></li>
+<li><p><strong>wavelength</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><em>numpy.ndarray</em></a>) – Wavelength in angstrom.</p></li>
+<li><p><strong>dispersion_order</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – Dispersion order (0 or 1). Defaults to 1.</p></li>
+<li><p><strong>**kwargs</strong> – Additional arguments passed to framecoord.radec_to_pixel.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>(x, y, detector_index)</dt><dd><p>x (float or ndarray): Pixel x-coordinate(s).
+y (float or ndarray): Pixel y-coordinate(s).
+detector_index (int or ndarray): Detector index/indices (0-15), -1 if off detector.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#tuple" title="(in Python v3.14)">tuple</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gelsa.specframe.SpecFrame.radec_to_fov">
+<span class="sig-name descname"><span class="pre">radec_to_fov</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ra</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dispersion_order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gelsa/specframe.html#SpecFrame.radec_to_fov"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gelsa.specframe.SpecFrame.radec_to_fov" title="Link to this definition">#</a></dt>
+<dd><p>Compute detector pixel coordinates from RA, Dec sky position and wavelength.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ra</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><em>numpy.ndarray</em></a>) – Sky position RA in degrees.</p></li>
+<li><p><strong>dec</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><em>numpy.ndarray</em></a>) – Sky position Dec in degrees.</p></li>
+<li><p><strong>wavelength</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><em>numpy.ndarray</em></a>) – Wavelength in angstrom.</p></li>
+<li><p><strong>dispersion_order</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – Dispersion order (0 or 1). Defaults to 1.</p></li>
+<li><p><strong>**kwargs</strong> – Additional arguments passed to framecoord.radec_to_pixel.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>(x, y, detector_index)</dt><dd><p>x (float or ndarray): Pixel x-coordinate(s).
+y (float or ndarray): Pixel y-coordinate(s).
+detector_index (int or ndarray): Detector index/indices (0-15), -1 if off detector.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#tuple" title="(in Python v3.14)">tuple</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gelsa.specframe.SpecFrame.fov_to_pixel">
+<span class="sig-name descname"><span class="pre">fov_to_pixel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xfov</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yfov</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gelsa/specframe.html#SpecFrame.fov_to_pixel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gelsa.specframe.SpecFrame.fov_to_pixel" title="Link to this definition">#</a></dt>
+<dd><p>Compute detector pixel coordinates from RA, Dec sky position and wavelength.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ra</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><em>numpy.ndarray</em></a>) – Sky position RA in degrees.</p></li>
+<li><p><strong>dec</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><em>numpy.ndarray</em></a>) – Sky position Dec in degrees.</p></li>
+<li><p><strong>wavelength</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><em>numpy.ndarray</em></a>) – Wavelength in angstrom.</p></li>
+<li><p><strong>dispersion_order</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – Dispersion order (0 or 1). Defaults to 1.</p></li>
+<li><p><strong>**kwargs</strong> – Additional arguments passed to framecoord.radec_to_pixel.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>(x, y, detector_index)</dt><dd><p>x (float or ndarray): Pixel x-coordinate(s).
+y (float or ndarray): Pixel y-coordinate(s).
+detector_index (int or ndarray): Detector index/indices (0-15), -1 if off detector.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#tuple" title="(in Python v3.14)">tuple</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gelsa.specframe.SpecFrame.pixel_to_radec">
+<span class="sig-name descname"><span class="pre">pixel_to_radec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">det</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dispersion_order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gelsa/specframe.html#SpecFrame.pixel_to_radec"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gelsa.specframe.SpecFrame.pixel_to_radec" title="Link to this definition">#</a></dt>
+<dd><p>Compute sky position RA, Dec from detector pixel coordinates and wavelength.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><em>numpy.ndarray</em></a>) – Detector pixel x-coordinate(s).</p></li>
+<li><p><strong>y</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><em>numpy.ndarray</em></a>) – Detector pixel y-coordinate(s).</p></li>
+<li><p><strong>det</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><em>numpy.ndarray</em></a>) – NISP detector index/indices (0-15).</p></li>
+<li><p><strong>wavelength</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5)"><em>numpy.ndarray</em></a>) – Wavelength in angstrom.</p></li>
+<li><p><strong>dispersion_order</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – Dispersion order (0 or 1). Defaults to 1.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>(RA, Dec)</dt><dd><p>RA (float or ndarray): Right Ascension coordinate(s) in degrees.
+Dec (float or ndarray): Declination coordinate(s) in degrees.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#tuple" title="(in Python v3.14)">tuple</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gelsa.specframe.SpecFrame.sample_psf">
+<span class="sig-name descname"><span class="pre">sample_psf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">detector</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelength_ang</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gelsa/specframe.html#SpecFrame.sample_psf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gelsa.specframe.SpecFrame.sample_psf" title="Link to this definition">#</a></dt>
+<dd><p>Draw samples representing the PSF offset at given coordinates/wavelength.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><em>ndarray</em><em>, </em><em>optional</em>) – Detector x-coordinate(s). Not currently used
+for position dependence. Defaults to None.</p></li>
+<li><p><strong>y</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><em>ndarray</em><em>, </em><em>optional</em>) – Detector y-coordinate(s). Not currently used
+for position dependence. Defaults to None.</p></li>
+<li><p><strong>detector</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> or </em><em>ndarray</em><em>, </em><em>optional</em>) – Detector index/indices. Not currently used.
+Defaults to None.</p></li>
+<li><p><strong>wavelength_ang</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><em>ndarray</em><em>, </em><em>optional</em>) – Wavelength(s) in angstroms.
+Used for chromatic PSF. Defaults to None.</p></li>
+<li><p><strong>**args</strong> – Additional arguments passed to psf_model.sample_psf.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(dx, dy) offsets in pixel coordinates, or (0, 0) if no PSF model is set.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#tuple" title="(in Python v3.14)">tuple</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gelsa.specframe.SpecFrame.lineflux_to_counts">
+<span class="sig-name descname"><span class="pre">lineflux_to_counts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flux</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelength</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gelsa/specframe.html#SpecFrame.lineflux_to_counts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gelsa.specframe.SpecFrame.lineflux_to_counts" title="Link to this definition">#</a></dt>
+<dd><p>Convert line flux in erg/s/cm^2 to photon counts.</p>
+<p>Uses the sensitivity model and exposure time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>flux</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><em>ndarray</em>) – Line flux in erg/s/cm^2.</p></li>
+<li><p><strong>wavelength</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><em>ndarray</em>) – Wavelength(s) in angstroms.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Corresponding photon counts.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)">float</a> or ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gelsa.specframe.SpecFrame.flux_to_counts">
+<span class="sig-name descname"><span class="pre">flux_to_counts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flux</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelength</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gelsa/specframe.html#SpecFrame.flux_to_counts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gelsa.specframe.SpecFrame.flux_to_counts" title="Link to this definition">#</a></dt>
+<dd><p>Convert flux density in erg/s/cm^2/A to photon counts.</p>
+<p>Uses the sensitivity model, wavelength step, and exposure time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>flux</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><em>ndarray</em>) – Flux density in erg/s/cm^2/A.</p></li>
+<li><p><strong>wavelength</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><em>ndarray</em>) – Wavelength array in angstroms. Assumes
+uniform spacing to calculate step.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Corresponding photon counts.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)">float</a> or ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gelsa.specframe.SpecFrame.counts_to_flux">
+<span class="sig-name descname"><span class="pre">counts_to_flux</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">counts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelength</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gelsa/specframe.html#SpecFrame.counts_to_flux"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gelsa.specframe.SpecFrame.counts_to_flux" title="Link to this definition">#</a></dt>
+<dd><p>Convert photon counts to flux density in erg/s/cm^2/A.</p>
+<p>Inverse of flux_to_counts. Uses sensitivity, wavelength step, and exposure time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>counts</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><em>ndarray</em>) – Photon counts.</p></li>
+<li><p><strong>wavelength</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><em>ndarray</em>) – Wavelength array in angstroms. Assumes
+uniform spacing to calculate step.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Corresponding flux density in erg/s/cm^2/A.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)">float</a> or ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gelsa.specframe.SpecFrame.get_sensitivity">
+<span class="sig-name descname"><span class="pre">get_sensitivity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wavelength</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gelsa/specframe.html#SpecFrame.get_sensitivity"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gelsa.specframe.SpecFrame.get_sensitivity" title="Link to this definition">#</a></dt>
+<dd><p>Return sensitivity (response) in units counts/(erg/cm^2/s).</p>
+<p>Note: This is the sensitivity integrated over the pixel wavelength step.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>wavelength</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><em>ndarray</em>) – Wavelength array in angstroms. Assumes
+uniform spacing to calculate step.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Sensitivity value(s).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)">float</a> or ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gelsa.specframe.SpecFrame.sensitivity">
+<span class="sig-name descname"><span class="pre">sensitivity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wavelength</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gelsa.specframe.SpecFrame.sensitivity" title="Link to this definition">#</a></dt>
+<dd><p>Return sensitivity (response) in units counts/(erg/cm^2/s).</p>
+<p>Note: This is the sensitivity integrated over the pixel wavelength step.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>wavelength</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> or </em><em>ndarray</em>) – Wavelength array in angstroms. Assumes
+uniform spacing to calculate step.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Sensitivity value(s).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)">float</a> or ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gelsa.specframe.SpecFrame.get_relative_flux_loss_radec">
+<span class="sig-name descname"><span class="pre">get_relative_flux_loss_radec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ra</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelength_ang</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gelsa/specframe.html#SpecFrame.get_relative_flux_loss_radec"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gelsa.specframe.SpecFrame.get_relative_flux_loss_radec" title="Link to this definition">#</a></dt>
+<dd><p>Calculates the relative flux loss factor at given detector coordinates and wavelength.</p>
+<p>Uses the relative flux calibration model (<cite>relative_flux_loss_params</cite>)
+if it has been set via <cite>set_relative_flux_model</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> | </em><em>np.ndarray</em>) – Detector x-coordinate(s).</p></li>
+<li><p><strong>y</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> | </em><em>np.ndarray</em>) – Detector y-coordinate(s).</p></li>
+<li><p><strong>det_index</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em> | </em><em>np.ndarray</em>) – NISP detector index/indices (0-15).</p></li>
+<li><p><strong>wavelength_ang</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em> | </em><em>np.ndarray</em>) – Wavelength(s) in Angstroms.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>Flux loss factor. This is a multiplicative factor</dt><dd><p>(&lt;= 1.0) representing the fraction of flux remaining after
+accounting for effects like vignetting or detector gaps modeled
+by the relative flux calibration. Returns 1.0 if no model is
+set or if the model doesn’t apply to the given inputs. The
+shape matches the input coordinate/wavelength arrays.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)">float</a> | np.ndarray</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#AttributeError" title="(in Python v3.14)"><strong>AttributeError</strong></a> – If the detector model has not been set (needed by
+    the underlying <cite>relative_flux.get_flux_loss</cite>).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gelsa.specframe.SpecFrame.get_detector">
+<span class="sig-name descname"><span class="pre">get_detector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">detector_index</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gelsa/specframe.html#SpecFrame.get_detector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gelsa.specframe.SpecFrame.get_detector" title="Link to this definition">#</a></dt>
+<dd><p>Get the pixel data arrays for a specific detector.</p>
+<p>Retrieves the science image, data quality (mask), and variance arrays.
+Applies the zero-order mask if it has been set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>detector_index</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – NISP detector index (0-15).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>(image, mask, variance)</dt><dd><p>image (ndarray): Science image data.
+mask (ndarray): Data quality mask (0=good, 1=bad).
+variance (ndarray): Variance data.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#tuple" title="(in Python v3.14)">tuple</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gelsa.specframe.SpecFrame.cutout">
+<span class="sig-name descname"><span class="pre">cutout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ra</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">redshift</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lam_step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelength_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">select_detector</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">crop_args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gelsa/specframe.html#SpecFrame.cutout"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gelsa.specframe.SpecFrame.cutout" title="Link to this definition">#</a></dt>
+<dd><p>Create spectral cutouts (SpecCrop objects) around a sky position.</p>
+<p>Calculates the trace of the object across the detectors for the given
+wavelength range and creates SpecCrop instances for each detector
+the trace falls on.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ra</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – Right Ascension of the target center (degrees).</p></li>
+<li><p><strong>dec</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – Declination of the target center (degrees).</p></li>
+<li><p><strong>redshift</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em>, </em><em>optional</em>) – Redshift of the target (used for metadata). Defaults to 0.</p></li>
+<li><p><strong>lam_step</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em>, </em><em>optional</em>) – Wavelength step for calculating the trace (Angstroms).
+Defaults to 20.</p></li>
+<li><p><strong>wavelength_range</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#tuple" title="(in Python v3.14)"><em>tuple</em></a><em>, </em><em>optional</em>) – (min, max) wavelength range for the trace.
+Defaults to the frame’s sensitivity range.</p></li>
+<li><p><strong>**crop_args</strong> – Additional keyword arguments passed to SpecCrop.crop_trace
+(e.g., padx, pady for padding around the trace).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>A dictionary where keys are detector indices (int) and values</dt><dd><p>are the corresponding SpecCrop objects.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.14)">dict</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#ValueError" title="(in Python v3.14)"><strong>ValueError</strong></a> – If the target’s trace does not fall on any detector within
+    the specified wavelength range.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gelsa.specframe.SpecFrame.add_sources">
+<span class="sig-name descname"><span class="pre">add_sources</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">galaxy_list</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gelsa/specframe.html#SpecFrame.add_sources"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gelsa.specframe.SpecFrame.add_sources" title="Link to this definition">#</a></dt>
+<dd><p>Simulate and add sources to the frame’s internal data arrays.</p>
+<p>This method is used when the SpecFrame is not loaded from an existing
+FITS file but is being used for simulation. It uses SpectralImager
+to generate the image of the provided galaxies.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>galaxy_list</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a>) – A list of Galaxy objects to simulate.</p></li>
+<li><p><strong>**kwargs</strong> – Additional keyword arguments passed to
+SpectralImager.make_image.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gelsa.specframe.SpecFrame.resample_on_wavelength">
+<span class="sig-name descname"><span class="pre">resample_on_wavelength</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ra</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dec</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gelsa/specframe.html#SpecFrame.resample_on_wavelength"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gelsa.specframe.SpecFrame.resample_on_wavelength" title="Link to this definition">#</a></dt>
+<dd><p>Extracts and combines 2D spectra onto a uniform wavelength grid.</p>
+<p>Creates cutouts around the target RA/Dec using <cite>cutout</cite>, then calls
+<cite>resample_on_wavelength</cite> on each <cite>SpecCrop</cite> object. The results from
+all detectors are summed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ra</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – Right Ascension of the target center (degrees).</p></li>
+<li><p><strong>dec</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – Declination of the target center (degrees).</p></li>
+<li><p><strong>**args</strong> – Additional keyword arguments passed directly to
+<cite>SpecCrop.resample_on_wavelength</cite> (e.g., <cite>wave_range</cite>,
+<cite>wave_step</cite>, <cite>extraction_window</cite>, <cite>ndrops</cite>).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>im (np.ndarray): The combined, resampled 2D spectrum (flux).</p></li>
+<li><p>var (np.ndarray): The combined variance of the resampled spectrum.</p></li>
+<li><p>norm (np.ndarray): The combined normalization map (sum of weights).</p></li>
+<li><p>pix_bins (tuple): The pixel and wavelength bin edges used for
+resampling, taken from the last processed crop (assumes they
+are consistent).</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#tuple" title="(in Python v3.14)">tuple</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#ValueError" title="(in Python v3.14)"><strong>ValueError</strong></a> – If <cite>cutout</cite> fails to find the target on any detector.</p></li>
+<li><p><strong># Add other potential exceptions from SpecCrop.resample_on_wavelength</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="gelsa.spec_imager.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">gelsa.spec_imager</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="gelsa.utils.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">gelsa.utils</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gelsa.specframe.SpecFrame"><code class="docutils literal notranslate"><span class="pre">SpecFrame</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gelsa.specframe.SpecFrame.load_frame"><code class="docutils literal notranslate"><span class="pre">SpecFrame.load_frame()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gelsa.specframe.SpecFrame.hdul"><code class="docutils literal notranslate"><span class="pre">SpecFrame.hdul</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gelsa.specframe.SpecFrame.close_frame"><code class="docutils literal notranslate"><span class="pre">SpecFrame.close_frame()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gelsa.specframe.SpecFrame.set_detector_model"><code class="docutils literal notranslate"><span class="pre">SpecFrame.set_detector_model()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gelsa.specframe.SpecFrame.set_optical_model"><code class="docutils literal notranslate"><span class="pre">SpecFrame.set_optical_model()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gelsa.specframe.SpecFrame.set_dispersion_model"><code class="docutils literal notranslate"><span class="pre">SpecFrame.set_dispersion_model()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gelsa.specframe.SpecFrame.set_sensitivity"><code class="docutils literal notranslate"><span class="pre">SpecFrame.set_sensitivity()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gelsa.specframe.SpecFrame.set_relative_flux_model"><code class="docutils literal notranslate"><span class="pre">SpecFrame.set_relative_flux_model()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gelsa.specframe.SpecFrame.set_psf_model"><code class="docutils literal notranslate"><span class="pre">SpecFrame.set_psf_model()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gelsa.specframe.SpecFrame.set_zero_order_mask"><code class="docutils literal notranslate"><span class="pre">SpecFrame.set_zero_order_mask()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gelsa.specframe.SpecFrame.detector_shape"><code class="docutils literal notranslate"><span class="pre">SpecFrame.detector_shape</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gelsa.specframe.SpecFrame.arcsec_to_pixel"><code class="docutils literal notranslate"><span class="pre">SpecFrame.arcsec_to_pixel()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gelsa.specframe.SpecFrame.radec_to_pixel_"><code class="docutils literal notranslate"><span class="pre">SpecFrame.radec_to_pixel_()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gelsa.specframe.SpecFrame.radec_to_pixel"><code class="docutils literal notranslate"><span class="pre">SpecFrame.radec_to_pixel()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gelsa.specframe.SpecFrame.radec_to_fov"><code class="docutils literal notranslate"><span class="pre">SpecFrame.radec_to_fov()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gelsa.specframe.SpecFrame.fov_to_pixel"><code class="docutils literal notranslate"><span class="pre">SpecFrame.fov_to_pixel()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gelsa.specframe.SpecFrame.pixel_to_radec"><code class="docutils literal notranslate"><span class="pre">SpecFrame.pixel_to_radec()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gelsa.specframe.SpecFrame.sample_psf"><code class="docutils literal notranslate"><span class="pre">SpecFrame.sample_psf()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gelsa.specframe.SpecFrame.lineflux_to_counts"><code class="docutils literal notranslate"><span class="pre">SpecFrame.lineflux_to_counts()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gelsa.specframe.SpecFrame.flux_to_counts"><code class="docutils literal notranslate"><span class="pre">SpecFrame.flux_to_counts()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gelsa.specframe.SpecFrame.counts_to_flux"><code class="docutils literal notranslate"><span class="pre">SpecFrame.counts_to_flux()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gelsa.specframe.SpecFrame.get_sensitivity"><code class="docutils literal notranslate"><span class="pre">SpecFrame.get_sensitivity()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gelsa.specframe.SpecFrame.sensitivity"><code class="docutils literal notranslate"><span class="pre">SpecFrame.sensitivity()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gelsa.specframe.SpecFrame.get_relative_flux_loss_radec"><code class="docutils literal notranslate"><span class="pre">SpecFrame.get_relative_flux_loss_radec()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gelsa.specframe.SpecFrame.get_detector"><code class="docutils literal notranslate"><span class="pre">SpecFrame.get_detector()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gelsa.specframe.SpecFrame.cutout"><code class="docutils literal notranslate"><span class="pre">SpecFrame.cutout()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gelsa.specframe.SpecFrame.add_sources"><code class="docutils literal notranslate"><span class="pre">SpecFrame.add_sources()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gelsa.specframe.SpecFrame.resample_on_wavelength"><code class="docutils literal notranslate"><span class="pre">SpecFrame.resample_on_wavelength()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/api/gelsa.specframe.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024–2026, Ben Granett and the GELSA contributors.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.22.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

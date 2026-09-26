@@ -1,0 +1,12 @@
+gelsa.sample\_dist
+==================
+
+.. automodule:: gelsa.sample_dist
+
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      SampleDistribution
+   

@@ -1,0 +1,15 @@
+gelsa.galaxy\_profiles
+======================
+
+.. automodule:: gelsa.galaxy_profiles
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      bulge
+      bulge_integrated
+      disk
+      disk_integrated
+   

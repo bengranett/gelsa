@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>gelsa.optimize &#8212; Gelsa 4.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/mycss.css?v=47693ab7" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../_static/documentation_options.js?v=9f5556dd"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/gelsa.optimize';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="gelsa.overlaps" href="gelsa.overlaps.html" />
+    <link rel="prev" title="gelsa.histogram" href="gelsa.histogram.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="4.0" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/elsa-color-300.png" class="logo__image only-light" alt="Gelsa 4.0 documentation - Home"/>
+    <img src="../_static/elsa-color-300.png" class="logo__image only-dark pst-js-only" alt="Gelsa 4.0 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../install.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guide/concepts.html">
+    Core concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guide/simulation.html">
+    Simulate spectrograms
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guide/real_data.html">
+    Euclid data on ESA Datalabs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guide/decontamination.html">
+    Decontaminated 1D spectra
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../api.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/elsa-euclid/gelsa" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://elsa-euclid.github.io/" title="ELSA" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../_static/elsa-color-icon.png" class="icon-link-image" alt="ELSA"/></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../install.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guide/concepts.html">
+    Core concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guide/simulation.html">
+    Simulate spectrograms
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guide/real_data.html">
+    Euclid data on ESA Datalabs
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guide/decontamination.html">
+    Decontaminated 1D spectra
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../api.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/elsa-euclid/gelsa" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://elsa-euclid.github.io/" title="ELSA" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../_static/elsa-color-icon.png" class="icon-link-image" alt="ELSA"/></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="gelsa.html">gelsa</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gelsa.analysis.html">gelsa.analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.colorize.html">gelsa.colorize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.consts.html">gelsa.consts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.continuum_subtraction_base.html">gelsa.continuum_subtraction_base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.decontam.html">gelsa.decontam</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.decontam_utils.html">gelsa.decontam_utils</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="gelsa.elsa.html">gelsa.elsa</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="gelsa.elsa.branding.html">gelsa.elsa.branding</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="gelsa.esa.html">gelsa.esa</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="gelsa.esa.azulero_gui.html">gelsa.esa.azulero_gui</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gelsa.esa.datalabs_paths.html">gelsa.esa.datalabs_paths</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gelsa.esa.euclid_archive.html">gelsa.esa.euclid_archive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gelsa.esa.line_map_studio.html">gelsa.esa.line_map_studio</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.galaxy.html">gelsa.galaxy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.galaxy_profiles.html">gelsa.galaxy_profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.gelsa.html">gelsa.gelsa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.histogram.html">gelsa.histogram</a></li>
+<li class="toctree-l2 current active"><a aria-current="page" class="current reference internal" href="#">gelsa.optimize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.overlaps.html">gelsa.overlaps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.photframe.html">gelsa.photframe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.plot_utils.html">gelsa.plot_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.profile_sampler.html">gelsa.profile_sampler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.sample_dist.html">gelsa.sample_dist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.sersic_profile.html">gelsa.sersic_profile</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="gelsa.sgs.html">gelsa.sgs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="gelsa.sgs.detector_model.html">gelsa.sgs.detector_model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gelsa.sgs.displacement_model.html">gelsa.sgs.displacement_model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gelsa.sgs.dmutils.html">gelsa.sgs.dmutils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gelsa.sgs.frame_coordinates.html">gelsa.sgs.frame_coordinates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gelsa.sgs.optical_model.html">gelsa.sgs.optical_model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gelsa.sgs.poly.html">gelsa.sgs.poly</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gelsa.sgs.psf_model.html">gelsa.sgs.psf_model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gelsa.sgs.relative_flux.html">gelsa.sgs.relative_flux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gelsa.sgs.relative_flux_fastinterp.html">gelsa.sgs.relative_flux_fastinterp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gelsa.sgs.sensitivity_model.html">gelsa.sgs.sensitivity_model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gelsa.sgs.tan_projection.html">gelsa.sgs.tan_projection</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.spec_crop.html">gelsa.spec_crop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.spec_imager.html">gelsa.spec_imager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.specframe.html">gelsa.specframe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.utils.html">gelsa.utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.version.html">gelsa.version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.visu.html">gelsa.visu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.wcs_interpolator.html">gelsa.wcs_interpolator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gelsa.zero_order_mask.html">gelsa.zero_order_mask</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../api.html" class="nav-link">API reference</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="gelsa.html" class="nav-link">gelsa</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">gelsa.optimize</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-gelsa.optimize">
+<span id="gelsa-optimize"></span><h1>gelsa.optimize<a class="headerlink" href="#module-gelsa.optimize" title="Link to this heading">#</a></h1>
+<p class="rubric">Functions</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gelsa.optimize.build_smoothness_operator" title="gelsa.optimize.build_smoothness_operator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_smoothness_operator</span></code></a>(galaxy_list)</p></td>
+<td><p>Build a block-diagonal discrete second-derivative operator D.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gelsa.optimize.compute_chi2_target" title="gelsa.optimize.compute_chi2_target"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_chi2_target</span></code></a>(frame_ordering, ...[, sel])</p></td>
+<td><p>Chi2, rms and pixel count over the target sources' footprint only.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gelsa.optimize.compute_jacobian" title="gelsa.optimize.compute_jacobian"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_jacobian</span></code></a>(galaxy_list, frame_list, ...)</p></td>
+<td><p>Build the full sparse Jacobian mapping each galaxy's spectrum to all masked pixels.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_jacobian_1</span></code>(galaxy, frame_list, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_jacobian_11</span></code>(galaxy, frame_list, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">evaluate_model</span></code>(samples, frame_list, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_data_vec</span></code>(images, var_images, mask_list, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_mask_1</span></code>(specimager, galaxies, input_mask)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gelsa.optimize.mask_jacobian" title="gelsa.optimize.mask_jacobian"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mask_jacobian</span></code></a>(jac, data, var, resid, ...[, ...])</p></td>
+<td><p>Flag and remove outlier pixels based on residual/sigma, and rebuild the mask list to match.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gelsa.optimize.measure_everything" title="gelsa.optimize.measure_everything"><code class="xref py py-obj docutils literal notranslate"><span class="pre">measure_everything</span></code></a>(images, var_images, ...)</p></td>
+<td><p>Extract spectra for all galaxies by building/solving the joint linear model across frames.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pseudoinv</span></code>(Q[, r, k])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gelsa.optimize.solve" title="gelsa.optimize.solve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">solve</span></code></a>(A, b, b_var[, lam, compute_var, ...])</p></td>
+<td><p>Weighted least-squares solve of A &#64; x ~= b, with Tikhonov regularization.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">super_concat</span></code>(models, frame_ordering)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gelsa.optimize.target_row_mask" title="gelsa.optimize.target_row_mask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">target_row_mask</span></code></a>(frame_ordering, mask_list, ...)</p></td>
+<td><p>Boolean mask over the flat data vector selecting target-footprint pixels.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gelsa.optimize.trace_product" title="gelsa.optimize.trace_product"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trace_product</span></code></a>(Qinv, M)</p></td>
+<td><p>Compute trace(Qinv &#64; M) without ever forming the n x n product.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unpack_extractions</span></code>(pack, galaxy_list)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gelsa.optimize.update_masklist" title="gelsa.optimize.update_masklist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_masklist</span></code></a>(valid, mask_list, frame_ordering)</p></td>
+<td><p>Rebuild per-detector pixel masks to account for newly invalidated pixels.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="gelsa.optimize.build_smoothness_operator">
+<span class="sig-prename descclassname"><span class="pre">gelsa.optimize.</span></span><span class="sig-name descname"><span class="pre">build_smoothness_operator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">galaxy_list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gelsa/optimize.html#build_smoothness_operator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gelsa.optimize.build_smoothness_operator" title="Link to this definition">#</a></dt>
+<dd><p>Build a block-diagonal discrete second-derivative operator D.</p>
+<p>D has one block per galaxy, in the same order as <cite>galaxy_list</cite>. Each
+block acts on that galaxy’s SED coefficients (its slice of the flat
+parameter vector <cite>x</cite>, as produced by <cite>unpack_extractions</cite>) and
+computes the discrete second derivative – the local curvature –
+of the spectrum along the wavelength grid:</p>
+<blockquote>
+<div><p>(D_i &#64; x_i)[r] = x_i[r] - 2*x_i[r+1] + x_i[r+2]</p>
+</div></blockquote>
+<p>Penalizing ||D &#64; x||^2 (instead of ||x||^2, as plain ridge does)
+therefore penalizes wiggliness/roughness in each galaxy’s spectrum
+rather than penalizing its overall flux level: a constant offset or
+a linear trend has zero second derivative, so those are left
+unpenalized while noisy high-frequency structure is suppressed.</p>
+<p>The blocks are stacked block-diagonally (galaxy 0’s rows/columns,
+then galaxy 1’s, etc.) so that D never compares coefficients that
+belong to two different galaxies – this mirrors how
+<cite>compute_jacobian</cite> builds the Jacobian by horizontally stacking one
+block of columns per galaxy, and how <cite>unpack_extractions</cite> later
+splits <cite>x</cite> back into per-galaxy chunks in that same order.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>galaxy_list</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a>) – Galaxies in the same order used to build the Jacobian / <cite>x</cite>
+(each contributes <cite>len(galaxy.wavelength)</cite> columns to D).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>D</strong> – <cite>n_cols</cite> equals <cite>len(x)</cite> (sum of <cite>len(gal.wavelength)</cite> over all
+galaxies). <cite>n_rows</cite> is the sum over galaxies of
+<cite>max(len(gal.wavelength) - 2, 0)</cite> – galaxies with fewer than 3
+wavelength samples have no interior point to take a second
+difference of, so they contribute zero rows (no smoothness
+constraint on them, but they still need their columns present
+so the block widths add up to <cite>len(x)</cite>).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>scipy.sparse csr array, shape (n_rows, n_cols)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gelsa.optimize.trace_product">
+<span class="sig-prename descclassname"><span class="pre">gelsa.optimize.</span></span><span class="sig-name descname"><span class="pre">trace_product</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Qinv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gelsa/optimize.html#trace_product"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gelsa.optimize.trace_product" title="Link to this definition">#</a></dt>
+<dd><p>Compute trace(Qinv &#64; M) without ever forming the n x n product.</p>
+<p>trace(Qinv &#64; M) = sum_ij Qinv_ij * M_ji, so the matmul – O(n^3)
+flops plus a second dense n x n allocation – is unnecessary. An
+elementwise product summed is O(n^2) dense, or O(nnz) when M is
+sparse. With n_params in the thousands that is the difference
+between seconds and milliseconds, and it is paid once per lambda
+per masking iteration, so it is worth the two lines.</p>
+<p>Both matrices this is called with (Q_unreg, and the target-row
+Gram matrix) are symmetric Gram matrices, so the transpose is a
+formality – but it costs nothing (<cite>.T</cite> on a csr array is an O(1)
+view) and keeps the identity exact for any M.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gelsa.optimize.solve">
+<span class="sig-prename descclassname"><span class="pre">gelsa.optimize.</span></span><span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b_var</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lam</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compute_var</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reg_operator</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reg_floor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dof_rows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gelsa/optimize.html#solve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gelsa.optimize.solve" title="Link to this definition">#</a></dt>
+<dd><p>Weighted least-squares solve of A &#64; x ~= b, with Tikhonov regularization.</p>
+<p>Solves the regularized normal equations</p>
+<blockquote>
+<div><p>(A^T Cinv A + lam_eff * P) x = A^T Cinv b</p>
+</div></blockquote>
+<dl class="simple">
+<dt>where Cinv = diag(1/b_var) and P is the regularization matrix:</dt><dd><ul class="simple">
+<li><p>plain ridge (shrink-to-zero), if <cite>reg_operator</cite> is None: P = I,
+so the penalty term is lam_eff * ||x||^2.</p></li>
+<li><p>smoothness (curvature) penalty, if <cite>reg_operator</cite> (e.g. from
+<cite>build_smoothness_operator</cite>) is given: P = reg_operator.T &#64;
+reg_operator, so the penalty term is lam_eff * ||reg_operator &#64;
+x||^2 – a small ridge floor is added on top, see <cite>reg_floor</cite>.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>A</strong> (<em>sparse array</em>) – Design matrix (Jacobian), rows = data points, columns = model
+parameters.</p></li>
+<li><p><strong>b</strong> (<em>ndarray</em>) – Data vector.</p></li>
+<li><p><strong>b_var</strong> (<em>ndarray</em>) – Per-data-point variance.</p></li>
+<li><p><strong>lam</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em>, </em><em>optional</em>) – Regularization strength; the matrix is scaled by the typical
+size of <cite>A</cite>’s entries (see <cite>lam_eff</cite> below) so that a given
+<cite>lam</cite> has a comparable effect regardless of the overall
+flux/units scale of <cite>A</cite>. <cite>lam &lt;= 0</cite> disables regularization.</p></li>
+<li><p><strong>compute_var</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em>, </em><em>optional</em>) – If True, also return (an approximation of) the covariance of
+<cite>x</cite>, in the old post-hoc-smoothing style. See <cite>smooth</cite> above.</p></li>
+<li><p><strong>reg_operator</strong> (<em>sparse array</em><em>, </em><em>optional</em>) – Linear operator D such that ||D &#64; x||^2 is the penalty to
+minimize, instead of the plain ridge penalty ||x||^2.</p></li>
+<li><p><strong>reg_floor</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em>, </em><em>optional</em>) – Only used when <cite>reg_operator</cite> is given. Fraction (relative to
+the plain ridge strength) of a plain ||x||^2 penalty that is
+always added on top of the smoothness penalty. A pure
+second-difference penalty has a null space – a constant
+offset or a linear trend has zero curvature – so for a galaxy
+that’s only weakly constrained by data, the normal equations
+can come out singular without this floor to fall back on.</p></li>
+<li><p><strong>dof_rows</strong> (<em>ndarray</em><em> of </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em>, </em><em>optional</em>) – Boolean mask over the rows of <cite>A</cite> (i.e. over the entries of
+<cite>b</cite>) selecting a subset of the data. When given, the effective
+degrees of freedom are <em>also</em> computed restricted to those
+rows, and returned as <cite>dof_eff_rows</cite>. This is the diagonal sum
+of the hat matrix over that subset only – how much freedom the
+fit spends on those particular pixels – which is what pairs
+with a chi2 computed on the same subset to form a valid
+GCV-style score. The full parameter vector is still fit to all
+rows; only the accounting is restricted.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>x</strong> (<em>ndarray</em>) – Solved parameter vector</p></li>
+<li><p><strong>estimator_var</strong> (<em>ndarray</em>)</p></li>
+<li><p><strong>chi2_reg</strong> (<em>float</em>) – The regularization penalty incurred by <cite>x</cite>, i.e.
+lam_eff * ||x||^2 (plain ridge) or
+lam_eff * ||reg_operator &#64; x||^2 (smoothness). Add this to the data-misfit chi2
+to get the total penalized objective value.</p></li>
+<li><p><strong>dof_eff</strong> (<em>float</em>) – Effective degrees of freedom used by the fit (trace of the hat
+matrix). Use this in
+place of the nominal parameter count <cite>len(x)</cite> when forming a
+reduced chi2 for comparing different regularization strengths
+– see the comment where it’s computed below for why.</p></li>
+<li><p><strong>dof_eff_rows</strong> (<em>float or None</em>) – The same quantity restricted to the rows selected by
+<cite>dof_rows</cite>, or None when <cite>dof_rows</cite> was not given.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gelsa.optimize.compute_jacobian">
+<span class="sig-prename descclassname"><span class="pre">gelsa.optimize.</span></span><span class="sig-name descname"><span class="pre">compute_jacobian</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">galaxy_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame_ordering</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gelsa/optimize.html#compute_jacobian"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gelsa.optimize.compute_jacobian" title="Link to this definition">#</a></dt>
+<dd><p>Build the full sparse Jacobian mapping each galaxy’s spectrum to all masked pixels.</p>
+<p>Computes the total number of unmasked pixels across all frames and
+detectors from <cite>mask_list</cite>, then builds a per-galaxy Jacobian block
+in parallel (via <cite>compute_jacobian_1</cite>) whose columns are the
+galaxy’s wavelength samples and whose rows are the concatenated
+masked pixels (ordered per <cite>frame_ordering</cite>). The per-galaxy blocks
+are horizontally stacked into a single sparse matrix so that a flat
+coefficient vector over all galaxies’ wavelengths maps directly onto
+the flat pixel vector produced by <cite>get_data_vec</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>galaxy_list</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em> or </em><em>single galaxy</em>) – Galaxy sources to build Jacobian columns for; normalized to a
+list via <cite>utils.ensurelist</cite>. Each contributes
+<cite>len(galaxy.wavelength)</cite> columns.</p></li>
+<li><p><strong>frame_list</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a>) – Frame/detector metadata used to evaluate the model image for
+each wavelength sample (passed through to <cite>compute_jacobian_1</cite>
+/ <cite>compute_jacobian_11</cite> / <cite>evaluate_model</cite>).</p></li>
+<li><p><strong>mask_list</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a>) – Per-frame dict of {detector: (npix, mask)}; determines the
+total row count and which pixels are included.</p></li>
+<li><p><strong>frame_ordering</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a>) – Ordered (frame_i, det) pairs defining how per-detector pixel
+blocks are concatenated into rows.</p></li>
+<li><p><strong>dx</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – Sampling density controlling how densely each galaxy’s image is
+sampled per wavelength bin when evaluating the model (default
+1000).</p></li>
+<li><p><strong>n_jobs</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – Number of parallel jobs used to compute each galaxy’s Jacobian
+block (default 4).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>jac</strong> – Horizontally stacked sparse Jacobian of shape
+(total masked pixels, sum of galaxies’ wavelength lengths).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>sparse array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gelsa.optimize.update_masklist">
+<span class="sig-prename descclassname"><span class="pre">gelsa.optimize.</span></span><span class="sig-name descname"><span class="pre">update_masklist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">valid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame_ordering</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gelsa/optimize.html#update_masklist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gelsa.optimize.update_masklist" title="Link to this definition">#</a></dt>
+<dd><p>Rebuild per-detector pixel masks to account for newly invalidated pixels.</p>
+<p>Walks <cite>frame_ordering</cite> to slice the flat <cite>valid</cite> boolean array into
+per-(frame, detector) chunks matching each mask’s pixel count. For
+each detector, pixels that were already masked (mask &lt;= -1) or are
+now invalid are excluded, and the surviving pixels are renumbered
+with consecutive indices (<code class="docutils literal notranslate"><span class="pre">0..npix_-1</span></code>) so downstream code can index
+into the trimmed data/jac/var arrays. Each entry in <cite>mask_list</cite> is
+replaced with the updated <code class="docutils literal notranslate"><span class="pre">(npix_,</span> <span class="pre">mask_)</span></code> pair.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>valid</strong> (<em>ndarray</em><em> of </em><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – Flat validity flags, in the same concatenated order as
+<cite>frame_ordering</cite>, marking which pixels survive.</p></li>
+<li><p><strong>mask_list</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a>) – Per-frame dict/list of {det: (npix, mask)}, where <cite>mask</cite> maps
+original pixel positions to indices (-1 for already masked).</p></li>
+<li><p><strong>frame_ordering</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a>) – Ordered (frame_i, det) pairs describing how the flat <cite>valid</cite>
+array maps onto <cite>mask_list</cite> entries.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>mask_list</strong> – The same structure with each (npix, mask) entry replaced by
+<code class="docutils literal notranslate"><span class="pre">(npix_,</span> <span class="pre">mask_)</span></code> reflecting the newly masked/renumbered pixels.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)">list</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gelsa.optimize.mask_jacobian">
+<span class="sig-prename descclassname"><span class="pre">gelsa.optimize.</span></span><span class="sig-name descname"><span class="pre">mask_jacobian</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jac</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame_ordering</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gelsa/optimize.html#mask_jacobian"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gelsa.optimize.mask_jacobian" title="Link to this definition">#</a></dt>
+<dd><p>Flag and remove outlier pixels based on residual/sigma, and rebuild the mask list to match.</p>
+<p>Pixels with zero variance are treated as already masked. Among the
+remaining pixels, any whose residual exceeds <cite>threshold</cite> times the
+local sigma (sqrt(var)) are marked invalid. <cite>mask_list</cite> is then
+updated via <cite>update_masklist</cite> so its per-frame/detector indexing
+stays consistent with the newly masked pixels, and <cite>jac</cite>, <cite>data</cite>,
+and <cite>var</cite> are trimmed to the surviving (valid) rows.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>jac</strong> (<em>ndarray</em>) – Jacobian matrix, rows aligned with <cite>data</cite>/<cite>var</cite>/<cite>resid</cite>.</p></li>
+<li><p><strong>data</strong> (<em>ndarray</em>) – Data vector.</p></li>
+<li><p><strong>var</strong> (<em>ndarray</em>) – Per-pixel variance; entries &lt;= 0 are treated as already masked.</p></li>
+<li><p><strong>resid</strong> (<em>ndarray</em>) – Residuals (data - model) used to compute the outlier statistic.</p></li>
+<li><p><strong>mask_list</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a>) – Per-frame mask info, as consumed/produced by <cite>update_masklist</cite>.</p></li>
+<li><p><strong>frame_ordering</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a>) – Ordering of (frame_i, det) pairs describing how <cite>resid</cite> maps
+onto <cite>mask_list</cite> entries.</p></li>
+<li><p><strong>threshold</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em>, </em><em>optional</em>) – Number of sigma above which a pixel is masked as an outlier
+(default 10).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>jac, data, var</strong> (<em>ndarray</em>) – Inputs trimmed to the valid (non-masked) rows.</p></li>
+<li><p><strong>mask_list</strong> (<em>list</em>) – Updated mask list reflecting the newly masked pixels.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gelsa.optimize.target_row_mask">
+<span class="sig-prename descclassname"><span class="pre">gelsa.optimize.</span></span><span class="sig-name descname"><span class="pre">target_row_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame_ordering</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_list_target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gelsa/optimize.html#target_row_mask"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gelsa.optimize.target_row_mask" title="Link to this definition">#</a></dt>
+<dd><p>Boolean mask over the flat data vector selecting target-footprint pixels.</p>
+<p>Walks <cite>frame_ordering</cite> in the same order <cite>get_data_vec</cite> used to
+concatenate the data, and for each (frame, detector) block marks the
+surviving pixels that also fall inside the target sources’ footprint
+according to <cite>mask_list_target</cite>. Detectors absent from
+<cite>mask_list_target</cite> (no target lands on them) contribute an all-False
+block. If <cite>var</cite> is given, pixels with non-positive variance are
+dropped as well, matching what <cite>compute_chi2_target</cite> counts.</p>
+<p>Factored out so that the target chi2 and the target-restricted
+effective dof are guaranteed to refer to the identical set of
+pixels – a GCV score built from a chi2 and a trace computed over
+different pixel sets would be silently wrong.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>frame_ordering</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a>) – Ordered (frame_i, det) pairs, as built by <cite>measure_everything</cite>.</p></li>
+<li><p><strong>mask_list</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a>) – Current per-frame {det: (npix, mask)} masks, i.e. the ones that
+match the <em>current</em> (post-sigma-clipping) data vector.</p></li>
+<li><p><strong>mask_list_target</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a>) – Per-frame {det: (npix, mask)} masks built from the target
+galaxies alone.</p></li>
+<li><p><strong>var</strong> (<em>ndarray</em><em>, </em><em>optional</em>) – Variance vector aligned with the data vector; when given,
+entries &lt;= 0 are excluded.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>sel</strong> – Length equals the current data vector length (sum of <cite>npix</cite>
+over <cite>frame_ordering</cite>).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ndarray of <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gelsa.optimize.compute_chi2_target">
+<span class="sig-prename descclassname"><span class="pre">gelsa.optimize.</span></span><span class="sig-name descname"><span class="pre">compute_chi2_target</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame_ordering</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_list_target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gelsa/optimize.html#compute_chi2_target"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gelsa.optimize.compute_chi2_target" title="Link to this definition">#</a></dt>
+<dd><p>Chi2, rms and pixel count over the target sources’ footprint only.</p>
+<p>Pass <cite>sel</cite> (from <cite>target_row_mask</cite>) to reuse a mask already computed
+by the caller; otherwise it is derived here.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gelsa.optimize.measure_everything">
+<span class="sig-prename descclassname"><span class="pre">gelsa.optimize.</span></span><span class="sig-name descname"><span class="pre">measure_everything</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">images</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var_images</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_galaxies</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contaminant_galaxies</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pixmask_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jac</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">masking_iterations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma_clip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smooth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reg_floor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reg_lambda_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[1]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compute_var</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gelsa/optimize.html#measure_everything"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gelsa.optimize.measure_everything" title="Link to this definition">#</a></dt>
+<dd><p>Extract spectra for all galaxies by building/solving the joint linear model across frames.</p>
+<p>Builds per-detector masks (via <cite>make_mask_1</cite>) if <cite>mask_list</cite> is not
+given, reconciles <cite>images</cite> and <cite>mask_list</cite> so both cover exactly the
+same frame/detector entries, and derives <cite>frame_ordering</cite> describing
+how per-detector pixels are concatenated. Builds the sparse Jacobian
+(via <cite>compute_jacobian</cite>) if not supplied, and assembles the flat
+data/variance vectors (via <cite>get_data_vec</cite>).</p>
+<p>For each regularization strength in <cite>reg_lambda_list</cite>, iteratively
+solves the linear system (via <cite>solve</cite>), computing residuals and
+optionally re-masking outlier pixels (via <cite>mask_jacobian</cite>) for up to
+<cite>masking_iterations</cite> rounds before finalizing chi2/dof and unpacking
+the fitted coefficients into per-galaxy SED extractions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>images</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a>) – Per-frame dict of {detector: image array} to extract from.</p></li>
+<li><p><strong>var_images</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a>) – Per-frame dict of {detector: variance array}, aligned with
+<cite>images</cite>.</p></li>
+<li><p><strong>frame_list</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a>) – Frame/detector metadata used to build masks and the Jacobian.</p></li>
+<li><p><strong>galaxies</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a>) – Galaxy sources to extract; each carries its own <cite>wavelength</cite>
+grid.</p></li>
+<li><p><strong>pixmask_list</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>, </em><em>optional</em>) – Per-frame input pixel masks passed to <cite>make_mask_1</cite> when
+<cite>mask_list</cite> is not supplied.</p></li>
+<li><p><strong>jac</strong> (<em>sparse array</em><em>, </em><em>optional</em>) – Precomputed Jacobian; if None, it is built via
+<cite>compute_jacobian</cite>.</p></li>
+<li><p><strong>reg_lambda_list</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>, </em><em>optional</em>) – Regularization strengths to solve for; one result is returned
+per entry (default [1]).</p></li>
+<li><p><strong>smooth</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a><em>, </em><em>optional</em>) – If True, regularize with a curvature (second-difference)
+penalty via <cite>build_smoothness_operator</cite>/<cite>solve</cite>’s
+<cite>reg_operator</cite>, instead of the plain ridge (shrink-to-zero)
+penalty (default False).</p></li>
+<li><p><strong>mask_list</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a><em>, </em><em>optional</em>) – Precomputed per-frame/detector masks; if None, built via
+<cite>make_mask_1</cite> from <cite>pixmask_list</cite>.</p></li>
+<li><p><strong>dx</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – Sampling density passed to <cite>compute_jacobian</cite> (default 10000).</p></li>
+<li><p><strong>n_jobs</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – Number of parallel jobs used for mask building and Jacobian
+computation (default 4).</p></li>
+<li><p><strong>masking_iterations</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em>) – Number of solve/re-mask rounds performed via <cite>mask_jacobian</cite>
+before the final solve for each lambda (default 1).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p><strong>results</strong> – For each lambda in <cite>reg_lambda_list</cite>: <cite>galaxies_out</cite> is a copy of
+<cite>galaxies</cite> with <cite>.sed</cite> set to the extracted spectrum, and
+<cite>fit_info</cite> is a dict with <cite>frame_ordering</cite>, <cite>data</cite>, <cite>model</cite>,
+<cite>resid</cite>, <cite>var</cite>, <cite>chi2</cite>, <cite>dof</cite>, <cite>jac</cite>, <cite>mask_list</cite>, and <cite>lam</cite>.</p>
+<p>No lambda is selected here – every entry in <cite>reg_lambda_list</cite>
+is returned and the choice is left to the caller. <cite>fit_info</cite>
+carries two generalized cross-validation scores for that
+purpose, each to be minimized over the returned results:</p>
+<p><cite>gcv_targ</cite> – computed over the target sources’ footprint only,
+and the one to select on. It scores the fit where it matters,
+on the pixels the extracted target spectrum is actually read
+from.</p>
+<p><cite>gcv</cite> – the same score over every fitted pixel. Kept as a
+diagnostic; it is dominated by contaminant and background
+pixels, so its minimum can sit at a different lambda.</p>
+<p>See where they are computed below for the assumptions behind
+both.</p>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)">list</a> of (galaxies_out, fit_info)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="gelsa.histogram.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">gelsa.histogram</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="gelsa.overlaps.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">gelsa.overlaps</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gelsa.optimize.build_smoothness_operator"><code class="docutils literal notranslate"><span class="pre">build_smoothness_operator()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gelsa.optimize.trace_product"><code class="docutils literal notranslate"><span class="pre">trace_product()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gelsa.optimize.solve"><code class="docutils literal notranslate"><span class="pre">solve()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gelsa.optimize.compute_jacobian"><code class="docutils literal notranslate"><span class="pre">compute_jacobian()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gelsa.optimize.update_masklist"><code class="docutils literal notranslate"><span class="pre">update_masklist()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gelsa.optimize.mask_jacobian"><code class="docutils literal notranslate"><span class="pre">mask_jacobian()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gelsa.optimize.target_row_mask"><code class="docutils literal notranslate"><span class="pre">target_row_mask()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gelsa.optimize.compute_chi2_target"><code class="docutils literal notranslate"><span class="pre">compute_chi2_target()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gelsa.optimize.measure_everything"><code class="docutils literal notranslate"><span class="pre">measure_everything()</span></code></a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/api/gelsa.optimize.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024–2026, Ben Granett and the GELSA contributors.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.22.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

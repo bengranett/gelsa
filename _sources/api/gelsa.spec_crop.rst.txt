@@ -1,0 +1,24 @@
+gelsa.spec\_crop
+================
+
+.. automodule:: gelsa.spec_crop
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      resample_drops
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      SpecCrop
+   
+   .. rubric:: Exceptions
+
+   .. autosummary::
+   
+      NoExtraction
+   

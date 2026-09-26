@@ -1,0 +1,13 @@
+gelsa.sgs.sensitivity\_model
+============================
+
+.. automodule:: gelsa.sgs.sensitivity_model
+
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      LookupTable
+      SensitivityModel
+   

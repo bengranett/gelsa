@@ -1,0 +1,28 @@
+gelsa.optimize
+==============
+
+.. automodule:: gelsa.optimize
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      build_smoothness_operator
+      compute_chi2_target
+      compute_jacobian
+      compute_jacobian_1
+      compute_jacobian_11
+      evaluate_model
+      get_data_vec
+      make_mask_1
+      mask_jacobian
+      measure_everything
+      pseudoinv
+      solve
+      super_concat
+      target_row_mask
+      trace_product
+      unpack_extractions
+      update_masklist
+   
