@@ -590,45 +590,6 @@ class SpecFrame:
     # alias
     sensitivity = get_sensitivity
 
-    def get_relative_flux_loss(self, x, y, det_index, wavelength_ang):
-        """Calculates the relative flux loss factor at given detector coordinates and wavelength.
-
-        Uses the relative flux calibration model (`relative_flux_loss_params`)
-        if it has been set via `set_relative_flux_model`.
-
-        Args:
-            x (float | np.ndarray): Detector x-coordinate(s).
-            y (float | np.ndarray): Detector y-coordinate(s).
-            det_index (int | np.ndarray): NISP detector index/indices (0-15).
-            wavelength_ang (float | np.ndarray): Wavelength(s) in Angstroms.
-
-        Returns:
-            float | np.ndarray: Flux loss factor. This is a multiplicative factor
-                (<= 1.0) representing the fraction of flux remaining after
-                accounting for effects like vignetting or detector gaps modeled
-                by the relative flux calibration. Returns 1.0 if no model is
-                set or if the model doesn't apply to the given inputs. The
-                shape matches the input coordinate/wavelength arrays.
-
-        Raises:
-            AttributeError: If the detector model has not been set (needed by
-                the underlying `relative_flux.get_flux_loss`).
-        """
-        print("get_relative_flux_loss is deprecated. Use get_relative_flux_loss_radec")
-        try:
-            self.relative_flux_loss_params
-        except AttributeError:
-            return np.ones(len(x))
-
-        if self.relative_flux_loss_params is None:
-            return np.ones(len(x))
-
-        return relative_flux.get_flux_loss(
-            self.detector_model,
-            self.relative_flux_loss_params,
-            x, y, det_index, wavelength_ang=wavelength_ang
-        )
-
     def get_relative_flux_loss_radec(self, ra, dec, wavelength_ang=None):
         """Calculates the relative flux loss factor at given detector coordinates and wavelength.
 

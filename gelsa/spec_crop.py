@@ -435,17 +435,6 @@ class SpecCrop:
         dy *= sign
         return np.arctan2(dx, dy)
 
-    def get_relative_flux_loss(self, x, y, wavelength):
-        """Get the relative flux loss at pixel coordinate"""
-        x_frame = x + self.bbox[0]
-        y_frame = y + self.bbox[2]
-        return self.frame.get_relative_flux_loss(
-            x_frame,
-            y_frame,
-            self.detector,
-            wavelength
-        )
-
     def get_relative_flux_loss_radec(self, ra, dec, wavelength_ang=None):
         """Get the relative flux loss at pixel coordinate"""
         return self.frame.get_relative_flux_loss_radec(
