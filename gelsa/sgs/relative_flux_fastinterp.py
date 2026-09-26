@@ -94,13 +94,9 @@ class RelativeFluxCalibration:
 
 def get_flux_loss_fov(detector_model, pack, xfov, yfov, wavelength_ang=15000):
     """ """
-    try:
-        xfov[0]
-        scalar_out = False
-    except (TypeError, IndexError):
-        scalar_out = True
-        xfov = np.array([xfov])
-        yfov = np.array([yfov])
+    scalar_out = np.ndim(xfov) == 0
+    xfov = np.atleast_1d(xfov)
+    yfov = np.atleast_1d(yfov)
 
     wavelength_ang = np.ones(len(xfov)) * wavelength_ang
 
@@ -114,7 +110,7 @@ def get_flux_loss_fov(detector_model, pack, xfov, yfov, wavelength_ang=15000):
 
     mag = pack['Map'](wavelength_ang[sel], yfov_s[sel], xfov_s[sel])
 
-    fluxloss = np.zeros(len(x), dtype='d')
+    fluxloss = np.zeros(len(xfov), dtype='d')
     fluxloss[sel] = 10**(-0.4 * mag)
 
     if scalar_out:
@@ -140,13 +136,9 @@ def get_flux_loss(detector_model, pack, x, y, det_index, wavelength_ang=15000):
     wavelength_ang : float, list
         wavelength in angstroms
     """
-    try:
-        x[0]
-        scalar_out = False
-    except (TypeError, IndexError):
-        scalar_out = True
-        x = np.array([x])
-        y = np.array([y])
+    scalar_out = np.ndim(x) == 0
+    x = np.atleast_1d(x)
+    y = np.atleast_1d(y)
 
     wavelength_ang = np.ones(len(x)) * wavelength_ang
 

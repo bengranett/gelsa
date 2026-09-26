@@ -381,14 +381,9 @@ class SpecCrop:
 
     def radec_to_pixel_(self, ra, dec, wavelength, dispersion_order=1):
         """ """
-        scalar = True
-        try:
-            len(ra)
-            scalar = False
-        except TypeError:
-            scalar = True
-            ra = np.array([ra])
-            dec = np.array([dec])
+        scalar = np.ndim(ra) == 0
+        ra = np.atleast_1d(ra)
+        dec = np.atleast_1d(dec)
 
         x, y, det = self.frame.radec_to_pixel(ra, dec, wavelength,
                                               dispersion_order=dispersion_order)

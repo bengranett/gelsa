@@ -15,12 +15,8 @@ class LookupTable:
 
     def __call__(self, new_x):
         """ """
-        try:
-            len(new_x)
-            scalar = False
-        except TypeError:
-            new_x = np.array([new_x])
-            scalar = True
+        scalar = np.ndim(new_x) == 0
+        new_x = np.atleast_1d(new_x)
         ii = ((new_x - self.start) // self.step).astype(int)
         out = np.zeros(len(new_x), dtype=self.y.dtype)
         valid = (ii >= 0) & (ii < len(self.y))

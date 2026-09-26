@@ -332,13 +332,9 @@ class PhotFrame:
             AttributeError: If WCS list (`_wcs_list`) has not been loaded.
         """
 
-        try:
-            len(ra)
-            scalar = False
-        except TypeError:
-            scalar = True
-            ra = np.array([ra])
-            dec = np.array([dec])
+        scalar = np.ndim(ra) == 0
+        ra = np.atleast_1d(ra)
+        dec = np.atleast_1d(dec)
 
         x_out = np.zeros(len(ra), dtype='d') - 1
         y_out = np.zeros(len(ra), dtype='d') - 1
@@ -378,13 +374,9 @@ class PhotFrame:
             AttributeError: If WCS list (`_wcs_list`) has not been loaded.
             IndexError: If any value in `det` is out of range (0-15).
         """
-        try:
-            len(x)
-            scalar = False
-        except TypeError:
-            scalar = True
-            x = np.array([x])
-            y = np.array([y])
+        scalar = np.ndim(x) == 0
+        x = np.atleast_1d(x)
+        y = np.atleast_1d(y)
         det = (np.ones(len(x))*det).astype(int)
 
         if self.params['sir_layout']:

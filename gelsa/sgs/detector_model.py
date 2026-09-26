@@ -164,15 +164,9 @@ class DetectorModel:
         -------
         bool, ndarray : true if inside field of view, false otherwise.
         """
-        try:
-            len(xfov)
-            scalar = False
-            xfov = np.array(xfov)
-            yfov = np.array(yfov)
-        except TypeError:
-            scalar = True
-            xfov = np.array([xfov])
-            yfov = np.array([yfov])
+        scalar = np.ndim(xfov) == 0
+        xfov = np.atleast_1d(xfov)
+        yfov = np.atleast_1d(yfov)
 
         low, high = self.envelope
         valid = (xfov > low[0]-eps_mm) & (xfov < high[0]+eps_mm)

@@ -394,13 +394,9 @@ class FrameCoordinates:
         res_x, res_y : ndarray or float
             Dispersed FOV positions in mm.
         """
-        try:
-            _ = len(x)
-            scalar = False
-        except TypeError:
-            x = np.array([x])
-            y = np.array([y])
-            scalar = True
+        scalar = np.ndim(x) == 0
+        x = np.atleast_1d(x)
+        y = np.atleast_1d(y)
 
         wavelength_arr = np.ones(len(x)) * wavelength
 
@@ -446,13 +442,9 @@ class FrameCoordinates:
         xfov, yfov : float or ndarray
             FOV positions in mm.
         """
-        try:
-            len(ra)
-            scalar = False
-        except TypeError:
-            scalar = True
-            ra = np.array([ra])
-            dec = np.array([dec])
+        scalar = np.ndim(ra) == 0
+        ra = np.atleast_1d(ra)
+        dec = np.atleast_1d(dec)
 
         wavelength_arr = np.ones(len(ra)) * wavelength
 
@@ -550,15 +542,9 @@ class FrameCoordinates:
         ra, dec : float or ndarray
             Sky coordinates in degrees; NaN for points outside the FOV.
         """
-        try:
-            len(xfov)
-            scalar = False
-            xfov = np.array(xfov)
-            yfov = np.array(yfov)
-        except TypeError:
-            scalar = True
-            xfov = np.array([xfov])
-            yfov = np.array([yfov])
+        scalar = np.ndim(xfov) == 0
+        xfov = np.atleast_1d(xfov)
+        yfov = np.atleast_1d(yfov)
 
         wavelength = np.ones(len(xfov)) * wavelength
 

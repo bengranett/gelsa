@@ -664,13 +664,9 @@ class SpecFrame:
         if wavelength_ang is None:
             wavelength_ang = (self.params['wavelength_range'][0] + self.params['wavelength_range'][1])/2.
 
-        try:
-            len(ra)
-            scalar = False
-        except TypeError:
-            scalar = True
-            ra = np.array([ra])
-            dec = np.array([dec])
+        scalar = np.ndim(ra) == 0
+        ra = np.atleast_1d(ra)
+        dec = np.atleast_1d(dec)
 
         wavelength_ang = np.ones(len(ra)) * wavelength_ang
 
