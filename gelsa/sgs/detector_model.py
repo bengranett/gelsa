@@ -1,38 +1,38 @@
-import os
 import numpy as np
 from astropy.table import Table
-import time
-from numba import njit, float64
+from numba import njit
+
 
 @njit(fastmath=True, cache=True)
 def fast_inside_poly(x, y, poly_x, poly_y):
     n_points = x.shape[0]
     n_edges = poly_x.shape[0]
     inside = np.ones(n_points, dtype=np.bool_)
-    
-    for i in range(n_points): # prange
+
+    for i in range(n_points):
         px = x[i]
         py = y[i]
         is_in = True
-        
+
         for j in range(n_edges):
             next_j = (j + 1) % n_edges
-            
+
             # Vector from point to vertex J
             dx = poly_x[j] - px
             dy = poly_y[j] - py
-            
+
             # Vector for the edge itself
             edge_x = poly_x[next_j] - poly_x[j]
             edge_y = poly_y[next_j] - poly_y[j]
-            
+
             # Cross product
             if (dx * edge_y - dy * edge_x) <= 0:
                 is_in = False
-                break # Early exit for this point!
-        
+                break
+
         inside[i] = is_in
     return inside
+
 
 class DetectorModel:
     """ """
@@ -80,10 +80,8 @@ class DetectorModel:
         b = idx // 4
         return (a+1)*10 + b + 1
 
-# function to load the EUC_SIR file
     def load_detector_slots(self, path):
         """Load the detector slots file."""
-        # print(f"loading {path}")
         wcs_table = Table.read(path, format='csv',
                                header_start=1, data_start=2)
 
@@ -212,11 +210,7 @@ class DetectorModel:
             inside = inside & (v > 0)
         return inside
 
-    ###################################################################
-    # This is the origina implementation
-    ###################################################################
-
-    def getDetectorNumber_(self, xfov, yfov):
+    def getDetectorNumber(self, xfov, yfov):
         """Get the detector index (0 to 15) from FOV coordinates
 
         -1 indicates no detector.
@@ -230,110 +224,23 @@ class DetectorModel:
         -------
         detector index
         """
-        try:
-            xfov[0]
-            scalar_out = False
-        except (TypeError, IndexError):
-            xfov = np.array([xfov])
-            yfov = np.array([yfov])
-            scalar_out = True
+        scalar_out = np.ndim(xfov) == 0
+        xfov = np.atleast_1d(xfov)
+        yfov = np.atleast_1d(yfov)
 
         det_list = np.zeros(len(xfov), dtype=int) - 1
+
         for det_idx in range(16):
             corners_x, corners_y = self.detector_poly_list[det_idx]
-            inside = self.inside_poly(xfov, yfov, corners_x, corners_y)
+
+            inside = fast_inside_poly(xfov, yfov, corners_x, corners_y)
             det_list[inside] = det_idx
 
         if scalar_out:
             return det_list[0]
         return det_list
-    
- 
 
-    
-    ###################################################################
-    # This is the profiled version
-    ###################################################################
-
-    def getDetectorNumber(self, xfov, yfov):
-        #stats = {}
-        #t_start = time.perf_counter()
-
-        # --- 1. Input Handling ---
-        #t0 = time.perf_counter()
-        try:
-            xfov[0]
-            scalar_out = False
-        except (TypeError, IndexError):
-            xfov = np.array([xfov])
-            yfov = np.array([yfov])
-            scalar_out = True
-        #stats['input_prep'] = time.perf_counter() - t0
-
-        # --- 2. Polygon Loop ---
-        det_list = np.zeros(len(xfov), dtype=int) - 1
-        
-        #t_loop_start = time.perf_counter()
-#        poly_times = []
-#        
-#        for det_idx in range(16):
-#            t_p = time.perf_counter()
-#            
-#            corners_x, corners_y = self.detector_poly_list[det_idx]
-#            
-#            # WARNING: These prints will destroy performance if N is large!
-#            # print('corners_x', corners_x)
-#            # print('corners_y', corners_y)
-#            
-#            # This is the geometric heavy lifting
-#            inside = self.inside_poly(xfov, yfov, corners_x, corners_y)
-#            det_list[inside] = det_idx
-#            
-#            inside2 = fast_inside_poly(xfov, yfov, corners_x, corners_y) 
-#            det_list2[inside2] = det_idx
-#
-#            poly_times.append(time.perf_counter() - t_p)
-#        
-#        are_equal = np.allclose(det_list, det_list2, rtol=1e-12, atol=1e-14)
-#        if are_equal:
-#            print("Success: dx and dx2 are identical within floating-point tolerance.")
-#        else:
-#            # Find the maximum difference to see if it's a bug or just precision
-#            diff = np.abs(det_list - det_list2)
-#            print(f" Error: Results differ! Max difference: {np.max(diff)}")
-#            
-#            # Optional: print the first few indices where they differ
-#            mismatch_indices = np.where(~np.isclose(det_list, det_list2))[0]
-#            print(f"First mismatch at index {mismatch_indices[0]}")
-#            print(f"Original: {det_list[mismatch_indices[0]]}, Numba: {det_list2[mismatch_indices[0]]}")
-
-        
-        for det_idx in range(16):
-            corners_x, corners_y = self.detector_poly_list[det_idx]
-
-            # This is the geometric heavy lifting
-            inside = fast_inside_poly(xfov, yfov, corners_x, corners_y) 
-            det_list[inside] = det_idx
-
-
-        #stats['poly_search_total'] = time.perf_counter() - t_loop_start
-
-        #total_time = time.perf_counter() - t_start
-
-        # --- Print Breakdown ---
-        #print(f"\n--- getDetectorNumber Breakdown (N={len(xfov)}) ---")
-        #print(f"Input Prep      : {stats['input_prep']:.6f}s")
-        #print(f"Total Poly Loop : {stats['poly_search_total']:.6f}s")
-        #print(f"{'TOTAL':15}: {total_time:.6f}s")
-
-        if scalar_out:
-            return det_list[0]
-        return det_list
-
-    ###################################################################
-    # This is the origina implementation
-    ###################################################################
-    def getPixel_(self, xfov, yfov, det_id=None):
+    def getPixel(self, xfov, yfov, det_id=None):
         """Transform FOV to detector coordinates
 
         Parameters
@@ -347,107 +254,37 @@ class DetectorModel:
         -------
         x, y
         """
-        try:
-            xfov[0]
-            scalar_out = False
-        except (TypeError, IndexError):
-            scalar_out = True
-            xfov = np.array([xfov])
-            yfov = np.array([yfov])
-            if det_id:
-                det_id = np.array([det_id])
+        scalar_out = np.ndim(xfov) == 0
+        xfov = np.atleast_1d(xfov)
+        yfov = np.atleast_1d(yfov)
+        if det_id is not None:
+            det_id = np.atleast_1d(det_id)
 
-        if not det_id:
+        if det_id is None:
             det_id = self.getDetectorNumber(xfov, yfov)
 
-        # ensure that det_id is a list
-        det_id = np.ones(len(xfov), dtype=int) * det_id
+        det_id = np.full(len(xfov), det_id, dtype=int)
 
         if self.params['rotated']:
-            #print('is rotated')
             xfov, yfov = -yfov, xfov
 
         fov = np.array([xfov, yfov])
         x = np.zeros(len(xfov))
         y = np.zeros(len(yfov))
-        for det_id_ in np.unique(det_id):
-            sel = det_id == det_id_
-            crpix, crval, _, cdinv = self._detector_transforms[det_id_]
-            x[sel], y[sel] = np.dot(cdinv, fov[:, sel]- crval[:, np.newaxis]) + crpix[:, np.newaxis] - 1
-        if scalar_out:
-            return x[0], y[0], det_id[0]
 
-        return x, y, det_id
-    
-    ###################################################################
-    # This is the profiled version
-    ###################################################################
-    def getPixel(self, xfov, yfov, det_id=None):
-        #stats = {}
-        #t_start = time.perf_counter()
-
-        # --- 1. Input Handling & Scalar Check ---
-        #t0 = time.perf_counter()
-        try:
-            xfov[0]
-            scalar_out = False
-        except (TypeError, IndexError):
-            scalar_out = True
-            xfov = np.atleast_1d(xfov)
-            yfov = np.atleast_1d(yfov)
-            if det_id is not None:
-                det_id = np.atleast_1d(det_id)
-        #stats['input_prep'] = time.perf_counter() - t0
-
-        # --- 2. Detector Identification ---
-        #t1 = time.perf_counter()
-        if det_id is None:
-            det_id = self.getDetectorNumber(xfov, yfov)
-        
-        # This line is dangerous: if det_id is already an array, 
-        # multiplying by np.ones creates a huge redundant matrix.
-        #stats['det_id_logic'] = time.perf_counter() - t1
-        det_id = np.ones(len(xfov), dtype=int) * det_id
-
-        # --- 3. Rotation Logic ---
-        #t2 = time.perf_counter()
-        if self.params['rotated']:
-            xfov, yfov = -yfov, xfov
-        #stats['rotation'] = time.perf_counter() - t2
-
-        # --- 4. The Loop & Linear Algebra ---
-        #t3 = time.perf_counter()
-        fov = np.array([xfov, yfov]) # Allocation 1
-        x = np.zeros(len(xfov))      # Allocation 2
-        y = np.zeros(len(yfov))      # Allocation 3
-        
         unique_dets = np.unique(det_id)
-        #stats['np_unique'] = time.perf_counter() - t3
-        
-        #t_loop = time.perf_counter()
+
         for det_id_ in unique_dets:
             sel = (det_id == det_id_)
             crpix, crval, _, cdinv = self._detector_transforms[det_id_]
-            
-            # Linear transform: Matrix dot product + broadcasting
+
             res = np.dot(cdinv, fov[:, sel] - crval[:, np.newaxis]) + crpix[:, np.newaxis] - 1
             x[sel], y[sel] = res[0], res[1]
-        #stats['transform_loop'] = time.perf_counter() - t_loop
-
-        #total_time = time.perf_counter() - t_start
-
-        # --- Print Breakdown ---
-        #print(f"\n--- getPixel Breakdown (N={len(xfov)}) ---")
-        #for key, duration in stats.items():
-        #    print(f"{key:20}: {duration:.6f}s ({ (duration/total_time)*100 :.1f}%)")
-        #print(f"{'TOTAL':20}: {total_time:.6f}s")
 
         if scalar_out:
             return x[0], y[0], det_id[0]
 
         return x, y, det_id
-
-
 
     def getFOVPosition(self, x, y, det_id):
         """Transform detector to FOV coordinates
@@ -462,19 +299,14 @@ class DetectorModel:
         -------
         xfov, yfov
         """
-        try:
-            x[0]
-            scalar_out = False
-        except (TypeError, IndexError):
-            scalar_out = True
-            x = np.array([x])
-            y = np.array([y])
+        scalar_out = np.ndim(x) == 0
+        x = np.atleast_1d(x)
+        y = np.atleast_1d(y)
 
         if x.size == 0:
-            raise ValueError("getFOVPosition received empty input") 
+            raise ValueError("getFOVPosition received empty input")
 
-        # ensure that det_id is a list
-        det_id = np.ones(len(x), dtype=int) * det_id
+        det_id = np.full(len(x), det_id, dtype=int)
 
         pix = np.array([x, y]) + 1
 
@@ -483,8 +315,6 @@ class DetectorModel:
 
         for det_id_ in np.unique(det_id):
             sel = det_id == det_id_
-            if np.sum(sel) == 0:
-                continue
             crpix, crval, cd, _ = self._detector_transforms[det_id_]
             xfov[sel], yfov[sel] = np.dot(cd, pix[:, sel] - crpix[:, np.newaxis]) + crval[:, np.newaxis]
 
