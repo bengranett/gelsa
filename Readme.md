@@ -37,12 +37,6 @@ Install
 python -m pip install git+https://github.com/elsa-euclid/gelsa.git
 ```
 
-The Euclid archive tools and notebook GUIs in `gelsa.esa` need the `esa` extra. It depends on [azulero](https://github.com/kabasset/azulero) 2.1, which is not yet on PyPI:
-```
-python -m pip install git+https://github.com/kabasset/azulero.git@master
-python -m pip install "gelsa[esa] @ git+https://github.com/elsa-euclid/gelsa.git"
-```
-
 For development, clone the repository and install in editable mode:
 ```
 python -m pip install -e ".[dev]"
