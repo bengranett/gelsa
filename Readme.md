@@ -78,5 +78,5 @@ Third-party code
 Acknowledgments
 ---------------
 
-<img src="docs/_static/EN_FundedbytheEU_RGB_POS.png" alt="EU Funding" width="150">
+<img src="https://raw.githubusercontent.com/elsa-euclid/gelsa/main/docs/_static/EN_FundedbytheEU_RGB_POS.png" alt="EU Funding" width="150">
 “ELSA: Euclid Legacy Science Advanced analysis tools” (Grant Agreement no. 101135203) is funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or Innovate UK. Neither the European Union nor the granting authority can be held responsible for them. UK participation is funded through the UK Horizon guarantee scheme under Innovate UK grant 10093177.
