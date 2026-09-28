@@ -1,8 +1,12 @@
 name: publish
 
+# A published GitHub release uploads to PyPI.
+# Running the workflow by hand (Actions tab -> publish -> Run workflow)
+# uploads to TestPyPI instead.
 on:
   release:
     types: [published]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -21,7 +25,26 @@ jobs:
           name: dist
           path: dist/
 
+  publish-testpypi:
+    if: github.event_name == 'workflow_dispatch'
+    needs: build
+    runs-on: ubuntu-latest
+    environment: testpypi
+    permissions:
+      id-token: write   # lets TestPyPI verify the upload comes from this workflow
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+      - uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          repository-url: https://test.pypi.org/legacy/
+          # a version can be uploaded only once; skip it on repeated test runs
+          skip-existing: true
+
   publish:
+    if: github.event_name == 'release'
     needs: build
     runs-on: ubuntu-latest
     environment: pypi
