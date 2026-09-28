@@ -10,6 +10,7 @@ GELSA builds on the products of the Euclid Science Ground Segment and SIR proces
 
 **Links**
 * [Documentation](https://elsa-euclid.github.io/gelsa/)
+* [Notebooks](https://github.com/elsa-euclid/gelsa-notebooks)
 * [Source code](https://github.com/elsa-euclid/gelsa)
 
 **Key Features:**
