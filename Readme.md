@@ -34,8 +34,11 @@ Install
 -------
 
 ```
-python -m pip install git+https://github.com/elsa-euclid/gelsa.git
+python -m pip install gelsa
 ```
+
+The development version can be installed from GitHub with
+`python -m pip install git+https://github.com/elsa-euclid/gelsa.git`.
 
 For development, clone the repository and install in editable mode:
 ```

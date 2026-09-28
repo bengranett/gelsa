@@ -9,8 +9,7 @@ and builds an Hα line map. It runs on
 `ESA Datalabs <https://datalabs.esa.int>`_, where the Euclid data products and
 the SIR calibration files are mounted on the file system.
 
-The example target is a galaxy at z = 0.751 in the COSMOS field. This
-walkthrough needs the ``esa`` extra (see :ref:`how_to_install`).
+The example target is a galaxy at z = 0.751 in the COSMOS field.
 
 .. code:: python
 

@@ -47,7 +47,7 @@ autodoc_default_options = {
     'show-inheritance': True,
 }
 autodoc_member_order = 'bysource'
-# Dependencies of the optional ``esa`` extra, mocked so the API pages build
+# Dependencies of the gelsa.esa modules, mocked so the API pages build
 # without them.
 autodoc_mock_imports = ['azulero', 'ipywidgets', 'IPython', 'astroquery']
 napoleon_google_docstring = True

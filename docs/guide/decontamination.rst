@@ -10,8 +10,8 @@ from other objects. :class:`~gelsa.decontam.Decontamination` removes it by
 modelling the target and its neighbours together, and fitting the spectra of
 all of them at once.
 
-This walkthrough runs on `ESA Datalabs <https://datalabs.esa.int>`_ and needs
-the ``esa`` extra (see :ref:`how_to_install`). A complete version is in the
+This walkthrough runs on `ESA Datalabs <https://datalabs.esa.int>`_ (see
+:ref:`how_to_install` to install `gelsa`). A complete version is in the
 notebook ``GELSA_1d_spectra_decontamination.ipynb``.
 
 

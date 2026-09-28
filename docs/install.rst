@@ -7,27 +7,27 @@ Installation
 Install with pip
 ================
 
-Install the latest version directly from GitHub:
+`gelsa` needs Python 3.10 or later. Install the latest release from
+`PyPI <https://pypi.org/project/gelsa/>`_:
+
+.. code:: bash
+
+    python -m pip install gelsa
+
+The required dependencies (numpy, scipy, numba, astropy, …) are installed
+automatically.
+
+To get the development version, with changes not yet released, install from
+GitHub instead:
 
 .. code:: bash
 
     python -m pip install git+https://github.com/elsa-euclid/gelsa.git
 
-The required dependencies (numpy, scipy, numba, astropy, …) are installed
-automatically.
-
-Euclid archive and notebook tools
----------------------------------
-
-The :mod:`gelsa.esa` modules query the Euclid archive and provide the
-interactive line map studio. They need extra packages, installed with the
-``esa`` extra. Version 2.1 of `azulero <https://github.com/kabasset/azulero>`_
-is not yet on PyPI, so install it from GitHub first:
-
-.. code:: bash
-
-    python -m pip install git+https://github.com/kabasset/azulero.git@master
-    python -m pip install "gelsa[esa] @ git+https://github.com/elsa-euclid/gelsa.git"
+The packages used by the :mod:`gelsa.esa` modules, which query the Euclid
+archive and provide the interactive line map studio, are installed too:
+astroquery, `azulero <https://github.com/kabasset/azulero>`_, ipywidgets and
+IPython.
 
 Install from source
 ===================
@@ -39,7 +39,7 @@ To modify the code, clone the repository and make an editable install. The
 
     git clone https://github.com/elsa-euclid/gelsa.git
     cd gelsa
-    python -m pip install -e ".[dev]"      # or ".[dev,esa]"
+    python -m pip install -e ".[dev]"
     pytest
 
 Some tests need the SIR calibration files. They are skipped when those files
