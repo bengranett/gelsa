@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "gelsa"
-version = "4.0"
+version = "4.1"
 description = "Advanced tools for Euclid grism spectroscopy"
 readme = "Readme.md"
 requires-python = ">=3.10"
