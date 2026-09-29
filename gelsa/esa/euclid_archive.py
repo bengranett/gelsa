@@ -120,23 +120,31 @@ def _survey_tables(survey):
         'deep_visits': 'mer_catalogue_deep_visits',
         'deep': 'mer_catalogue_deep_survey',
         'wide': 'mer_catalogue_wide_survey',
-        'cosmos': 'mer_catalogue_deep_mode',
+        'deep_mode': 'mer_catalogue_deep_mode',
+        'wide_mode': 'mer_catalogue_wide_mode',
     }
     tables_sir = {
         'deep_visits': 'spectra_source_deep_visits',
         'deep': 'spectra_source_deep',
         'wide': 'spectra_source_wide',
-        'cosmos': 'spectra_source_deep',
+        'deep_mode': 'spectra_source_deep',
+        'wide_mode': 'spectra_source_wide',
     }
     survey = survey.lower()
     if 'visits' in survey:
         survey = 'deep_visits'
+    elif 'wide' in survey and 'mode' in survey:
+        survey = 'wide_mode'
+    elif 'deep' in survey and 'mode' in survey:
+        survey = 'deep_mode'
     elif 'wide' in survey:
         survey = 'wide'
     elif 'cosmos' in survey:
-        survey = 'cosmos'
-    else:
+        survey = 'deep_mode'
+    elif 'deep' in survey:
         survey = 'deep'
+    else:
+        raise ValueError(f"Could not identify survey '{survey}' options: ('wide', 'deep', 'wide_mode', 'deep_mode', 'deep_visits', 'cosmos')")
 
     return tables_sir[survey], tables_mer[survey]
 
