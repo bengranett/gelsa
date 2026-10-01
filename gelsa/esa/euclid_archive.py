@@ -276,7 +276,7 @@ class EuclidArchive:
 
     # --- MER products ----------------------------------------------------
 
-    def query_mer_mosaic(self, tile_index, filter=None, patch_id=None):
+    def query_mer_mosaic(self, tile_index, filter=None, patch_id=None, processing_mode=None, purpose=None):
         """ """
         query = f"""SELECT CONCAT(mer.datalabs_path,'/',mer.file_name) AS full_path, mer.filter_name
                 FROM {self._product_table('mosaic_product')} AS mer
@@ -285,15 +285,23 @@ class EuclidArchive:
             query += f" and mer.patch_id_list='{patch_id}'"
         if filter is not None:
             query += f" and mer.filter_name='{filter}'"
+        if processing_mode is not None:
+            query += f" and processing_mode='{processing_mode}'"
+        if purpose is not None:
+            query += f" and purpose='{purpose}'"
         return self.query(query)
 
-    def query_mer_segmap(self, tile_index, patch_id=None):
+    def query_mer_segmap(self, tile_index, patch_id=None, processing_mode=None, purpose=None):
         """ """
         query = f"""SELECT CONCAT(mer.datalabs_path,'/',mer.file_name) AS full_path
                 FROM {self._product_table('mer_segmentation_map')} AS mer
                 WHERE mer.tile_index={tile_index}"""
         if patch_id is not None:
             query += f" and mer.patch_id_list='{patch_id}'"
+        if processing_mode is not None:
+            query += f" and processing_mode='{processing_mode}'"
+        if purpose is not None:
+            query += f" and purpose='{purpose}'"
         return self.query(query)
 
     def query_mer_tile(self, ra, dec, radius_deg=0.3, survey='Deep'):
@@ -310,7 +318,7 @@ class EuclidArchive:
         return tile_list
 
 
-    def query_mer_catalog_by_tile(self, tile_index, patch_id=None):
+    def query_mer_catalog_by_tile(self, tile_index, patch_id=None, processing_mode=None, purpose=None):
         """Query path to MER final catalogue tile.
         """
         query = f"""SELECT datalabs_path, CONCAT(file_name_list) as file_name_list
@@ -318,6 +326,10 @@ class EuclidArchive:
                 WHERE tile_index_list='{{{tile_index}}}'"""
         if patch_id is not None:
             query += f" and patch_id_list='{{{patch_id}}}'"
+        if processing_mode is not None:
+            query += f" and processing_mode='{processing_mode}'"
+        if purpose is not None:
+            query += f" and purpose='{purpose}'"
         results = self.query(query)
         row = results[0]
         path = row['datalabs_path']
@@ -360,12 +372,12 @@ class EuclidArchive:
             wcs = WCS(hdul[0].header)
         return image, wcs
 
-    def load_tile_image(self, tile, patch_id=None, filter='NIR_J'):
+    def load_tile_image(self, tile, patch_id=None, filter='NIR_J', processing_mode=None, purpose=None):
         """Load an image by tile index, filter and optional patch ID.
 
         Returns image, segmap, wcs
         """
-        results = self.query_mer_mosaic(tile, patch_id=patch_id, filter=filter)
+        results = self.query_mer_mosaic(tile, patch_id=patch_id, filter=filter, processing_mode=processing_mode, purpose=purpose)
         results_seg = self.query_mer_segmap(tile, patch_id=patch_id)
 
         image = None
@@ -381,11 +393,11 @@ class EuclidArchive:
         return image, segmap, wcs
 
     def load_stamp(self, ra, dec, width=51, height=51, filter='NIR_H', radius_deg=10./3600,
-                   survey='DEEP', patch_id=None, hdu=0):
+                   survey='DEEP', patch_id=None, processing_mode=None, purpose=None, hdu=0):
         """ """
         tile_index = self.query_mer_tile(ra, dec, radius_deg=radius_deg, survey=survey)
         tile_index = tile_index[0]
-        results = self.query_mer_mosaic(tile_index, filter=filter, patch_id=patch_id)
+        results = self.query_mer_mosaic(tile_index, filter=filter, patch_id=patch_id, processing_mode=processing_mode, purpose=purpose)
         filter_select = results['filter_name'] == filter
         if np.sum(filter_select) == 0:
             logger.warning(f"filter {filter} not found. options: {np.unique(results['filter_name'])}")
