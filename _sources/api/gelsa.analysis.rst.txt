@@ -1,0 +1,12 @@
+gelsa.analysis
+==============
+
+.. automodule:: gelsa.analysis
+
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Analysis
+   

@@ -1,0 +1,18 @@
+gelsa.sgs.displacement\_model
+=============================
+
+.. automodule:: gelsa.sgs.displacement_model
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      string_to_array
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      DisplacementModel
+   

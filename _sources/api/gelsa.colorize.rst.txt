@@ -1,0 +1,19 @@
+gelsa.colorize
+==============
+
+.. automodule:: gelsa.colorize
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      colorize
+      composite
+      histogram_rgb
+      make_wcs
+      make_wcs_from_specframe
+      mosaic_image
+      reproject_specframe
+      spectro_composite
+   

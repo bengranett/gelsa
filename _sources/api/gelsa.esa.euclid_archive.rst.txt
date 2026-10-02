@@ -1,0 +1,19 @@
+gelsa.esa.euclid\_archive
+=========================
+
+.. automodule:: gelsa.esa.euclid_archive
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      clear_query_cache
+      object_id_to_radec
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      EuclidArchive
+   

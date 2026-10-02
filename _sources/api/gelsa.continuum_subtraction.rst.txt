@@ -1,0 +1,22 @@
+gelsa.continuum\_subtraction
+============================
+
+.. automodule:: gelsa.continuum_subtraction
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      cosmetic_filter
+      make_line_mask
+      median_filter
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      MedianFilterBase
+      MedianFilterCutout
+      MedianFilterFrame
+   

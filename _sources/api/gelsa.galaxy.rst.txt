@@ -1,0 +1,12 @@
+gelsa.galaxy
+============
+
+.. automodule:: gelsa.galaxy
+
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Galaxy
+   

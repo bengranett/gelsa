@@ -1,0 +1,18 @@
+gelsa.utils
+===========
+
+.. automodule:: gelsa.utils
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      asarray
+      ensurelist
+      intrange
+      inverse2d
+      is_number
+      make_wcs
+      rotate_around
+   

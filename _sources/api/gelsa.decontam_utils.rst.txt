@@ -1,0 +1,20 @@
+gelsa.decontam\_utils
+=====================
+
+.. automodule:: gelsa.decontam_utils
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      build_contaminant_list
+      build_gal_list
+      build_target_gal_list
+      crop_image
+      find_image
+      get_overlapping_sources
+      pack_images
+      plot2d
+      plot2d_target
+   

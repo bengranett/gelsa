@@ -1,0 +1,13 @@
+gelsa.consts
+============
+
+.. automodule:: gelsa.consts
+
+   
+   .. rubric:: Module Attributes
+
+   .. autosummary::
+   
+      c
+      planck
+   

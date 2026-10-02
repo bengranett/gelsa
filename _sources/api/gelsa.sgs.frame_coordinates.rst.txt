@@ -1,0 +1,12 @@
+gelsa.sgs.frame\_coordinates
+============================
+
+.. automodule:: gelsa.sgs.frame_coordinates
+
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      FrameCoordinates
+   
