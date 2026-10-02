@@ -239,7 +239,7 @@ def build_target_gal_list(target_list, image_list,
     return gal_list
 
 
-def plot2d(fit_list, vmin=-50, vmax=200, cmap='inferno_r',
+def plot2d(fit_list, vmin=-50, vmax=200, figsize=(10, 10), cmap='inferno_r',
           label="", tag='all', outdir=None,
               pad=10):
     """ """
@@ -286,7 +286,12 @@ def plot2d(fit_list, vmin=-50, vmax=200, cmap='inferno_r',
 
         shape = im_m.shape
         aspect = shape[0]/shape[1]
-        plt.figure(figsize=(8,8*aspect*2))
+
+        if figsize is not None:
+            figsize=(figsize[0], figsize[0] * aspect * 2.5)
+
+        plt.figure(figsize=figsize)
+
         ax1=plt.subplot(311)
         plt.imshow(im_d, vmin=vmin, vmax=vmax, cmap=cmap)
         ax1.text(0,1,"Data", transform=ax1.transAxes,c='k', va='top', fontsize=14)
@@ -314,7 +319,7 @@ def plot2d(fit_list, vmin=-50, vmax=200, cmap='inferno_r',
             plt.close()
 
 
-def plot2d_target(fit_list, frame_list, fig=None, vmin=-50, vmax=200, cmap='inferno_r',
+def plot2d_target(fit_list, frame_list, figsize=(10, 10) , vmin=-50, vmax=200, cmap='inferno_r',
           only_target=False, label="", tag='target', outdir=None,
               pad=10):
     """ """
@@ -392,8 +397,11 @@ def plot2d_target(fit_list, frame_list, fig=None, vmin=-50, vmax=200, cmap='infe
 
         shape = im_m.shape
         aspect = shape[0]/shape[1]
-        if fig is None:
-            plt.figure(figsize=(8,16*aspect))
+
+        if figsize is not None:
+            figsize=(figsize[0], figsize[0] * aspect * 2.5)
+
+        plt.figure(figsize=figsize)
 
         info = (f"Pointing ID: {params['PTGID']}\nDither {params['DITHOBS']}\n"
                 f"Grism: {params['grism_name']}\nDetector: {det}\n"
