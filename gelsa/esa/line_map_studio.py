@@ -11,8 +11,9 @@ export.  A notebook only has to open it::
 A target is either typed in as RA, Dec and redshift, or picked from a
 ``targets.txt`` file with columns ``name,ra_deg,dec_deg,redshift``.  Where the
 line map is centred can be given either as a redshift plus a rest-frame line,
-or directly as the observed wavelength, which is what the stacker actually
-uses.
+or directly as any observed wavelength, which is what the stacker actually
+uses.  Only the SIR frames whose grism sensitivity range covers that
+wavelength are stacked, so the blue or red grism is picked to suit it.
 
 Wavelengths are in nanometres throughout the interface, the labels and the
 FITS header, and converted to the Angstrom that gelsa works in at the call.
@@ -112,9 +113,34 @@ DEFAULT_OBSERVED_NM = 1149.463
 # target reads against one scale whichever grism its line falls in.
 DEFAULT_HUE_RANGE_NM = (920.0, 1900.0)
 
+# How far each press of the wavelength up and down buttons moves the line map.
+WAVELENGTH_STEP_NM = 0.1
+
+# Loggers whose INFO messages are written into the log box.
+LOG_TO_BOX = ('gelsa', 'astroquery')
+
 DEFAULT_CREDENTIALS = '/media/home/my_workspace/password'
 DEFAULT_CONFIG = '/media/home/my_workspace/gelsa-spectra/calib/gelsa_config.json'
 DEFAULT_CALIBDIR = '/media/home/my_workspace/gelsa-spectra/calib/'
+
+
+class OutputHandler(logging.Handler):
+    """Write log records into an ``ipywidgets.Output`` box.
+
+    Appending to the widget directly, rather than printing inside its context
+    manager, shows the messages whichever callback logged them.
+    """
+
+    def __init__(self, output, level=logging.INFO):
+        super().__init__(level)
+        self.output = output
+        self.setFormatter(logging.Formatter('%(levelname)s %(name)s: %(message)s'))
+
+    def emit(self, record):
+        try:
+            self.output.append_stdout(self.format(record) + '\n')
+        except Exception:
+            self.handleError(record)
 
 
 class Quiet:
@@ -236,6 +262,10 @@ def compute_continuum_rgb(stamps, wcs, transform):
     return np.clip(np.asarray(bgr)[:, :, ::-1], 0, 1)
 
 
+# The log handler of the newest studio, replaced when another one is built.
+_log_handler = None
+
+
 class LineMapStudio:
     """Widget front end for the whole line map figure pipeline.
 
@@ -270,6 +300,10 @@ class LineMapStudio:
         self.wcs = None
         self.frame = None          # one SpecFrame, kept open for colorize
         self.frame_paths = []      # every SIR frame used for the stack
+        # Sensitivity range of each frame in frame_paths, in Angstrom, so a
+        # move of the centre wavelength can be checked against what was
+        # loaded.  Empty when the ranges are not known.
+        self.frame_ranges = []
         self.frame_index = None    # which of them self.frame came from
         self.line_map = None       # (elmap, var, norm, count)
         self.hue_rgb = None        # wavelength-coloured trace image
@@ -286,6 +320,7 @@ class LineMapStudio:
 
         self._build_widgets(targets_file, credentials_file, config_file,
                             calibdir)
+        self._attach_log_handler()
         self._load_targets()
         self.refresh()
 
@@ -371,12 +406,14 @@ class LineMapStudio:
             description='Search (deg)', value=0.5, min=0.01, max=2.0,
             step=0.05, layout=small, style={'description_width': '100px'})
         self.w_grism_filter = widgets.Text(
-            description='Frame filter', value='BGS', layout=small,
+            description='Frame filter', value='', layout=small,
             style={'description_width': '90px'},
             description_tooltip='Substrings a SIR frame path may contain, '
                                 'comma separated: BGS for the blue grism '
                                 'alone, BGS,RGS to stack both, empty for '
-                                'every frame the query returned')
+                                'every frame the query returned. Frames '
+                                'whose grism does not cover the observed '
+                                'wavelength are dropped either way.')
         self.w_one_per_pointing = widgets.Checkbox(
             description='One frame per pointing', value=True, indent=False,
             layout=widgets.Layout(width='210px'))
@@ -431,6 +468,17 @@ class LineMapStudio:
         self.w_progress_label = widgets.HTML(value='')
         self.w_log = widgets.Output(layout=widgets.Layout(
             height='170px', overflow='auto', border='1px solid #ccc'))
+        self.w_wave_down = widgets.Button(
+            description=f'-{WAVELENGTH_STEP_NM:g} nm', icon='arrow-down',
+            layout=widgets.Layout(width='120px'),
+            tooltip='Move the observed wavelength down and restack')
+        self.w_wave_up = widgets.Button(
+            description=f'+{WAVELENGTH_STEP_NM:g} nm', icon='arrow-up',
+            layout=widgets.Layout(width='120px'),
+            tooltip='Move the observed wavelength up and restack')
+        self.w_wave_down.on_click(lambda _: self.step_wavelength(-1))
+        self.w_wave_up.on_click(lambda _: self.step_wavelength(+1))
+        self.w_wave_status = widgets.HTML(value='')
 
         connection_tab = widgets.VBox([
             widgets.HTML(
@@ -448,8 +496,9 @@ class LineMapStudio:
             widgets.HTML(
                 "Where the line map is centred. With <b>Redshift</b> the "
                 "observed wavelength is <code>rest * (1 + z)</code>; with "
-                "<b>Observed wavelength</b> it is used as typed and the "
-                "redshift is ignored."),
+                "<b>Observed wavelength</b> any wavelength is used as typed "
+                "and the redshift is ignored. Only frames whose grism "
+                "covers it are stacked."),
             widgets.HBox([self.w_center_mode,
                           widgets.VBox([self.w_redshift, self.w_rest_line]),
                           self.w_observed]),
@@ -475,6 +524,8 @@ class LineMapStudio:
             self.w_load_status,
             widgets.HBox([self.w_progress, self.w_progress_label]),
             self.w_log,
+            widgets.HBox([self.w_wave_down, self.w_wave_up,
+                          self.w_wave_status]),
         ])
 
         # --- continuum colour ------------------------------------------
@@ -539,7 +590,7 @@ class LineMapStudio:
 
         # --- line map colouring ----------------------------------------
         self.w_color_mode = widgets.Dropdown(
-            description='Colouring', value='Wavelength rainbow',
+            description='Colouring', value='Single hue',
             options=['Wavelength rainbow', 'Single hue'],
             layout=widgets.Layout(width='300px'), style=style)
         self.w_cmap = widgets.Dropdown(
@@ -683,6 +734,12 @@ class LineMapStudio:
         self.w_show_compass = widgets.Checkbox(
             description='N/E compass', value=False, indent=False,
             layout=widgets.Layout(width='140px'))
+        self.w_show_wavelength = widgets.Checkbox(
+            description='Wavelength on line map', value=False, indent=False,
+            layout=widgets.Layout(width='210px'),
+            description_tooltip='Write the observed wavelength in nm in the '
+                                'bottom left corner of the line map, also on '
+                                'a clean image')
         self.w_annot_color = widgets.ColorPicker(
             description='Annotation colour', value='#ffffff', concise=False,
             layout=widgets.Layout(width='260px'), style=style)
@@ -706,7 +763,9 @@ class LineMapStudio:
                 "piece of text, and lets the pixels fill the figure edge to "
                 "edge - what a cover image or a figure with its own caption "
                 "wants. The graphical annotations still honour their own "
-                "checkboxes, they just lose their labels."),
+                "checkboxes, they just lose their labels. <b>Wavelength on "
+                "line map</b> is the exception: it writes the observed "
+                "wavelength on the line map even on a clean image."),
             widgets.HBox([self.w_clean] + [self.w_panels[n] for n in PANEL_ORDER[:2]]),
             widgets.HBox([self.w_panels[n] for n in PANEL_ORDER[2:]]),
             widgets.HBox([self.w_panel_width, self.w_panel_height, self.w_dpi,
@@ -715,7 +774,7 @@ class LineMapStudio:
             widgets.HBox([self.w_show_wcs, self.w_show_grid, self.w_show_cbar,
                           self.w_show_labels]),
             widgets.HBox([self.w_show_scalebar, self.w_scalebar_arcsec,
-                          self.w_show_compass]),
+                          self.w_show_compass, self.w_show_wavelength]),
             widgets.HBox([self.w_annot_color, self.w_font_size,
                           self.w_count_cmap]),
         ])
@@ -837,13 +896,31 @@ class LineMapStudio:
             self.w_clean, self.w_panel_width, self.w_panel_height, self.w_dpi,
             self.w_title, self.w_show_wcs, self.w_show_grid, self.w_show_cbar,
             self.w_show_labels, self.w_show_scalebar, self.w_scalebar_arcsec,
-            self.w_show_compass, self.w_annot_color, self.w_font_size,
+            self.w_show_compass, self.w_show_wavelength,
+            self.w_annot_color, self.w_font_size,
             self.w_facecolor, self.w_count_cmap,
         ] + self.w_scaling + list(self.w_panels.values())
 
     # ------------------------------------------------------------------
     # target handling
     # ------------------------------------------------------------------
+    def _attach_log_handler(self):
+        """Send INFO messages of :data:`LOG_TO_BOX` to this studio's log box.
+
+        Only the newest studio gets them: a handler left by an earlier one,
+        e.g. from re-running the notebook cell, is replaced.
+        """
+        global _log_handler
+        handler = OutputHandler(self.w_log)
+        for name in LOG_TO_BOX:
+            logger = logging.getLogger(name)
+            if _log_handler is not None:
+                logger.removeHandler(_log_handler)
+            logger.addHandler(handler)
+            if logger.getEffectiveLevel() > logging.INFO:
+                logger.setLevel(logging.INFO)
+        _log_handler = handler
+
     def _connection_summary(self):
         bits = []
         bits.append('archive ' + ('ready' if self.EA is not None else 'not connected'))
@@ -945,6 +1022,11 @@ class LineMapStudio:
         else:
             text = (f"Line map centred on <b>{observed:.2f} nm</b> as "
                     f"typed; the redshift box is ignored.")
+        if self.frame_ranges and not any(
+                lo <= observed * ANGSTROM_PER_NM <= hi
+                for lo, hi in self.frame_ranges):
+            text += (" <span style='color:#c0392b'>No loaded frame covers "
+                     "this wavelength - load the target again.</span>")
         if self.hue_wavelength is not None and \
                 abs(self.hue_wavelength - observed) > 0.1:
             text += (" <span style='color:#c0392b'>The hue map was built at "
@@ -1045,7 +1127,8 @@ class LineMapStudio:
 
                 self.w_load_status.value = 'Querying SIR frames...'
                 paths = self.EA.query_sir_frames(
-                    ra, dec, radius=self.w_radius.value)
+                    ra, dec, radius_deg=self.w_radius.value,
+                    unique_pointing_id=self.w_one_per_pointing.value)
                 needle = self.w_grism_filter.value.strip()
                 wanted = [n.strip() for n in needle.split(',') if n.strip()]
                 if wanted:
@@ -1056,18 +1139,25 @@ class LineMapStudio:
                         f"no SIR frames within {self.w_radius.value} deg "
                         f"matching '{needle}'")
 
-                if self.w_one_per_pointing.value:
-                    self.w_load_status.value = (
-                        f'Reading headers of {len(paths)} frames...')
-                    self._progress_start('Reading frame headers', len(paths))
-                    paths = self._one_per_pointing(paths)
+                observed = self.observed_wavelength()
+                self.w_load_status.value = (
+                    f'Reading headers of {len(paths)} frames...')
+                self._progress_start('Reading frame headers', len(paths))
+                paths, ranges = self._frames_covering(
+                    paths, observed * ANGSTROM_PER_NM)
+                if not paths:
+                    raise RuntimeError(
+                        f"none of the SIR frames matching '{needle}' covers "
+                        f"{observed:.2f} nm")
                 if self.w_max_frames.value > 0:
                     paths = paths[:self.w_max_frames.value]
+                    ranges = ranges[:self.w_max_frames.value]
 
                 # One frame stays open: colorize needs its focal plane
                 # model, and it has to be a frame that actually sees the
                 # target -- a 0.5 degree search returns plenty that do not.
                 self.frame_paths = list(paths)
+                self.frame_ranges = list(ranges)
                 score = self.choose_trace_frame()
                 self.w_load_status.value = (
                     f'Tracing from frame {self.frame_index} '
@@ -1078,9 +1168,12 @@ class LineMapStudio:
                 self.A = analysis.Analysis(self.G)
                 self.A.read_file_list(paths)
                 self._progress_start('Cropping frames', len(paths))
+                # The crop spans each frame's whole sensitivity range, so it
+                # suits any wavelength; the redshift is only metadata.
+                by_redshift = self.w_center_mode.value == 'Redshift'
                 self.A.crop(
                     ra, dec,
-                    redshift=self.w_redshift.value,
+                    redshift=self.w_redshift.value if by_redshift else None,
                     padx=self.w_padx.value,
                     pady=self.w_pady.value,
                     continuum_subtraction=self.continuum_subtraction(),
@@ -1219,6 +1312,7 @@ class LineMapStudio:
 
         self.frame_paths = [pack['frame_path'] for pack in analysis.sir_pack
                             if 'frame_path' in pack]
+        self.frame_ranges = []
         self._rgb_cache_key = None
         self.hue_rgb = None
         self.hue_wavelength = None
@@ -1244,7 +1338,8 @@ class LineMapStudio:
     def choose_trace_frame(self, max_tries=12, good=0.25):
         """Pick a frame whose dispersion sweeps the field, and open it.
 
-        Frames of the preferred grism are tried first, then the rest, and the
+        Frames whose sensitivity range covers the observed wavelength are
+        tried first, those of the preferred grism ahead of the rest, and the
         first one that sweeps at least ``good`` of the field is kept. The grism matters beyond
         geometry: ``colorize`` spreads the colour map over the trace frame's
         whole sensitivity range, so a red-grism frame would give this target a
@@ -1259,8 +1354,15 @@ class LineMapStudio:
         fixed = self.observed_angstrom()
         prefer = self.w_trace_grism.value.strip()
         candidates = list(enumerate(self.frame_paths))
-        if prefer:
-            candidates.sort(key=lambda c: prefer not in c[1])
+
+        def rank(candidate):
+            index, path = candidate
+            covers = True
+            if index < len(self.frame_ranges):
+                lo, hi = self.frame_ranges[index]
+                covers = lo <= fixed <= hi
+            return (not covers, bool(prefer) and prefer not in path)
+        candidates.sort(key=rank)
         for index, path in candidates[:max_tries]:
             frame = self.G.load_frame(path)
             score = trace_sweep(frame, self.wcs, fixed)
@@ -1309,24 +1411,24 @@ class LineMapStudio:
         self._sync_hue_frame_options(index)
         return trace_sweep(frame, self.wcs, self.observed_angstrom())
 
-    def _one_per_pointing(self, paths):
-        """Keep one frame per pointing, as the demo notebook does.
+    def _frames_covering(self, paths, wavelength):
+        """Keep the frames whose sensitivity range covers ``wavelength``.
 
-        Every exposure carries its own pointing id, including the blue and red
-        exposures of the same field, so this stays correct with both grisms in
-        the list.
+        ``wavelength`` is in Angstrom. A frame that does not cover it cannot
+        add anything to the line map, and which grism does depends on the
+        wavelength, so this is what lets the line map be centred anywhere.
+
+        Returns the kept paths and their sensitivity ranges.
         """
-        seen = {}
-        keep = []
+        keep, ranges = [], []
         for i, path in enumerate(paths):
             frame = self.G.load_frame(path)
-            pointing = frame.params['PTGID']
+            lo, hi = frame.params['wavelength_range']
             self._progress_step(i + 1)
-            if pointing in seen:
-                continue
-            seen[pointing] = True
-            keep.append(path)
-        return keep
+            if lo <= wavelength <= hi:
+                keep.append(path)
+                ranges.append((lo, hi))
+        return keep, ranges
 
     def stack_line_map(self):
         """Stack the line map at the current wavelength. Raises on failure.
@@ -1337,6 +1439,12 @@ class LineMapStudio:
         if self.A is None or self.wcs is None:
             raise RuntimeError('no crops: call load_target() first')
         observed = self.observed_wavelength()
+        if self.frame_ranges and not any(
+                lo <= observed * ANGSTROM_PER_NM <= hi
+                for lo, hi in self.frame_ranges):
+            raise RuntimeError(
+                f"no loaded frame covers {observed:.2f} nm: load the target "
+                "again to pick frames for this wavelength")
         self.w_load_status.value = (
             f'Stacking the line map at {observed:.2f} nm over '
             f'{len(self.A.crop_list)} crops...')
@@ -1380,6 +1488,32 @@ class LineMapStudio:
         finally:
             self.w_restack.disabled = False
         self._build_hue_if_stale()
+
+    def step_wavelength(self, direction):
+        """Move the observed wavelength by one step, then restack and redraw.
+
+        ``direction`` is +1 or -1. The centre switches to the observed
+        wavelength mode, starting from wherever the redshift put it, so the
+        steps do not depend on the rest line.
+        """
+        observed = round(self.observed_wavelength()
+                         + direction * WAVELENGTH_STEP_NM, 3)
+        self._suspend = True
+        try:
+            self.w_center_mode.value = 'Observed wavelength'
+            self.w_observed.value = observed
+        finally:
+            self._suspend = False
+        self._on_center_change()
+        self.w_wave_status.value = (
+            f"<span style='color:#888'>{observed:.2f} nm</span>")
+        if self.A is None:
+            return
+        self.w_wave_down.disabled = self.w_wave_up.disabled = True
+        try:
+            self._on_restack()
+        finally:
+            self.w_wave_down.disabled = self.w_wave_up.disabled = False
 
     def build_hue_map(self):
         """Trace the dispersion of every bright continuum pixel into a hue map.
@@ -1680,6 +1814,10 @@ class LineMapStudio:
             self._draw_scalebar(ax, annot, fs, clean)
         if self.w_show_compass.value:
             self._draw_compass(ax, annot, fs, clean)
+        if panel == PANEL_LINE and self.w_show_wavelength.value:
+            ax.text(0.03, 0.03, f'{self.observed_wavelength():.1f} nm',
+                    transform=ax.transAxes, va='bottom', ha='left',
+                    color=annot, fontsize=fs, path_effects=_halo())
 
     def _pixel_scale_arcsec(self):
         """Mean pixel scale of the stamp WCS, in arcsec."""
