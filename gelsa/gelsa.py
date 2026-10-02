@@ -56,10 +56,10 @@ class Gelsa:
         """
         self.config = self._default_config.copy()
         self.load_config(config_file, config, **kwargs)
-        self.find_calibdir(self)
+        self.find_calibdir()
         self.check_calibdir()
 
-    def find_calibdir(self, config_file):
+    def find_calibdir(self):
         """ """
         if self.config['calibdir'] is not None:
             return

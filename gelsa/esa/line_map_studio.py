@@ -120,8 +120,11 @@ WAVELENGTH_STEP_NM = 0.1
 LOG_TO_BOX = ('gelsa', 'astroquery')
 
 DEFAULT_CREDENTIALS = '/media/home/my_workspace/password'
-DEFAULT_CONFIG = '/media/home/my_workspace/gelsa-spectra/calib/gelsa_config.json'
-DEFAULT_CALIBDIR = '/media/home/my_workspace/gelsa-spectra/calib/'
+# No config file and no calibration directory by default, as in gelsa.Gelsa:
+# gelsa then uses its built-in configuration and finds the SIR calibration in
+# datalabs itself (see gelsa.esa.datalabs_paths).
+DEFAULT_CONFIG = None
+DEFAULT_CALIBDIR = None
 
 
 class OutputHandler(logging.Handler):
@@ -273,9 +276,12 @@ class LineMapStudio:
     ----------
     targets_file : str
         Target list read by the ``Targets`` dropdown.
-    credentials_file, config_file, calibdir : str
-        Defaults for the archive login and the gelsa calibration, all editable
-        in the GUI.
+    credentials_file : str
+        Default for the archive login, editable in the GUI.
+    config_file, calibdir : str, optional
+        Defaults for the gelsa calibration, editable in the GUI. Left empty,
+        gelsa uses its built-in configuration and finds the calibration
+        directory in datalabs, as ``gelsa.Gelsa`` does.
     outdir : str
         Where ``Save figure`` and ``Save settings`` write.
     Euclid : astroquery.esa.euclid.core.EuclidClass, optional
@@ -343,10 +349,13 @@ class LineMapStudio:
             description='Credentials file', value=credentials_file,
             layout=wide, style=style)
         self.w_config = widgets.Text(
-            description='Gelsa config', value=config_file, layout=wide,
+            description='Gelsa config', value=config_file or '',
+            placeholder="none: gelsa's built-in configuration", layout=wide,
             style=style)
         self.w_calibdir = widgets.Text(
-            description='Calib dir', value=calibdir, layout=wide, style=style)
+            description='Calib dir', value=calibdir or '',
+            placeholder='found automatically in datalabs', layout=wide,
+            style=style)
         self.w_connect = widgets.Button(
             description='Connect', icon='plug', button_style='primary',
             layout=widgets.Layout(width='150px'))
@@ -911,6 +920,10 @@ class LineMapStudio:
         e.g. from re-running the notebook cell, is replaced.
         """
         global _log_handler
+        # astroquery installs its own logger class when first imported, and
+        # fails if a plain logger of that name already exists; import it
+        # before asking for its logger.
+        import astroquery  # noqa: F401
         handler = OutputHandler(self.w_log)
         for name in LOG_TO_BOX:
             logger = logging.getLogger(name)
@@ -1052,10 +1065,14 @@ class LineMapStudio:
                 self.Euclid.login(credentials_file=self.w_credentials.value)
             self.EA = euclid_archive.EuclidArchive(self.Euclid)
             if self.G is None:
+                # An empty box means the Gelsa default: no config file, and a
+                # calibration directory found in datalabs.
                 self.G = gelsa.Gelsa(
-                    config_file=self.w_config.value,
-                    calibdir=self.w_calibdir.value,
+                    config_file=self.w_config.value.strip() or None,
+                    calibdir=self.w_calibdir.value.strip() or None,
                     zero_order_catalog=None)
+                if not self.w_calibdir.value.strip():
+                    self.w_calibdir.value = self.G.config['calibdir'] or ''
         self.w_connect_status.value = self._connection_summary()
 
     def _on_connect(self, _=None):
